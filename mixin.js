@@ -440,3 +440,17 @@ var constant = (function() {
 
 //判断是否是数字
 +data + "" === data
+
+// 获得元素的在屏幕上的位置坐标
+function findPos(obj) {
+    var curleft = curtop = 0;
+
+    if (obj.offsetParent) {
+        do {
+            curleft += obj.offsetLeft;
+            curtop += obj.offsetTop;
+        } while (obj = obj.offsetParent);
+    }
+
+    return [curleft, curtop];
+}
