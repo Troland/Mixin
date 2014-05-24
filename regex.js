@@ -15,3 +15,6 @@ isBrowser && navigator.platform === 'PLAYSTATION 3' ? /^complete$/ : /^(complete
 
 // opera
 typeof opera !== 'undefined' && opera.toString() === '[object Opera]'
+
+// 判断数组元素是否相等
+/\b(.)\1+\b/.test([1,1,1].join(''))

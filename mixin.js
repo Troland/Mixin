@@ -462,3 +462,13 @@ var uuid = function () {
         return v.toString(16);
     });
 };
+
+// 函数的形参个数
+fn.length
+
+//字符串内按任意位数的字符进行反转
+function flip(s, offset) {
+    var len = s.length;
+    offset = offset < len ? offset : (offset % len);
+    return s.replace(new RegExp('^(.{' + offset + '})(.*)$'), '$2$1');
+}
