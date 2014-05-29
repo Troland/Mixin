@@ -472,3 +472,56 @@ function flip(s, offset) {
     offset = offset < len ? offset : (offset % len);
     return s.replace(new RegExp('^(.{' + offset + '})(.*)$'), '$2$1');
 }
+
+// getAttribute 第二个参数 DOM2
+0
+Default. Performs a property search that is not case-sensitive, and returns an interpolated value if the property is found.
+1
+Performs a case-sensitive property search. To find a match, the uppercase and lowercase letters in strAttributeName must exactly match those in the attribute name.
+2
+Returns attribute value as a String. This flag does not work for event properties.
+4
+Returns attribute value as a fully expanded URL. Only works for URL attributes.
+
+// 快速排序
+var quickSort = function(arr) {　　
+    if (arr.length <= 1) {
+        return arr;
+    }　　
+    var pivotIndex = Math.floor(arr.length / 2);　　
+    var pivot = arr[pivotIndex];　　
+    var left = [];　　
+    var right = [];　　
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] != pivot) {
+            if (arr[i] < pivot) {　　　　　　
+                left.push(arr[i]);　　　　
+            } else {
+                right.push(arr[i]);　　　
+            }　
+        }
+    }　　　　
+    return quickSort(left).concat([pivot], quickSort(right));
+};
+
+// 输入一个整数数组，调整数组中数字的顺序，使得所有奇数位于数组的前半部分，并排序。
+// 所有偶数位于数组的后半部分。
+// 如： [4,6,5,3,7] -> [3,5,7,4,6]
+var a = [1, 3, 11, 2, 4, 10];
+a.sort(function(a,b){return b-a;}).sort(function(a,b){return a%2 ? b%2 : 1;})
+
+// 对象的toString或者valueOf会在进行运算的时候进行转化
+var a = {
+    toString: function () { //或者valueOf
+        return 2;
+    }
+}
+// IE6-IE8 substr参数不支持负数应该用substring
+substring
+
+// 测试是否是空数组
+var obj;
+var length = obj.length;
+if (length !== +length) { //如果不是数组或者是对象
+
+}
