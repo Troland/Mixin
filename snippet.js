@@ -178,3 +178,12 @@ function addURLParam(url, name, value) {
     url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
     return url;
 }
+
+// content-types
+text/plain //文字
+text/HTML //html
+text/xml /xml
+test/javascript
+application/json //当传输的是json字符串例如对象数组需要用到var objs = [{name: 'mike', val: 1}, {name: 'scot', val:2}];JSON.stringify($.toJSON(objs))
+image/GIF
+image/JPEG

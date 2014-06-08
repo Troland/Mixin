@@ -525,3 +525,4 @@ var length = obj.length;
 if (length !== +length) { //如果不是数组或者是对象
 
 }
+NaN !== NaN //true
