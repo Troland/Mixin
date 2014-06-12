@@ -184,6 +184,6 @@ text/plain //文字
 text/HTML //html
 text/xml /xml
 test/javascript
-application/json //当传输的是json字符串例如对象数组需要用到var objs = [{name: 'mike', val: 1}, {name: 'scot', val:2}];JSON.stringify($.toJSON(objs))
+application/json //当传输的是json字符串例如对象数组需要用到var objs = [{name: 'mike', val: 1}, {name: 'scot', val:2}];JSON.stringify(objs)
 image/GIF
 image/JPEG
