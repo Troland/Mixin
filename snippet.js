@@ -179,6 +179,9 @@ function addURLParam(url, name, value) {
     return url;
 }
 
+var isExplorer = /msie [\w.]+/;判断是否ie
+var docMode           = document.documentMode;
+var oldIE             = (isExplorer.exec(navigator.userAgent.toLowerCase()) && (!docMode || docMode <= 7));
 // content-types
 text/plain //文字
 text/HTML //html

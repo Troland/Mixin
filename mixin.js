@@ -526,3 +526,6 @@ if (length !== +length) { //如果不是数组或者是对象
 
 }
 NaN !== NaN //true
+
+//是否是IE6，7，8
+var isIE678 = !+'\v1';
