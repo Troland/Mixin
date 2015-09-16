@@ -21,10 +21,13 @@ var leftPos = (typeof window.screenLeft = "number") ?
 var topPos = (typeof window.screenTop = "number") ?
     window.screenTop : window.screenY;
 
-// 取得页面视口宽高
-var pageWidth = window.innerWidth,
-    pageHeight = window.innerHeight;
+// 取得页面视口宽高 IE9+
+var pageWidth = window.innerWidth || document.documentElement.clientWidth,
+    pageHeight = window.innerHeight || document.documentElement.clientHeight;
 
+// 这个兼容所有
+// pageWidth = document.documentElement.clientWidth
+// 
 if (typeof pageWidth !== "number") {
     if (document.compatMode === "CSS1Compat") {
         pageWidth = document.documentElement.clientWidth;
@@ -35,6 +38,11 @@ if (typeof pageWidth !== "number") {
     }
 }
 
+// 页面宽(包含滚动条和隐藏的部分)
+// offsetWidth
+var pageWidth = Math.max(document.documentElement.scrollWidth,
+                         document.documentElement.offsetWidth, document.documentElement.clientWidth,
+                         document.body.scrollWidth, document.body.offsetWidth);
 // 解析地址中的参数
 
 function getQueryStringArgs() {
@@ -179,7 +187,7 @@ function addURLParam(url, name, value) {
     return url;
 }
 
-var isExplorer = /msie [\w.]+/;判断是否ie
+var isExplorer = /msie [\w.]+/.exec(navigator.userAgent.toLowerCase());判断是否ie
 var docMode           = document.documentMode;
 var oldIE             = (isExplorer.exec(navigator.userAgent.toLowerCase()) && (!docMode || docMode <= 7));
 // content-types
@@ -190,3 +198,47 @@ test/javascript
 application/json //当传输的是json字符串例如对象数组需要用到var objs = [{name: 'mike', val: 1}, {name: 'scot', val:2}];JSON.stringify(objs)
 image/GIF
 image/JPEG
+
+// http://larryzhao.com/2011/10/28/arguments-dot-callee-dot-caller-bug-in-internet-explorer-9/
+// IE9 bug
+function func1(flag){
+   if(flag){
+      alert("Caller is here!");
+   }else {
+      func2();
+   }
+}
+
+function func2(){
+    arguments.callee.caller(true);
+}
+func1(false);
+//bugfix:
+function func1(flag){
+   if(flag){
+      alert("Caller is here!");
+   }else {
+      func2();
+   }
+}
+
+function func2(){
+   var callerFunc = func2.caller; //func2.caller或者是arguments.callee.caller
+   callerFunc(true);
+}
+func1(false);
+
+// 取得锚点对应的页面中元素
+// 比如页面上有hash值#sec,页面上有元素<div id="sec"></div>
+$(':target')
+
+"1"[0] IE6,IE7返回undefined
+
+// 判断是否同源
+function isSameOrigin(el) {
+    var ret = false;
+    try {
+        ret = !!el.contentWindow.location.href;
+    } catch (e) {}
+    return ret;
+}

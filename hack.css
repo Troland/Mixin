@@ -1,3 +1,30 @@
 html {
     overflow-y: scroll;
 }
+/*IE7 overflow hack
+The problem is that overflow: hidden won't work in IE7 unless the parent container has position: relative.*/
+/*http://stackoverflow.com/questions/9629698/css-overflow-issue-with-ie7/9629774#9629774*/
+.ov {
+    *position: relative;
+    overflow: auto;
+}
+/*IE7 min-width会有bug 用*来写*/
+.mWidth {
+    min-width: 100px;
+    *width: 100px;
+}
+
+/*scrollbar-arrow-color 滚动时滚动条的箭头的颜色IE专有*/
+
+/*表格定宽超出用省略号*/
+table {
+    table-layout: fixed;
+    border-collapse:collapse;
+    width: 100%;
+}
+table td,  table thead th {
+    border: 1px dashed #333;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑距离</title>
+</head>
+<body>
+    <input type="text" id="search">
+    <button class="search-btn">搜索</button>
+    <ul class="result-list">
+        
+    </ul>
+    <script type="text/javascript" src="jquery-1.11.0.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            function levenshtein(a, b) {
+
+                var al = a.length + 1;
+                var bl = b.length + 1;
+                var result = [];
+                var temp = 0;
+
+                // 创建一个二维数组
+                for (var i = 0; i < al; result[i] = [i++]) {}
+                for (var i = 0; i < bl; result[0][i] = i++) {}
+
+                console.log(result);
+                for (i = 1; i < al; i++) {
+                    for (var j = 1; j < bl; j++) {
+                        // 判断最上方和最左方数字是否相等
+                        temp = a[i - 1] == b[j - 1] ? 0 : 1;
+                        // result[i - 1][j] + 1 左方数字
+                        // result[i][j - 1] + 1 上方数字
+                        // result[i - 1][j - 1] + temp 左上方数字
+                        result[i][j] = Math.min(result[i - 1][j] + 1, result[i][j - 1] + 1, result[i - 1][j - 1] + temp);
+                    }
+                }
+
+                return result[i-1][j-1];
+
+            }
+
+
+            var data = [
+                "今天是星期五",
+                "今天是周五",
+                "明天咱们去钓鱼吧",
+                "明天咱们去玩游戏",
+                "明天咱们吃火锅",
+                "下周今天是星期几",
+                "明天天气怎么样"
+            ];
+
+            $('.search-btn').on('click', function() {
+
+                var searchStr = $('#search').val();
+                var tempArr = [];
+                var result = [];
+                var resultStr = '';
+
+                for (var i = 0; i < data.length; i++) {
+                    console.log(levenshtein(searchStr, data[i]));
+                    tempArr[i] = [];
+                    tempArr[i].push(levenshtein(searchStr, data[i]));
+                    tempArr[i].push(data[i]);
+                }
+
+                // 这里认为编辑距离小于五的数据比较接近原意
+                // 你还可以按照编辑距离排序，数字小的排在上面
+                // result = tempArr.filter(function(distance) {
+                //  return distance[0] < 10;
+                // });
+                result = tempArr.sort(function(a, b) {
+                    return a[0] - b[0];
+                });
+                console.log(result);
+                // 显示结果
+                result.forEach(function(val, index) {
+                    resultStr += '<li>' + val[1] + '（' + val[0] + '）' + '</li>';
+                });
+                $('.result-list').html(resultStr);
+            });
+        });
+    </script>
+</body>
+</html>
