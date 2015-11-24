@@ -1,0 +1,400 @@
+﻿.monthly_calendar {
+    /*height: 230px;*/
+    width: 598px;
+    border: 1px solid #d9d9da;
+    /*margin-top: 4px;*/
+}
+.monthly_calendar .cam-calendar {
+    padding: 0px;
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 0px;
+}
+.monthly_calendar .cam-calendar-list {
+    border: none;
+}
+.cam-calendar-s {
+    width: 170px;
+    padding: 10px;
+    border-right: 1px solid #d9d9da;
+    float: left;
+    overflow: hidden;
+}
+.fast_sech_btn {
+    height: 20px;
+    width: 70px;
+    border: 1px solid #dadada;
+    color: #4986a6;
+    margin-left: 30px;
+    background: #FFF;
+    line-height: 14px;
+    text-align: center;
+}
+.calendar_wrap .line_one {
+    text-align: right;
+}
+
+.faster_month {
+    color: #909090;
+    margin-left: 7px;
+    /*float: right;*/
+    line-height: 22px;
+    font-size: 12px;
+}
+.cam-calendar-2 {
+    margin: 0 12px;
+    border-left: 1px solid #d9d9da;
+}
+.cam-calendar-3 {
+    border-right: 0;
+    border-left: 1px solid #d9d9da;
+}
+.cam-calendar-s-title {
+    position: relative;
+    height: 20px;
+    width: 170px;
+    border: 1px solid #dadada;
+    color: #4986a6;
+    line-height: 20px;
+    text-align: center;
+    background-color: #f5f6f6;
+}
+.cam-calendar-ctrl-prev, .cam-calendar-ctrl-next {
+    position: absolute;
+    top: 0px;
+}
+.cam-calendar-ctrl-prev {
+    left: 0;
+}
+.cam-calendar-ctrl-next {
+    right: 0;
+}
+.cam-calendar-ctrl-prev, .date-list .prev-ctrl {
+    border-right: 1px solid #dadada;
+}
+.year-ctrl-next.disable {
+    cursor: not-allowed;
+}
+.year-ctrl-next, .date-list .next-ctrl {
+    border-left: 1px solid #dadada;
+}
+.cam-calendar-ctrl-next {
+    border-left: 1px solid #dadada;
+}
+.cam-calendar-type-month ul li.clickable, .cam-calendar-normal .cam-calendar-s ul li {
+    color: #5f5d5d;
+    cursor: pointer;
+}
+.cam-calendar-type-month ul, .cam-calendar-type-halfmonth ul.month-list {
+    width: 172px;
+}
+.cam-calendar-type-halfmonth .cam-calendar-s-title .calendar-dropdown-wrapper {
+    margin-right: 40px;
+}
+.cam-calendar-type-month ul li.active, .d-half.active {
+    color:#FFF;
+    background:#ff615c;
+}
+.cam-calendar-type-month ul li {
+    height: 50px;
+    width: 40px;
+    background: #f9f9f9;
+    margin: 10px 3px 0px 0;
+    float: left;
+    line-height: 50px;
+    text-align: center;
+    color: #ccc;
+}
+.calendar-close {
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    width: 24px;
+    height: 24px;
+    background: url(/Images/img/calendar-colse.png) 0 0 no-repeat;
+    z-index: 1000;
+    cursor: pointer;
+}
+.calendar-close:hover {
+    background: url(/Images/img/calendar-colse.png) -32px 0 no-repeat;
+}
+.btn-calendar-search {
+    color: #ff615c;
+    margin-left: 7px;
+    line-height: 22px;
+    font-size: 12px;
+}
+.calendar-head {
+    text-align: right;
+}
+.cam-calendar-wrapper {
+    /*position: absolute;
+    z-index: 4;*/
+}
+.cam-calendar-close {
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    width: 24px;
+    height: 24px;
+    background: url(/Images/img/calendar-colse.png) -32px 0 no-repeat;
+    /*background: url(/Images/img/calendar-colse.png) 0 0 no-repeat;*/
+    z-index: 1000;
+    cursor: pointer;
+}
+.cam-calendar-close:hover {
+    background: url(/Images/img/calendar-colse.png) -32px 0 no-repeat;
+}
+.cam-calendar {
+    position: relative;
+    padding: 10px;
+    background: #FFF;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 7px 0px #888888;
+    -moz-box-shadow: 1px 1px 7px 0px #888888;
+    box-shadow: 1px 1px 7px 0px #888888;
+}
+.cam-calendar-list {
+    width: 598px;
+    border: 1px solid #d9d9da;
+    /*margin-top: 4px;*/ 
+}
+.cam-calendar-list.calendar-single-type {
+    width: 190px;
+}
+.calendar-search {
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid #dadada;
+    background: #FFF;
+    text-align: center;
+}
+.cam-calendar-halfmonth.disable {
+    background: #f9f9f9;
+}
+.cam-calendar-halfmonth.disable .m-text {
+    color: #ccc;
+}
+.cam-calendar-halfmonth .d-half {
+    position: relative;
+    height: 25px;
+    font-size: 10px;
+    cursor: pointer;
+}
+.cam-calendar-halfmonth .d-half .d-half-text {
+    display: none;
+    position: absolute;
+    right: 0px;
+    width: 25px;
+    color: #fff;
+}
+.cam-calendar-halfmonth .d-half.active .d-half-text {
+    display: block;
+}
+.cam-month-first-half .d-half-text {
+    top: 0px;
+}
+.cam-month-second-half .d-half-text {
+    bottom: 0px;
+}
+.cam-calendar-halfmonth {
+    position: relative;
+    width: 40px;
+    background: #f9f9f9;
+    margin: 10px 3px 0px 0;
+    float: left;
+    text-align: center;
+}
+.cam-calendar-halfmonth .m-text {
+    position: absolute;
+    left: 0px;
+    top: 16px;
+    width: 20px;
+    height: 18px;
+    color: #5f5d5d;
+    font-size: 14px;
+}
+.cam-calendar-halfmonth.active .m-text {
+    background: url(/Images/img/month-active.png) 0 0 no-repeat;
+    z-index: 5;
+}
+.cam-calendar-halfmonth .split-line {
+    position: absolute;
+    right: 0px;
+    top: 24px;
+    width: 20px;
+    height: 0px;
+    border-bottom: 1px solid #fff;
+    z-index: 3;
+}
+.calendar-dropdown-wrapper {
+    position: relative;
+    float: right;
+    margin-top: 2px;
+    height: 16px;
+    line-height: 16px;
+}
+.calendar-dropdown-wrapper .dropdown {
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    text-align: center;
+    z-index: 6;
+}
+.dropdown .dropdown-items {
+    -webkit-box-shadow: 1px 1px 9px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 1px 1px 9px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 1px 1px 9px 0px rgba(50, 50, 50, 0.75);
+    background-color: #fff;
+}
+.calendar-menu-year .dropdown {
+    width: 50px;
+}
+.calendar-menu-year .dropdown .scroll-ctrl {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 7px;
+    height: 180px;
+}
+.cam-scroll-axis {
+    width: 7px;
+    height: 180px;
+    background-color: #f2f2f2;
+}
+.scroll-ctrl.hover .cam-scroll-axis {
+    background-color: #bfbfbf;
+}
+.cam-scroll-slider {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 5px;
+    height: 0px;
+    border: 1px solid #e1e1e1;
+    border-bottom: 1px solid #d4d4d4;
+    background-color: #fff;
+    cursor: pointer;
+}
+.calendar-menu-month .dropdown {
+    width: 30px;
+}
+.calendar-menu-year {
+    margin-right: 5px;
+    width: 70px;
+
+}
+.calendar-menu-month .calendar-menu-text {
+    width: 30px;
+}
+.calendar-menu-text {
+    float: left;
+    position: relative;
+    height: 14px;
+    line-height: 14px;
+    border: 1px solid #dadada;
+    cursor: pointer;
+    width: 50px;
+}
+.calendar-icon {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 10px;
+    height: 14px;
+    line-height: 14px;
+}
+.calendar-icon-border {
+    width: 9px;
+    height: 14px;
+    border-left: 1px solid #ccc;
+    text-align: center;
+}
+.calendar-menu-month {
+    margin-right: 20px;
+    width: 50px;
+}
+.calendar-menu-year .calendar-menu-text-s {
+    padding: 0px 8px 0px 9px;
+}
+.calendar-menu-text-s {
+    float: left;
+    padding: 0px 8px 0px 3px;
+    height: 14px;
+}
+.calendar-icon-arr {
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    width: 6px;
+    height: 3px;
+    background: url(/images/img/mini.png) 0 -980px no-repeat; 
+}
+.week-tb {
+    width: 170px;
+}
+.week-tb .day {
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.week-tb .cw {
+    background-color: #efeeed;
+    text-align: center;
+}
+.week-tb .calendar-row.active, .week-tb .calendar-row.hover {
+    border: 1px solid #ffc1b9;
+}
+.week-tb .calendar-row.active .cw, .week-tb .calendar-row.hover .cw {
+    color: #fff;
+    background-color: #ff524b;
+}
+.week-tb .calendar-row.active .day, .week-tb .calendar-row.hover .day {
+    background-color: #fcf2ef;
+}
+.week-tb .calendar-row.disable .cw, .week-tb .calendar-row.disable .day {
+    color: #d5d3ce;
+    background-color: #efeeed;
+}
+.week-tb-head {
+    font-weight: bold;
+}
+.calendar-row .calendar-grid {
+    float: left;
+    width: 21px;
+    padding: 3px 0px;
+    text-align: center;
+    color: #5f5d5d;
+}
+.calendar-row {
+    margin-bottom: 5px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+.calendar-row .calendar-grid.cw {
+    width: 21px;
+    font-weight: bold;
+}
+.dropdown-items li {
+    height: 20px;
+    cursor: pointer;
+}
+.dropdown-items {
+    height: 180px;
+    overflow: hidden;
+}
+.cam-calendar-type-week {
+    height: auto;
+}
+.btn-calendar {
+    background: #ff615c;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+.cam-calendar-bottom {
+    text-align: right;
+}

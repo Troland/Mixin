@@ -1,0 +1,1776 @@
+calendar 窗口调整的显示位置bug还有点击滚动条的事件
+获取一天是星期几和是第几周
+
+中药药膳
+React, fis, edp, jsdoc输出ui组件的api
+这个插件怎么搞?插件开发流程
+requirejs源码
+
+
+flux, ngix本地服务器进行调试处理等等
+双向绑定，单向绑定，多向绑定原理markdown
+xss
+跨域
+发布过程需要进行重新定义
+model,view,controller
+Caidongliang102848
+camdemo20150521
+
+整理dev tools,httpie,atom
+Flux, ImmutableJS, 采用 cursor 机制,docker,Reduce
+NPM + Reduce
+NPM进行组件分发
+reduce进行打包
+
+
+webpack,plugin development,fis
+所有的命名全部进行自我的控制统一一下习惯
+
+
+IE7销量地图的echart有问题
+每月囤物
+img-lazyload
+药材相克表
+
+莫干山清庭乐农家
+莫干山·田园曼居
+莫干山石颐寺水库山庄
+莫干山锦绣山庄 
+莫干山山水别院 
+
+网页性能提升
+plantuml
+各自链式done看一下
+artDialog的对话框层级
+velocity
+PI操作栏的那个弹出层
+
+
+zindex,$.when那几个url是无序的还是有序的呢?
+检测浏览器语言
+requirejs timeout
+菜单的鼠标移入移出还是有些问题
+
+判断是否拥有一组类要怎么写?
+打包js
+
+那个查询统一一下
+loading,那个dialog position位置如何写?
+requirejs可以检测已经存在的jQuery或者其它来判断是否要加载吗？
+编辑器中的大写小问题
+关于发布的问题如果是发布在某个子目录下那些个JS，IMG,CSS的路径就会跟着有进行改变
+apt-file list softwarename
+
+
+
+
+
+
+
+弹出窗插件弹出窗在按钮的任意位置.
+用getUTCDate还是getDate?
+utcdate date等问题
+重新审视整个技能
+
+
+
+UTCDate等等关系.
+float-bar的弹出的选择层的插件$.popSelect
+关于方法的问题
+然后点击区域生成不同的canvas比如线段HTML5画图然后，拖拽图更新数据，反之亦可.点击然后画线两个DOM之间画线.等等
+滚动插件有时候当只有横向滚动的时候有时候会出现垂直的滚动
+
+
+
+
+加入md5检查
+更改文件夹
+md5秒传文件相同则不用再上传
+
+
+
+下载文件post公用,iframe吗?
+IE9 box-shadow不行。。。？
+querystring模块是什么?
+php接口,数据库接口之类,做一个百度网盘类似,php,nodejs,go?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+性能测试
+placeholder需要调整一下.
+iframe进行下载
+字数统计
+svn版本
+如何根据不同页面输出不同的搜索模板
+eclipse有没有emmet?
+添加到购物车的动画效果
+polyfills整理一下
+pomelo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+查一下批量上传可以不用请求多次吗？
+.map文件全部删掉
+ajax请求成功失败进行封装
+文件夹操作的时候进行notify?的操作
+spiner.js
+IE10以下大文件上传不行.
+eclipse的那个有没有emmet插件?
+fake data
+关于跨域js
+
+
+
+
+
+
+
+
+
+
+关于错误信息
+lang语言，那个所有的上传的下载模板点击其它也要关闭弹出框
+loading,提示所有
+Make a dialog
+比如一个选项卡每个选项卡请求内容，要去缓存每个选项卡的内容吗？
+安全退出
+MEAN全栈框架
+
+
+
+fis, ngix, data diggerd挖数据,google update
+fis csssprite只对相同的图片大小进行整合到一张上面去
+进行计时吧。进行大量的估算。
+全面地审视requirejs这样写究竟好不好?
+emmet myeclipse?
+淘宝的加入购物车的动画怎么做的，抛物线,首页的图片缩小动画.
+写一个提示的？jquery.tooltip?
+
+
+
+
+写一个日历
+各个组件等等.
+手写一个弹出组件？
+滚动加载
+重新进行整理
+系统看一下缓存，关于浏览器缓存.会不会再请求服务器
+
+
+
+文件名重新整理一下所有弹出窗口更改
+销量分析的resize事件
+写一个loader吧
+jsdoc
+require,js压缩等等,一体化
+看一下json究竟是用下划线好还是用骆驼好呢?
+那个tortoiseSVN的代理设置如何设置
+
+
+每天写一个.md嗯
+socket.io进行文件的同步,oAuth
+Api rate-limiting
+登录重新设计
+中英文切换
+哇酷网取消注册
+php几篇文章要看完
+可拖拽
+
+编辑器插件?
+日期控件如果不是在当月的要让其显示为灰色
+echarts中的地图在rendermark的时候如何渲染为饼图呢?
+
+
+图表统一用setOption(abc, true)来进行重新渲染
+办理社保
+重新整理整个系统，工具等，列出所有的C开发工具清单进行整顿。
+编译chromec
+全线精减一下
+安装php扩展有些DLL需要编译才能够在window下c使用。
+week有多少周这个要算一下
+用notify代替loading，因为那个看起来非常的糟
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+js系统整理一遍
+php和node开搞
+alog进行统计上传
+关于缓存原理
+模仿网盘文件夹操作
+phpsevice 接口数据进行数据库操作
+一个月时间进行php和mysql的学习, php调试
+
+todolist导航的最后一个administrator无法隐藏掉左边的分隔线因为如果设置margin-left的话会导致露出来右边
+所有的常用的再整理一下
+
+
+
+http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+http://velocity.oreilly.com.cn/2013/ppts/16_ms_optimization--web_front-end_performance_optimization.pdf
+获取地图数据区县的
+webpagetest
+
+
+优化建议:
+1.用静态服务器来存储图片等等例如static.pms.com等等。避免传送cookie到服务器浪费带宽
+2.图片,js,css压缩打包
+3.测试下如果采用cdn能够提速多少呢?
+
+
+
+
+about tracing
+SPDY?Nginx负载均衡
+如果使用的是全局的layout的话有一个问题，不知道要怎么构建这个css，js等等的.
+css打包怎么样?js打包是可以
+个人团队合作打包协作等等.nginx-http-concat线上压缩打包tmodjs完整地开发插件的流程.两片.net构建
+combo服务弄一下svn挂勾版本更新。。打版本.开发及发布版分离开来svn集成等
+版本控制的最佳实践
+开发组件流程及测试等等api blueprint,如何完全和后端分离开来呢？Linux + Mono来进行部署.net.图片,CSS等用高速CDN收藏起来吧.点击再请求js文件再进行运行.
+
+
+
+所有的页面查出的车系的分组的问题,选宝马的时候
+查车系的时候有停产的进行分组的问题等等
+价格带最后的图少一款车
+
+
+
+预先加载
+etag改变,last-modify也会改变？反之亦然？etag,last-modified原理
+缓存策略
+禁止直接写样式css('color'等必须用类
+phantomjs
+
+
+
+
+miniprofiler性能统计
+性能，chrome
+手持设备,ipad,android
+音乐网站
+百度云平台和google云平台
+Sail是说要使用httpmodule,map去掉版本号吗
+我目前是这样，debug模式使用非min, 并且Render的css后面会自动跟一个v=?, ？使用随机数，如果是release，则？被真实版本号取代，且使用mini版本。 每次发布，都需要更新一个全局版本号。
+@Styles.Render(String.Format("~/Content/global{0}.css", IsReleaseMode ? ".min" : string.Empty))
+
+
+
+
+
+求出对象数组的不同部分
+菜单栏hover上去IE8下有bug为什么那个下拉的菜单width100%IE8下有时候会有错误？
+
+
+动态如何设置数据是否缓存，如果重复呢？
+map的addData问题.如何做缓存?
+数据在模板中尽量不要做处理
+移动设备的测试
+360浏览器测试,IE测试
+利用百度地图api获取区县数据
+收集所有polyfill
+avalon模板共用,js共用
+压缩一下
+关于缓存等等前后端全部看一下。
+
+
+
+有数据Spark apache
+百度地图的legend放底部的时候如果legend过多无法装下。
+echarts当两条折线进行比较的时候设置数值为'-'那个点也消失不了。只有一条的时候会消失
+增加验证码
+
+
+android 4.1pc
+如何阅读android
+
+
+
+
+
+
+模板引擎换一个?
+把所有的绑定的document的click全部干掉。
+全部写成umd的格式
+
+
+requirejs loadtimeout 错误
+插件如何写的重新进行设计
+modernizr定制一下不用全部功能都要
+http://yujianshenbing.iteye.com/category/256978看完
+全部通过backbone进行改造吧。
+affix插件有问题
+业务和插件混合起来了。。不行..
+插件里面插入subscribers?
+插件生成文档,挂起来.
+动画里面的插件.+和-就是乘以后面的数值
+avalon.live.js干什么用的avalon插件如何编写？
+avalon.grid.插件写.
+js插件整理.c
+菜单再改一下
+IE7导航栏样式有问题有时候hover上去会有问题
+组件那个开发流程.
+CSS,JS,HTML开发规范及文件名组织
+css,js,html分层less?
+hashMap, get, set
+全部改成单引号
+echart的主题
+responseive layout
+那种新闻热点，网易
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Automatic Event Registration?
+img lazyload img <textarea 来加载?减少dom节点 <textarea src="1.jpg" disable></textarea> 然后换成img
+阅读优化原理进行优化
+动画点选?购物车
+shadowsocks,karma查看一下安装nginx整个一体化
+expando属性在ie10,ie9下和unSelectable="on"的时候expandon属性无效在ie8,ie7是有效的
+IEbug,chrome性能调试.
+保存条件的问题这个url如何进行处理呢
+echarts重新整顿一下
+把所有的工具函数都进行整理吧。
+登录加一个显示大小写。
+车型比较滚动到一定程序就闭合那个左边的导航，不然下面的说明会显示不下.
+销量查询如果是如果可用日期为空的话要日期让其灰掉吧。
+竞品组的编辑弹出编辑框有问题会被遮挡
+requirejs中如果多个都用的$.fn.calendar如何避免重复呢？
+增加一个destroy方法?
+多人聊天
+装备批量下载查车系那个结果查出来以后。会有问题还是要visibile hidden?弹出框?
+那些兼容判定搞一下
+offset,clientX等记一下吧。
+本地时间与utc时间
+pdf reader
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+那种popup的淘宝是怎么样写的？相关组件？
+event.preventDefault(), event.returnValue,event.stopProgation,cancelBubble,e.stopImmediateProgation
+运用一下miniprofiler
+mocha framework?
+varnish web加速器
+charles in chromecharles性能测试,chromCe性能测试
+对于url每个页面似乎有些乱套了。。
+global.js把菜单和导航加进去
+价格气泡图
+这些判断兼容的东西如何处理好点,关键是打包以后
+响应式设计
+前端用户行为统计
+统计pv,uv等等
+如果是公共的比如returntop应该如何做呢?这个公共的?一个一个Js的引用好像不好
+图片整理,css整理,js整理.
+多语言网站
+价格带下载不了?
+注意下ie的缓存ajax问题.
+那个保存条件
+查询的结果的模板整理一下吧。
+表格的结果优化.
+缓存起那个可复制的列
+表格可拖动.
+那个选择条件的问题
+fis前端开发框架集成工作流必须全部实现啊.这和yeoman有啥区别？fis与r.js协同数据模拟等等,如何与.net协同?
+开发版，测试版，发布版，三个版本进行切换?
+增加调试开关
+加入动态验证码吧
+r.js http 构建服务?node.js?
+jQuery event.setup?对于特殊事件的处理,正则后面有一个|是什么意思？^([^.]*)(?:\.(.+)|)$
+dispatchEvent等
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+懒加载在屏幕范围以内以及分页
+Excel的筛选算法
+webComponents
+jQuery.notify用一个?
+不一定都要用模板用笑意的字符串进行替换也行
+一个数组删除其中的元素如何保持索引?
+_.each(arr, function() { arr.splice(1, 1); });
+编辑造车的显示运用瀑布流的做法?
+城市雷达
+销量查询的地市切换不了
+价格带那个图表重叠了。。
+价格查询下载按钮
+mycompetor中的slidedownstatus有问题.
+那个上一步，下一步的按钮问题
+收集客户数据？
+字段描述
+更新时间
+reuqirejs中应用modernizr并进行兼容测试等立一个通用的测试服务器吗？
+模板统一收到一个数组里面.
+height和padding的关系当为absolute的时候不一样。。和正常情况的不一样.
+URL长度会超过
+thin.js
+搞一个监控系统?把每次请求都搞出来显示在数据库?
+销量下载的这个映射关系要如何写?
+那个tip动态生成吧.
+
+各种的动画效果都掌握吧
+jQuery notifier会好点.
+chrome源码和swapon.
+log4js运用起来
+那些个禁止编辑等等.selectstart
+日期格式的进行格式化
+slide可以用1overflow:hidden用position或者scroll
+2.或者是隐藏
+在style中添加样式
+
+
+sticketit,marionette.
+HTTP request methods
+X-HTTP-Method-Override
+Backbone patch?
+
+
+正则手册
+exec和match正则返回
+正则进行验证的时候如果把正则字符串写在data-rules上面的话不用像在代码里面写\进行转义.但是如果在代码的话需要用\进行转义比如^\d+$不在模板中要用^\\d+$
+正则表达式.source
+收集常用正则及正则的语法.
+正则的replace和match,exec这三个的各个属性理解那个replace方法仔细研究一下.第一个是匹配的字符第二个是位移第三个是原字符串.
+关于正则的所有的方法等等.
+
+
+
+iframe进行backbone router
+创建一个下载小站
+avalon.dialog可以通过三个来三个dialogModel来进行数据的填充.
+var require = {
+        deps: ["some/module1", "my/module2", "a.js", "b.js"],
+        callback: function(module1, module2) {
+            //This function will be called when all the dependencies
+            //listed above in deps are loaded. Note that this
+            //function could be called before the page is loaded.
+            //This callback is optional.
+        }
+    };
+
+
+文档的观看方式滚动等
+
+
+
+
+运用almond.js代替requirejs吧?debug requirejs,
+检查一下是不是有些require写得有问题导致在ie下出现了错误.
+packages和bundles看一下吧.
+
+
+
+
+发给服务器一个请求然后服务器返回一段json配置？服务端javascript
+写一个调试模式和开发模式的js利用image的src进行错误汇报
+
+
+
+
+css模块化采用cam-的可行性.
+页面加载以前
+
+require bundles如何用？
+pomelo网易游戏框架
+
+js设计debug模式.
+
+
+
+
+deferrred,callback,ajax再看一下。queue,sizzle,jQuery.expr选择器.
+scrollHeight等等.clientHeightpageXOffse
+
+
+
+
+瀑布流滚动加载不然性能没法搞.
+
+
+不小心把source分支又加入了一个分支，应该删掉的。
+druid阿里巴巴数据库监控系统。
+模块化编程，由一个沙箱来进行通信.sandbox.js，注册等等。
+下拉框和slide.
+
+
+整个的js版本控制。
+jquery.prototype.init.prototype = jquery.prototype?为何?
+关于函数原型继承等等
+Object.defineProperties
+dojo用一下?
+single app
+
+
+
+搞一个自己的bug提交系统把所有的bug都整理起来吧.
+jQuery.css float
+需要有自己的动画库.
+安装octopress的完整教程吧。
+JSON数据格式呈现树型展现在页面上.
+
+
+
+
+
+
+
+
+
+
+
+deferred做性能优化？$('div').promise()做动画之后的动作.
+.net razor,mvc语法熟练一下.
+依赖注入.
+文档api生成用doc太慢了。。jsdoc用起来吧
+每个表格都可编辑...类似excel?
+关于callbacks.
+headfirstc#mvc
+c#中传回的字段名大写问题属性是要大写开头。。如何处理呢?
+jQuery validate
+
+
+
+
+增加位操作.
+autocomplete还是有问题。
+条件筛选的进行优化
+滚动加载数据.
+chrome工具。
+
+grid.js,cloumn:列名数组,tbody store存放数据.
+avalon写成umd格式让其在require或者不依赖requirejs执行.
+已保存条件操作.
+中英文切换.
+ms-include-src
+formula.js类似微软的excel表格.
+taobaoUED modelproxy nodejs全栈
+
+
+
+
+
+ms-duplex
+设计模式java
+avalon的定义里面的问题，初始化的时候的问题.el并不是原对象el.$model才是原对象.model.$model来获取.不要写在定义外面。
+.push会顺便带进其它的属性。双向绑定.
+avalon plugins
+avalon的$watch的duplex,polyfiler
+
+
+MCV,框架。
+控制台进行输出各种图形?
+avalon ui,里面的外部模板打包问题.avalon.config({
+   interpolate: ["<%", "%>"] //  要求openTag 不等于closeTag就能配置成功
+});需要进行更改源码。最好不要用<%吧。
+
+
+
+关于模块化JS的文章进行整理.
+前端技能总汇.自动化构建工具必须搞完.
+把最精华的文章收集起来.收集并应用各种前端工具
+javascript hoisted.
+所有的代码片段进行整理.花一个星期时间进行全面整理.
+写一个添加饮食的菜单？
+
+
+mvc学习
+js设计模式整理.
+分页
+
+
+
+
+
+
+
+requirejs让某个先运行，这个做?
+那个@author加上去吧。
+fineuploader各种上传做一下吧.
+MSBUILD
+原型继承,构造函数继承.组件开发模式.
+后端用模板来输出模板内容像前端那样.
+r.js压缩后的那个build.txt是什么？
+phantomJs配合测试reactjs编写组件
+如何在本地创建一个本地测试项目呢？
+菜单样式问题.
+传递数组对象的时候其实可以不用进行处理。如果传递的是json字符串是会被解析成对象,applica
+动态取得模型.
+r.js单独构建
+
+
+
+avalon里面的define里面定义过的所有的变量都是进行重新整过的。添加了一些数组的方法.
+那种类似苹果的效果
+
+
+
+
+瀑布流
+写一个localstorage,cookie来保存条件等.已经保存条件整理.
+网速测试require common error.
+angular.js
+defer.js再看一下吧。
+如果不是.net其它的框架如何进行发布和调试的切换的?
+那个结果的如果只有一个车系就不用那个深灰背景色了.
+关于那个状态如果超时了应该是要直接跳到首页的吧.
+服务端重定向
+未经授权页面不要允许访问
+权限管理xml等
+保存的条件.
+对所有的脚本进行升级
+保存和应用条件,客户端存储.
+已存页面
+登录加验证码
+升级到2.0啊。。
+工作流.
+
+
+
+
+
+博客写表格样式和那个元素类型比较.localeCompare为什么会不一样比如["长城", "我的"]为什么长城会比我的的值还要大？
+border-spacing是cell-spacing的css写法
+isPrototypeOf:检察某个对象的原型是否在另一个实例对象的原型链上面是ES3。
+表格列可拉伸做一下,draggable.
+
+
+
+
+autocomplete有些问题.
+这个版本要怎么进行动态更新呢?库
+当跳第二步啥的时候需要制造一个状态loading否则又重新加载。。
+调查清楚为什么什么都返回json来进行控制，不可以直接写在页面上吗？
+元素闪烁
+
+
+
+
+那此个打包样式整齐，c#编译全部搞完.
+本周任务写一个tab插件,写一个scrollbar插件写一个关于客户端存储的问题
+日志系统, try catch。
+async: false?禁用？
+品牌的显示车系列表的进行更改运用one和triggerHandler。
+类似淘宝或者jd的导航的
+
+
+
+
+
+
+
+车系如果是手写的那么我到最后一步的时候如何请求该车系下的所有车型呢?
+jQuery.validate只能用在form之中有些奇怪
+如何在一个html中直接插入json.stringify呢?模板中是可以经过转义的纯js中如何做？
+
+
+
+
+
+requestAnimationFrame函数动画.应用一下
+把多个$.when中的function()类似这样写成其它的形式？例如var sersverData = {};
+async.js,q.js异步控制
+polymer，es6,react
+dialog问题time会删除,dialog在按钮附近显示
+模板规整一下
+
+
+
+验证码.
+grid网格
+弹窗在按钮附近怎么写？
+滚动加载页面
+跨域策略文件和ＣＯＲＳ,IE8xdOMAINrEQUEST
+es6学习,nodejs
+表格控制,网格来写吗?
+快捷搜索好像有些问题.
+grab data
+p2p routerhack
+phonegap
+
+
+
+
+看完智能社的视频吧。
+记住密码
+还是用log4进行调试吧
+查一下这里的数据服务可以直接本地取吗？apache
+完整的mvc走一下..前后端,可以监听el吗？
+phonegap环境搭建一下
+dropdownlist研究透彻,tooltip研究透彻.所有的插件过一下coffee
+怎么样选取或和元素集合呢？
+this.callSuper
+当点击了停产在车系选项卡对于弹出的车系里面的车型的添加好像有些问题
+sourcemap
+almond打包后进行应用,错误控制台
+wrap=true不明白
+语言设置
+表格类
+jQuery贡献开发
+ICS开启问题
+IE7下脚本错误和样式问题
+检测是否全选的可以写成一个函数.
+构建一个版本,那个分段折线的segment.
+关于对事件解绑定事件,会有性能问题.
+cache设计
+一个tooltip，autocomplete的时候显示loading
+对所有的ajax请求进行uri映射统一管理
+视图局部渲染
+IE7下样式有问题。
+尽量不要在元素上面绑定元素的其它属性而只显示其一般的属性.其它的写在model里面吧。
+
+尝试环境构建工具
+javascript修炼之道和coffeescript
+
+工程架构编写测试
+文字等自适应啥的.
+对表格进行的操作的专门控件，把表格的相关的css分开
+
+
+
+写一个模块包含有例如系统信息ajax等等或者用原生的写一个？
+jasmine和sinon.js,C#代码书写规范
+
+
+今天的mouseenter的设置规则toElement获取鼠标离开所到达的元素
+e.currentTarget, e.target.今天的mouseenter的设置规则toElement获取鼠标离开所到达的元素
+
+react library
+先Backbone再marionette
+分块head就是head，window.location.url长度限制,写成块以后再进行组装.组装服务.系统的前端性能优化,combo服务.
+marioent+ba
+如何在模板页里面写入变量值
+top和那个menu现在混在一起了必须重新写.
+dialogView,autocompleteView
+应该是要为不同的品牌view或者其它的建立不同的model
+Backbone listenTo
+上传的有很多的问题
+c# 500 服务端成功却是500是怎么一回事？
+页面的样式进行整理写一个完整的来。
+模块化分解,样式说明,公用部分提取等等。
+打标签验证如何做?通过邮件补丁如何管理呢？
+Backbone完整文件组织及页面,android及测试,响应式及各种手机开发模式phonegap学一下吧
+客户端存储flash-cookie, cookie,session,http.
+导引的存储究竟要不放在服务端,要的话就需要一个专门的表。结束索引的时候需要一个接口。客户端发请求来重置是否导引的开关。那种层级关系的采用history api来做吗？
+swfobject,stateless mvc
+cpujs
+require.async
+mobile+MVC给一个版本吧完整搞一个mvc吧
+先做上传mvc
+只有一个月的时间进行适应性练习进行linux迁移,不要再迟疑了。
+pageguide.js npm install error
+用一下iframe
+autocomplete已完成在learning中autocomplete
+tor虚拟专用网
+一旦分支中的提交对象发布到公共仓库，就千万不要对该分支进行衍合操作，不然会发生问题。
+网站内容抓取
+如何生成地图文件几个省的坐标进行combine坐标如何做以及应该如何生成这个geoJSON文件那个文字的坐标如何去控制？
+这个插入的顺序是不可以变的
+这个如果没有原始数据。应该怎么弄？而且现在县的数据是整合在一起的没有分开
+
+
+
+开发版和发布版分开来
+nodejs socket.io+formdiable
+node+fineuploader+mongodb来写一个上传的例子
+toGMTString已经过时用toUTCString
+当建立一个库的时候必须在master上有文件不然，无法建立新的分支.
+各种跨域实践,pager,autocomplete
+coffee
+node watchfile自动应用
+对css进行模块化
+winforms
+rest服务pi和上传价格结果里面显示问题
+上市新车的首页有问题有时候加载不到artDialog在helper的openDialog的时候
+后端写成rest
+整理移动开发的各项工具及桌面开发的各项工具吧
+echarts中的图表的实例的方法都传递到zrender实例中了通过一个messagecenter,click事件和mapSelected参数是不一样的。
+function Line里面的设置线段样式的如果用户在浏览器里面设置了样式会用不了如果设置了isSegment的话只能实线或者虚线.
+最好写一个类符合自己的业务,再者自己根据底层zrender再进行书写
+ngix专门为静态页面而准备的
+nodejs watch-server.js不行..
+nodejs signedCookie, node vhost不理解
+upstart有问题
+node code standard
+node-cgi不管用
+node mocha不管用
+mocha和nodeunit先用
+nodeclub
+node中引用对应的模块语法?
+deploy forever监视程序的运行,upstart
+curl,检测是否被拦截js
+被拦截的现象用async:false,判断返回值是否为null提示
+methodOverride可以伪造服务器不认识的比如PUT等等
+EISDIR, read是因为读取的是要一个文件而不是一个目录
+问题在于V6版本并没有jQuery版本而且如果皮肤不能够再用了
+artDialog也要改一下.artdialog问题如果没有设置fixed:true的话是visibility为true。这样在IE中会有问题滚动的内容就会盖住FIXED的导航区.
+解决办法有两个设置body relative或者设置artDialog对话框为display:none;切换到v6吧。
+比如position:fixed的导航块在IE下必须设置body为position:relative如设置的是body { padding-top: 高度}
+notify就可以了
+rest需要做哎
+autocomplete和dialog需要更改
+问题：发现requirejs的配置拉得越来越长了可以通过order来明确模块之间的依赖而不仅仅用shim来明确
+有的不是必须的点击再去requirejs不然会造成非常的臃肿。
+看一下amd规范吧，全部写成amd
+nodejs with requirejs建立一个rest服务,mongodb+nodejs+backbone+express
+MetaSploit渗透测试平台
+Backbone ui及howto develop the ui component
+超时请求ajax应该弹出去登录页面才对
+cookie记住登录有问题.
+RequireCSS
+Backbone.TabView
+使用webhelpers来输出表格。。
+SimpleMembership简单成员资格配置
+在_references中写明需要智能补全的js库吧.
+tabView,slideView,等等autocomplete view
+_app.cshtml c# mvc中以下划线开头的是无法被浏览的
+
+window ruby compass watch undefinedEncoding不行
+加一个验证方法吧在做下载之前等其它操作之前
+Marionetter.Controller
+EventAggretor
+office365和bookmarkly看一下吧
+注意那个对象销毁需要销毁事件的绑定
+个人控制面板,dashboard设计一下吧。
+嵌套那个子模板
+overview里面的价格的上翻下翻没做
+设置所有的json2.jsie8下写在ie条件注释中
+把那些电脑配件搞起来
+Backbone页面组织结构
+进行全面的整理吧。
+应该如何组织这个文件
+pageload的时候把加载写在页面上吧。不要去请求了。
+use JST来缓存模板//Important
+cookie 及跨域验证
+jquery queue
+在view当中写上
+可以点击后再require相应的js的
+App.Views.Tabs = Backbone.View.extend(
+  _.extend({}, App.Mixins.Navigation, {
+
+  // (Methods and attributes here)
+
+}));
+这样视图就可以继mixins中的方法
+必须把所有的东西包含进模块里面不写在页面上了。运用mediator。
+socket.io
+去掉源文件里面的map吧,开发的时候有用。发布的时候去掉吧.
+设置一个存储栏的基类
+存储,amplify.store保存些条件吧.把级别改成下拉的形式。储存栏进行优化。整理吧.
+取一个callback来进行传递参数的获取
+点击了再去require相应的js
+把组件的CSS限制起来重用.
+css版本
+MVC跨页面调用.保存变量如何搞?
+全选和单选不一致的问题必须改掉
+这个比较的模块还需要再进行更改
+amd返回的define(moduleName一定是要是文件名。
+define('moduleid')往往和文件名是一样的不然要在paths中指定映射.
+debounce这个东西
+在model上面写对对象的操作不然很容易出错
+多语言
+
+
+设计得有问题如果存储的是车型的话还必须加上级别
+
+
+amplifyjs的userData不支持ie7的跨目录
+那个button disabled插件
+超时的得弄一下
+e.currentTarget是当前被触发的元素
+var target = event.target || event.srcElement || event.originalTarget;适用于当前元素没有子节点的.
+order插件会让库异步加载但是会按照顺序执行对于用define写的模块并不适用.
+
+如果继承的东西有些不需要的呢？
+还是写得有问题重新再写一下.
+bug:如果ajax请求已经超时了。应该就跳出去才对.
+.net MVC里面的可以直接给js变量赋值的.但是要加引号
+//根据性质，级别来进行筛选
+make a combox 作为临时筛选的条件，比如根据性质，级别来筛选品牌.
+
+
+imagegallery
+第三方登陆
+聊天室
+常用应用
+运用向导式的js,modal流程来建。。。
+流布局
+建一个自己的弹出框
+手机验证码如何做的？
+Jquery controlPanel
+页面初始化多个区域如何分开来初始化？
+订阅到。。
+可伸缩网站
+jquery折叠
+一个月做一个网站
+extjs4
+发表评论
+用QQ等登录
+考试Jquery应用
+历史观看记录
+分享到
+flash
+imageshow
+淘宝的左边会随着页面滚动而展开或者折叠
+财务控制小应用
+上传
+用熟jquery UI和extjs
+评分系统
+Flash
+apache配置一下
+ngix
+上传下载前后端
+jQuery Upload
+JS聊天室
+单元测
+验证
+那种圈起来一闪框的是怎么实现的？
+ajax分页
+session问题
+计时器
+slide
+登录的自动登录什么的cookie
+导航式的弹出窗口
+订阅功能
+flash
+countup倒计时
+网易的鼠标划字弹出纠错的如何做的？
+Jabber/XMPP聊天室
+那个支持反对的digg的ajax
+上传
+集成自己一套常用组件
+鼠标ＨＯＶＥＲ图片放大效果
+鼠标按上去有一个悬浮图片承受着鼠标动
+还有就是图片大小自动改变的。picturefill
+responsive图片的处理
+js画图。
+图片加载的时候自适应高度宽度?
+图片命名规则
+滚动放大图片？
+自制图片滚动条
+图片上传的大小限制等信息应该给出
+imagezoom-icon然后加一个放大原图或者放大镜的。。
+所有的用原生和自己理解写插件一下
+纯原生JS写那个
+整个jQuery的贡献整个流程
+写一个slide及像网易那样的matchnav编写模块图片集像网易那种。。图集bootstrap
+比如选择城市等等登录模块slide.js各种视频网站上的.slidejs.定制一个编辑器
+flash,登录和注册模块
+如何写自己的ui等各个模块呢?ActionScript看下吧。star wrating
+一天写一个模块吧
+todomvc和require.js和yui一个线上编辑器写require模块吧和seajs模块是一样的.
+那个上传弄一下,那个验证的表单swfupload,单个上传和多个上传.jQuery fileuploader,写一个历史记录的js
+一个instant_news如何写呢?在本页面内合建模块md5等.cpu.js检查系统是否开启硬件加速擦。。日历控件
+tinyMCE,关于那个scrollbootstrap
+那种看点播放视频的时候聊天如何做的？
+所有的插件都写过一遍吧。
+yui,metroui.写一个瀑布流的单页extjs单元测试
+Struts,actionScript,写一个foat_menu.js
+那个移动上去有水波的。。
+nodejs npn 模块离线安装。。?
+那种云标签..
+聊天室。。
+弄一下云标签吧。写一个像网易图集那样的东东。。
+todoList
+instant_news.jQuery.access..
+animate.js,ajax.js,data.js,callback.js动画中的剪裁功能
+关于css和js的版本问题,extend..?
+自己定制autocomplete等等,弹出窗口？写一个音乐应用
+全部都纯原生写一下JS。还有那个JS必须自己再写一遍
+YUI看完等.
+backbone+requrie+express+nodejs+yui+jquery+jqueryui
+HTML5音频与歌词一致?
+两个div进行切换的JS如何写?
+jsonp如何写呢?
+手机slide的CSS3
+WebSocket connection to 'ws://localhost:8080/echo' failed: Compressed bit must be 0 if no negotiated deflate-frame extension ?
+那种向下然后向右移动的动画。。
+没事写写原生的JS吧
+再看lazyload
+如何获得元素在视口内的距离上的距离呢？
+需要你自己写各种插件进行相关的定制,flash这个需要学学啊。
+如何写一个HTML5表单并降级呢
+那个自动化全程需要做一下ant或者grunt等,关于自定义多个flash,lazyload而不只是图片加载
+track.js跟踪网站用户行为还有那个星号啊。starwrating.js
+一个图片集滚动的如何做呢？YUI有一个onepager自己写一个pager
+聊天室
+那种翻转的JS如何写呢?
+写模块+测试+自动化
+拖放的JS代码如何写还有那种滚动条。。
+立即搞出作品来.简历写一下项目和地址
+那种在页面内弹出一个登陆页面的iframe如何做呢?
+像那种slide可以转多个的如何做的呢？版本化js?
+考虑事件如何整合呢？
+明天上传做一下就用YUI的来做吧。
+ajax和animate.js,jsonp，苹果的CSS3滑动。。
+YUI写下啊,slide.js,自己写一个分页吧。
+Backbone+bootstrap+less+nodejs+mongodb+requirejs
+消息滚动
+grunt里面如何调试呢
+图片轮播一直滚动的那种如何写呢？
+拖动和滚动条+图片集如何搞呢？slidejs搞一下吧.动画队列看一下。那种先左再下的stop动画..
+flash精通一下
+后台功能如何开发呢？
+那种弹出来对话框然后数秒消失。
+那种滚动新闻的JS。scrollnews如何写呢?
+instant_news如何写？那种猜你喜欢的东东如何做的呢？
+制作自己的一套框架
+那种会员认证和邀请的如何做的呢？
+那种倒计时关闭的如何做的呢？
+document JS 文档必须写一下
+ajax组件是什么意思呢？
+uploadfy关于软件版本号如何定呢？
+每个JS都进行汇总吧。
+测试一定也要会啊。
+express.methodOverride();
+put,delete需要浏览器支持的吗?如何获得所有的models呢?
+hijack
+html5上面的prefix和那个itemscope等等用的Modernizr做的吧。
+siblingCheck最后为什么返回的return a ? 1 : -1;?
+createPositionalPseudo?什么意思呢？
+那些基础的元件都搞一下啊。
+YUI3 combo等做一下吧。
+如何防止代码被扒呢？
+如何backbone写上那页码如果很多的话如何省略呢？
+我跳过了backbone jQueryMobile的
+测试整个流程都走一遍吧。
+flash开发
+那种focusscroll如何做的呢？网易的那种.双语切换如何做呢
+单元测试当中的ajax如何测试呢？
+yui+angular+ember.js
+书写自己的框架?
+后端缓存那个页面如何输出呢？
+backbone-jasmine test?
+写一个tweets吧。对于后端我非常欠缺啊。
+该给的功能都给上吧。
+可以拿smarthome来练手backbone吧。
+自己写一个验证的代码吧
+transform,transition
+yui3-tabs
+验证,
+那个建模工具每天看一下rational Rose建模工具吧。
+写一个分页的前后端,跨域登录如何弄呢？
+scrollspy弄一下啊,验证的搞一下啊
+那种消息左右上下滚动的如何做呢？
+今年目标，几种类型的网站弄清楚并做出来吧。
+用几个javascript pattern写js吧所有的东西都试验一遍吧。
+YUI3用一下吧
+那种翻转的效果如何做呢？
+那种instant_news如何做的?
+三种模式类继承和原型继承+混合类继承都搞一下吧 弄一下动画JS和CSS吧
+flash
+模块如何测试呢？那个jam中一整套做下来吧。CSS,JS压缩等等。
+backbone的验证
+grunt中的smasher插件。。有没有？
+countup和float_menu.js吧=
+focus:里面(!document.hasFocus || document.hasFocus())什么意思？
+window.onload和DOMready之间关系如何呢？
+把流程化全部弄出来.今天必须完成
+图片集如何做呢？jam中如何处理当是IE的时候输出加载一些必要的插件呢？
+php ajax service,手机事件看一下
+按照那些javascript pattern写模块吧
+bbb中有没有version呢？require.js如何对版本做出控制呢？如果去根据IE来加载一些IE插件呢？看下那个MODULE ID。
+那种极客标签上的滚动效果如何做呢？
+
+那个开放平台怎么用的？
+scrollspy,妹的淘宝买两件衣服吧。
+近期就写一个聊天应用吧。百分比
+豆瓣然后从豆瓣登录
+backbone中的验证如何写呢？
+AS和YUI
+ajax服务如何控制弹出去呢？
+事件委托让监听方法一直有。。如何弄呢？
+backbone如何调试呢?
+现在需要写requriejs amd 模式,backbone中如何用上传插件呢？
+Backbone单页与多页如何实现呢？
+如何去重塑造 JQUERYUI呢
+个一样的库的时候如果再fork会有冲突。。。还会指向原来FORK而不会是现在新的。。
+一个投票功能
+开发模式需要再看一下吧。各种JS的特效
+flash上传和yui上传和kissy上传插件看一下哎。
+flash学一下吧
+TestSwarm,jquery form and jquery validate
+如何重新塑造bootstrap呢?
+手风琴.
+jQuery UI的widget机制如何理解呢？_super和_superApply?this.super和this.superApply
+jQuery的升级,jQuery.promisejQuery observer模式
+window.onload和DOM READY
+grunt -bbb 调试等等
+后台订阅，邀请码
+项目与后台管理，产品等等我不熟悉
+grunt watch用一下吧。
+-x-webkit-speech,是从哪里来的？backbone中view中的serialize是什么方法呢？
+分页做一下吧。
+inertView中model？如何弄
+YUI COMBO上传今天必须完成啊,jQuery Fileupload.
+整套流程化下来..,YUI
+那种消息的滚动上下，左右
+那个动态IE9以下插件,
+require.js+mondernizr+backbone+grunt.js+layoutmanager+debug+release+qunit
+scrollbar..
+slide
+像电影slide的东西
+上传和验证这两个再弄一下吧。
+jQuery.form.js,jquery.formvalidator.js看一下哎。
+loading packages也有些不明白哎。
+js两个元素调换位置如何做呢？
+需要你把所有的组件自己写一遍哎。
+as3
+那个php一个内容项一个内容项如何建立的呢？比如菜单呢看情况 有时自动生成 有时直接跳转  或者虚拟一下路劲
+用iframe做登陆弹出层。。。做一个哎?判断密码强度的JS如何写呢?
+我的动画效果不好哎.
+html5 boilerate吧及flash吧.
+redis 来保存SESSION及其它东西
+无法删除文件unlink 操作不行哎。。怎么回事呢？
+找下开源项目看一下哎,学习一下吧。
+karma and phantomjs 这两个搞一下.
+那种凹下去如何写呢？css?
+那种边看电影边写影评如何做的呢？
+问题是通过yo bbb创建的里面的调试不行因为phantomjs有问题async multitasks问题,MSB3411 好像是要安装VISUAL STUDIO 2008和和.NET？
+对所有可用的代码重新进行更改和整理
+翻页JS动画效果
+图片展示的让其在中间显示如何做呢？
+jQUery 动态加载样式如何写呢？
+virtual 目录
+用那个bbb 来写个简单的来,什么菜单栏啊，什么统统归类起来呢。
+前端检测设备等等,jQuery tab实现动画效果,Backbone url和urlRoot
+那种监视滚动条的距离然后让某个DIV元素变为position:fixed如何做呢?图片轮播等等
+border-radius等CSS3如何用工具全部输出
+那个requirejs ID,这个模块化的要怎么测试呢？
+如果不把全部压缩成一个JS。按需加载。。
+yui3.js
+写一个瀑布流吧
+今天把那个router都写出来吧,node smasher项目里面移植进去吧。
+backbone 测试这个要怎么做呢?dymanicidslide和上传必须要完成了
+$.oberserve开发模式
+各种开发模式都搞一下吧
+backbone cache,那个复制文字的命名空间法
+把那些常用的JS组件都形成起来吧。ajax重定向
+图片轮播,常用的都写一道吧。
+豆瓣的SLIDE各种slide都写一下吧.
+affix,文件上传
+等等常用的都用一些吧。。
+如果页面上有滚动和其它的一些东西如何弄呢？各种轮播,整理一下插件。那种相册
+打印出工资单.流程再熟悉弄一下吧。表单验证这块的也弄一下吧
+直接一个页面一个js吧,做一个robots.txt吧
+关于那个继承,js设计模式还是不熟哎,agument,ul的布局,flash cookie,js写字板。nodejs
+h5boilerate学一下吧fileUpload,psd切片
+分页，上传都搞出来吧。全部写requirejs吧,selectmenu写一个？
+去判断是否登录login.js常用css样式写一下？
+flash也要搞一个。
+写一个谷歌地图？
+proxy,Checkbox/radio state in a .trigger()ed "click" event这是什么意思?hover事件？
+元素反向排序？josnp的那个前端需要注意什么呢？agument模式
+上传文件大小.
+那种添加一个DIV的什么的如何做呢？各种菜单CSS等等
+表单验证和提交等等
+tab搞一下吧。adjacents.emmmet csss3看一下呀,
+yo上面有没有开发插件的boilerate?验证码
+增加effect和那个preload还有就是写一下通过给slide_container写上全部slide的长度试试吧常用选项卡JS,
+reveal.js用一下lodash吧
+如何让事件live,用原生的如何写呢电影的slide还有那个分页完成。
+完整地检测是否支持平板等等吧。
+报表系统?有些东西不要写得太细,组建自己的类库吧。
+对各种滚动等效果进行整理
+requirejs console,睡觉之前进行整理吧
+各种slide
+那个超级时钟似乎可以重新写一下吧。
+那个书翻如何做的呢？ws中安装字体?Test Rest Service
+那个书本如何做呢？翻动效果
+那个JS设计模式都弄一下吧,那个网易的图片集
+如何叫他映射出来那个服务器呢，以便于我调试呢？
+flash
+写那个inherit.js封装一下吧。广告js
+建立起一整套的理论,原理及示例
+如何让鼠标点击一个块然后拖的时候也是十字的鼠标呢？
+继承写下插件工厂快点
+类似那个购物网站的弹出框紧贴着按钮的如何做呢？
+checkbox和selectbox都美化一下吧
+如何写一小型数据库呢？
+详细信息也得做一下哎。
+分页，滚动条插件写一下。完善一下规范吧。
+国际化前端语言包.
+css预编译
+写模块化那些开发模式一天一个吧。
+把模板放在外头
+类似网易的那种nav赛事滚动
+bigrender等等
+starWrating记录等
+电影专门的slide
+constructor模式和那个module模式
+workflow:js->nodejs->blog
+phonegap
+h5bp用啊,twitterbp
+nodejs formidable不会自己创建目录吗？
+入库。。,编写theory.md汇集各种原理吧。
+滚动的文字及一个或多个。。架构
+子模板jQuery tmpl中设置一下吧。
+图标移上去放大图片的写一个吧
+做一个整站吧。
+原型设计,Backbone项目看一下哎。Backbone全力看吧。多看些优秀的源码吧。看一下网易的相片应用吧。写成自执行的模块(function(){})();这样
+如果是自执行的东西如何写成AMD?像那个网易的define(function(require, exports, module) { }))?
+两个模块如何互相监听呢？
+构建整个流程起来发布等等.
+那个日期开始结束的选择上面
+归纳自己的JS置办成一个库吧。
+缓存保存,localstorage
+创建自己的库吧。函数库
+require当中的时候似乎是不会污染全局变量的可以引用全局的JS里面的创建模块的方法呢？还是不用理呢？
+如何边写边写测试呢？
+邮箱app的那种增删怎么做的呢？
+how to create a widget
+添加删除todo每添加一个都传吗？
+网页上拍照
+json_parse.js解析的时候有问题..
+我需要一个整站都是用backbone写的站
+用网格来写吧。
+中间件模式
+如何去做一个类构建函数呢？
+写一个tab插件吧。要求文档都用markdown来编写
+全面改革,学习流程文档编写
+twitterb中有一个那个affix和那个scroll什么的看一下
+超类
+设定酒店类系统原型
+xss
+再看一下那个性质复选框等要怎么设计呢?
+做一个跨域通信的document.domain和JSONP有什么区别?
+输出原型链上的所有的东西呢？
+鼠标选择一段文字显示按钮
+让浏览器支持所有的HTML5新功能？
+jQuery.Event
+做一完整的表单
+关于内存垃圾回收的测试
+写一个选择了文字就显示一个按钮的东西出来吧
+不要忘了使用onunload事件处理程序意味着页面不会缓存在bfcache里面也就是页面缓存里面，如果在意这个问题就要在onunload里面移除事件处理程序..?
+HTML5 pushState用一下？
+跨域技术
+那个我们的一整套错误处理机制
+// javascript 调试错误集中到服务器
+function logError(sev, msg) {
+    var img = new Image();
+    img.src = 'log.php?sev=' + encodeURIComponent(sev) + '&msg=' + encodeURIComponent(msg);
+}
+
+try {
+
+} catch (ex) {
+    logError('nofatal', 'module init failed:' + ex.message);
+}
+做一个动态图像ping吧.跟踪用户点击页面或动态广告曝光次数,jQuery ajax?
+sse,websocket,comet
+yeoman等工具的全部集成到.net中吧.
+可以通过cookie中的用户名来通过服务器来判定是否超时吗？
+Ant写一下吧
+加密,进行整理吧
+jsDoc文档生成器
+ajaxdoc为.net而准备的文档生成器
+adsafe和caja可以创建安全的执行环境
+对所有的东西进行整理改革
+rest 服务构建搞一下吧
+我的配置文件以前的重新修改一下
+广告代码
+把别人站点的整个JS都弄下来
+写完东西先测试啊
+那些评论当滚动到的时候才显示
+requrie中的has插件及如何调试呢？
+如何判断是否发言太快呢？
+那种选择然后出现选择按钮的
+文件上传一开始可以过滤？
+有的东西并不需要构建啊。测试一下性能吧
+用grunt.js建立sourcemap来测试js或者css
+requirejs sourcemap
+获取cookie检查用户时间
+接口里面可以获取cookie吗？
+网站渗透
+请求伪造攻击
+所有的基础再度打牢固一下吧
+构建grunt图片压缩
+瀑布流构建一个吧。
+站点的跟踪功能
+多语言版本.
+记住密码免登录的
+mvc + 智能社视频 + 设计模式这三本看完.Backbone + requirejs结合起来
+kissy.use
+redis存储信息
+编写插件全部按照流程来走，测试什么的
+那个ＱＱ音乐添加音乐的时候可以重复添加．．?
+那个源码里面的东西再修改一下修改成类的模式吧．
+ajax缓存和jsonp的时候error,success可以用吗？ajax成功
+var a = function() { this.init.apply(this, arguments); };a.prototype.init = function(element) { this.el = $(element); };var b = new a('#users');构造函数里面this.init()好呢还是另一个？
+局部模板
+undersocre invoke和局部模板
+模块加载器和自己建立一个库,cdn combo,lab.js
+html5拖拽上传文件
+drag时候阻止触发浏览器默认行为?阻止浏览器的默认行为等等
+把我们的上传文件搞一下吧．CORS+JSONP都试验一下啊
+测试集成在服务器post-commit,web开发工具的所有的东西,构建自己的testswarm
+httpwatch观察页面首次加载时间
+关于Cache-Control的问题,t-packer
+Spine中没有on来live未初始化的元素吗？ST2中ASIS声明
+jQuery中的Event处理看一下
+关于性能问题
+所有的插件写一遍下来吧．
+关于模板的预加载
+IE8内存泄漏ie sieve,两次都requir会造成重复吗？
+广告代码
+构造一个错误函数
+CDN NODE.JS+R.JS整合自动.logger,还有记录错误的如何写呢？
+lazy function?var scare = function () { alert("Boo");scare = function() { alert("Double boo");};?
+chrome调试，各种ＣＳＳ３都必须起来fly-in动画
+sandbox,闭包深入了解
+私有和公共进行区分.imgpreload,requirejs所有的功能都搞清楚来
+写一个类似淘宝商城的导航各商城导航
+http chunked分块输出内容
+.net TFS有时候会出现问题连接不上，其它人却可以连接上.
+博客进行分栏目还有如何预览我的VPS上不行可以在自己电脑上吗？在我的VPS上如何写汉字
+记住密码,define中的moduleid?require undef,需要一个core.js,define中可以用requrie,的umd jquery plugin作者看一下.mediator.js
+品牌需要接收性质改变不然当只有性质和品牌的时候会有问题.
+reuse pattern
+那些个公共的东西全部修改完毕那些仅有的1性质储存栏
+
+search netease,facebook设计等.
+json数组的问题传参数的时候[{name: 'mie'}];
+看那个设计删除购物的物品的
+dynaTrace AJAX Edition 
+zepto.js.
+接口层的配置,基类继承必须选择起来，同步刷新缓存CDN机制当是在异步的情况下的时候会出现
+openUrl，焦点图等有一个巨大的问题就是隐藏和显示的时候对是否全选的同步情况。
+那些个增删改的可以用proxy模式作一下缓存和TIMEOUT来发多个删除条件。增加体验减少请求.
+MAKE REMEMBERPASS 功能
+增加单元测试
+如果模块加载失败应该如何进行启动呢？
+所有页面共同的整理一下吧。logger.js
+查询结果进行缓存吗？
+可以让界面不会抖动
+fixHeight.js有时候如果计算高度会让不准确会因为里面的空白撑出来.需要设置overflow:hidden
+前端lang
+cookie和那个，IE8及以下对blur事件有些问题取不到e.target
+lang.js增加语言支持。
+消息组件.保存条件删除条件问题
+有一个bug就是关于那个隐藏了的元素和全选元素的状态切换
+看下超时会话时间
+缓存问题.nature.change的传播问题,layout整理一下吧。
+_.debounce搞一下吧
+开发时候把那些样式等做版本标记
+公共的模板等问题整理一下吧。
+多看其它人写的插件吧。
+css版本控制
+section元素在ie下里面填充数据然后再显示会出现IE下不行的出现错位
+设置调试开关吧
+重新进行linux编译.
+bootstrap的样式更改如何快速更改呢?
+引入aura, backbone
+进行全面的总结。。不然每次都是思考相同的过程很糟糕.
+记住密码
+
+
+读取excel表
+数据结构的转换直接写在模块里面吧.这个级别得重新改正
+图片进行整理吧
+mime_module必须在httpd.conf里面写上
+做一个动画装备字段跳到指定字段的时候会闪几下
+debug有些问题
+如何应用bower呢
+如何做测试单元测呢？
+
+
+只能使用表格来输出吗?
+自己建一个项目mvc
+aura怎么会是这个样子?路径指向aura然后requrie的时候写aura/aura
+nodejs+express+aura+backbone+marionette
+
+客户端的存储这一小项目
+a target="new" 或者其它的名字target="任意名字"的是表示其它任何打开的都会在这个再打开而不会像blank一样再重新打开一个tab
+
+
+
+
+动画c#,webconfig
+当鼠标点击的时候记住被选中的条件储藏起来不然性能是个问题.
+
+如果真要写成model,collection，view都有的话要花些时间的.
+
+签入设置规则collection和model的衔接
+React的jsx语法必须有/**@jsx开头否则会报错
+Backbone ui和那个视图里面的请求数据如何办呢？如何添加额外的参数?
+所有的plugins集自己制作一个等等.
+scroll.
+Bacbone.ajax和Backbone.sync这两个不理解.
+基础不牢固.
+requirejs+基础+mvc性能测试等等
+表格当中的pop其实可以和下拉框一样即可.
+python -m http.server python3构建独立简单的web服务器
+.net mvc 创建的批处理文件存储的编码必须为us-asci不然无法执行进行r.js优化操作
+$.ajax({里面返回的是xhr对象可以用bind来改变作用域让其指向调用这个方法的对象
+当用r.js进行构建的时候.net mcv修改里面的csproj文件就可以包含进那些已经创建的文件了.
+运用T4模板,可以根据调试的模式进行r.js调试和发布
+打包的时候设置inlineText为true从而减少xhr请求text!模板的时候,has插件
+jQuery tablesorter 动态加入表格行的话可以触发表格的update事件来进行更新trigger('update')
+fnTest = /xyz/.test(function(){xyz;})？检测函数的反编译功能因为Function.prototype.toString()在老式的浏览器中不会返回有用的信息.
+进入路由和那个p2p保护
+表格table-layout:fixed
+表格的th设置背景会把其边框遮盖住.
+
+
+"onfocusin" in window? 只是在IE才会有的事件,ff和chrome都没有.
+triggerHandler非冒泡式的方法.
+sourceIndex IE获取元素的在文档中的位置
+那个~运算符需要处理.
+requirejsload timeout for modules requirejs？
+matchesSelector是为了查看所获取的元素是否符合表达式如document.getElementById('sell') '#sell'
+sizzle是中的Sizzle.attr中的val.specified是什么意思?
+以后所有的错误全部到项目的issue去查看
+coffeescipt中的cake是由于window下spawn必须用spawn coffee.cmd来取代coffee
+
+
+instanceof 只对自定义的类有效，内置的则无效.
+javascript elem.tabIndex
+selectedMode: 'single',地图的点击事件必须写这个参数。
+$.when的时候如果里面是只有一个请求的数据就是xhr否则 是xhr[0]
+IE7及以下var dock = document.createElement("div");
+    	dock.innerHTML = "<a href='#'></a>";
+
+    	document.body.appendChild(dock);
+    	alert( dock.firstChild.getAttribute("href") === "#" );不为false
+
+defaultValue IE专有的。
+getAttributeNode
+"onfocusin" in window， IE9以下不支持
+console.log运用一下
+slideDown因为需要为元素设置高度否则会导致有时候会没法设置那个收缩的div的高度.
+defaultView,,window.defaultView返回window对象.(IE除外).document.parentWindow是获取window对象(IE的).
+event.isPropagationStopped判断是否已经用过stopPropagation
+pageX, clientX, pageY, clientY
+event.result返回最近一次绑定此元素的返回的值.
+
+在win2012系统中，在vs2012 中调试运行MVC的项目一切正常，但部署到 IIS 中的时候就出现了一些莫名的错误。包括以下的 HTTP Error 500.19  或 HTTP Error 500.21 错误。导致此错误的根本原因就是 asp.net 4.5 没有加入到 ISAPI扩展和筛选器。可以通过管理器，在添加角色和功能中，添加以下项就可以了。
+HTTP Error 500.19 - Internal Server Error 
+配置错误: 不能在此路径中使用此配置节。如果在父级别上锁定了该节，便会出现这种情况。锁定是默认设置的(overrideModeDefault="Deny")，或者是通过包含 overrideMode="Deny" 或旧有的 allowOverride="false" 的位置标记明确设置的。
+
+出现这个错误是因为 IIS 7 采用了更安全的 web.config 管理机制，默认情况下会锁住配置项不允许更改。要取消锁定可以运行命令行 %windir%\system32\inetsrv\appcmd unlock config -section:system.webServer/handlers 。其中的 handlers 是错误信息中红字显示的节点名称。
+如果modules也被锁定，可以运行%windir%\system32\inetsrv\appcmd unlock config -section:system.webServer/modules
+event.defaultPrevented IE9及以上支持,event.returnValue IE专有.
+event.originalEvent
+onfocusin只在ie下有。
+如果已经用了require.js如何避免重复，直接修改源码更改里面的loader为false最好。
+DOMParser返回解析的HTMLDocument,SVGDocument,或者DOCUMNET,IE9以下不兼容.
+
+
+
+
+
+rake_deploy会报错.先生成服务器上的ssh再进入deploy文件夹进行修复需要设置一些选项.
+每台电脑必须要有一个公钥才能够进行库的访问
+
+
+
+
+一个简单的登陆验证保存密码和保存验证.
+deferred,如果界面上比如点击然后全选然后选中复选框这个如何判断已经全部选中了呢？
+关于jsonp，json等等写一下哎。
+contentDocument,contentWindow.IE8以下支持contentWindow.获取iframe或者frame的document对象
+deferIE专有会按照顺序执行但是async却并不一定按顺序执行.
+把http://html5ify.com/上面的书籍全部看完.
+bindows
+
+
+
+
+
+
+先安装rvm再安装
+octypress必须先安装zlib1g-dev 才可以安装gem install bundler否则会报错必须重新安装1.9.3-p0
+写这个checkbox的选择，如果是定时器的话有可能会导致无法为checkbox设值.
+Node.replaceChild，写一个scrollbar.
+defineProperty
+
+
+
+
+写一个关于汽车的框架吧.
+种子模块
+setGlobalEvals "script" global是怎么一回事？
+写一个财务单。
+node+angular+avalon+backbone实现现有的系统。
+
+
+
+正美的书mix函数好像有问题.
+第一件事情关于事件分发器。
+第二dom选择器.
+类型判断isProotypeof新的ecma262标准.
+对所有的函数库进行全面的整顿,snippet等等。
+IE下判定window window == documnet 为true, document == window为false.IE6, 7, 8.
+mouseover mouseout mouseenter mouseleave的区别等等.
+ajax的when等要进行深入整理。传递的data参数等等.
+jsonp跨域等等.jsonpCallback都做一下吧。cors跨源策略等等。X-Requested-With
+因为那个check的时候选中会很慢.有一个方法那就是只有当切换的时候再进行渲染.这样就可以防止一下子去加载很多。
+或者有什么deferred方法没有$.callback.
+
+
+
+
+
+如何写一个业务插件?
+
+
+
+
+
+本周搜集所有的domready实现等等。开发一个插件的所有流程实现起来travis等等。模块加载器。
+css box-sizing: content-box, border-box.默认是content-box即宽高为内容的宽高.
+vs中两种调试js的方法一种IE中打开菜单vs中如何调试js.打开取消禁止调试在IE中打开菜单栏的脚本调试open就可以打开一个vs2012的实例了
+另外一种就是在VS中 附加到进程中设置那个进程然后附加到选择框中选择script然后最后选择要附加的进程如IE。
+
+
+
+google polymeter看一下那个自定义标签的东西。
+Ext源码还有Yui还有kissy还有backbone,angular,avalon等等.
+
+
+
+mouseenter,mouseleave
+jQuery.expr
+自己制作一个类似下拉菜单的东西。。
+form elements form.elements来获取所有的表单元素.
+querySelectorAll等选择器.
+
+
+
+那个打赏一杯的加上去.
+
+做一个音乐播放器.
+ngix nodejs 自动发布整合.
+
+
+如何获取某一个元素的前几个元素呢？
+javascript hosited.
+一些基本的javascript语法规则收集整理一下如关于false, undefined等等.
+script标签的defer和async属性.
+
+
+
+linux,security等等。
+linux经常遇到只读如何操作.
+
+
+
+本周重点promise要求仔细看吧。defer,callbacks.等等
+firstElementChild和firstChild的区别
+compareDocumentPosition
+排序插件
+关于节点类型等等.
+
+
+
+
+一月时间.net进行调整
+关于模板参考一下john resig的模板效率等等.是用的with所以会慢
+var noMatch = /(.)^/;
+
+
+收集所有的插件
+并独立写出所有的插件吧
+tab,slide,scroll.
+
+
+更改artDialog esc是直接调用close()
+jquery ui 的dialog调查一下
+开发的时候未压缩版本和压缩版本进行切换?
+还有那个滚动，还有排序算法.jsmap
+nodejs cps回调.写一篇文章.
+整个amd,commonjs写一遍
+q.js异步任务.
+tail-call optimization?
+
+
+
+
+backbone loadingView
+backboneui
+传值的时候对象数组传过去的问题.Backbone query的参数啥的如何添加上去呢？
+history,router.今天改可以在render函数中传入其它的参数就可以了，或者传入collection或者model
+事件应该由model引发不应该由view来引发
+listenTo 动态解除model的绑定防止on没有Off的僵死状态.
+angular,backbone, avalon.
+sinonjs和backbone开发,addsobiliy backbone example,aura,fis自动集成开发,Terrific.js.
+window.open问题
+
+整理所有的插件
+tab,slide等常用的先起来.autocomplete等等.
+对话框为什么要有hidden?open和close区别等等.
+专门的IE css hack, js hack列表
+关于sourcemap问题发布,测试，开发三个版本如何进行切换呢?
+
+window.open被拦截有没有更好的办法?
+加入localstorage和那个console.log的图片吧.
+
+
+
+
+原型继承，子类超类等等。继承和原型链
+关于文件上传
+写一个类似百度的图片放大各种放大等等
+关于事件冒泡等等
+
+收集各常用插件吧
+建立自己的库
+tab,slide插件
+vps上建立vpn吧.
+
+
+css统一用-连字符,js驼峰,php用下划线.
+调查一下做一个自己的库开发顺序.
+
+
+
+立即彻查那个st中的script标签的内容是怎么一回事.
+类似jd,淘宝导航
+git的所有流程习惯下来吧
+
+
+
+lifestyle
+开始移动端页面
+关于跨域请求数据如豆瓣等等
+
+love diet开始吧
+运用backbone,angular,avalon进行编写
+做一个nodejs项目吧
+
+
+
+每周看一个js库
+AutobahnJS
+
+关于xss注入
+应用百度的钩子程序?
+如何输出运算符运算规则呢？
+IE haslayout
+
+Search.prototype.init.constructor =  Search?
+
+为什么jquery的offset()方法和用的function offset(node) {
+    var left = 0,
+        top = 0;
+
+    do {
+        left += node.offsetLeft;
+        top += node.offsetTop;
+    } while (node = node.offsetParent);
+
+    return {
+        left: left,
+        top: top
+    };
+
+}
+有出入?
+IE的expando属性再看一下呃
+jsmap, jshooks.钩子.
+那个下拉框selectbox写或者自己写一个,mouseenter, mouseleave,mouseover,mouseout
+
+
+滚动条js,mousemove,mousewheel,mousedown要兼容呃
+智能提示的autocomplete的事件要写成input,ie6-8 onpropertychange, ie9 selectionchange?类似微博的列表功能?
+
+各种滚动新闻等等。
+node-webkit
+所有的常用代码片段再重新整理
+sliceIE几不支持
