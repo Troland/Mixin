@@ -1,0 +1,7 @@
+1.安装node
+2.安装npm
+3.安装grunt具体url:http://gruntjs.com/getting-started#working-with-an-existing-grunt-project
+4.手动编写package.json或者用npm init
+5.npm install 安装依赖
+6.编写Gruntfile
+7.运行grunt完成压缩
