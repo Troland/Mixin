@@ -5,16 +5,16 @@
  */
 //Todo:点击轨道的时候进行移动
 (function (factory) {
-    //if (typeof define === 'function' && define.amd) {
-    //    // AMD. Register as an anonymous module.
-    //    define(['jquery', 'underscore', 'mousewheel'], factory);
-    //} else if (typeof module === 'object' && module.exports) {
-    //    // Node/CommonJS
-    //    module.exports = factory( require('jquery'), require('underscore'), require('mousewheel') );
-    //} else {
-    //    // Browser globals
-        factory(jQuery, _);
-    //}
+    if (typeof define === 'function' && define.amd) {
+       // AMD. Register as an anonymous module.
+       define(['jquery', 'underscore', 'mousewheel'], factory);
+    } else if (typeof module === 'object' && module.exports) {
+       // Node/CommonJS
+       module.exports = factory( require('jquery'), require('underscore'), require('mousewheel') );
+    } else {
+       // Browser globals
+       factory(jQuery, _);
+    }
 }(function ($, _) {
     'use strict';
     var helper;
