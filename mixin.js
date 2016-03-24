@@ -707,7 +707,7 @@ var mediator = (function(){
         mediator.channels[channel].push({ context: this, callback: fn });
         return this;
     },
- 
+
     publish = function(channel){
         if (!mediator.channels[channel]) return false;
         var args = Array.prototype.slice.call(arguments, 1);
@@ -717,7 +717,7 @@ var mediator = (function(){
         }
         return this;
     };
- 
+
     return {
         channels: {},
         publish: publish,
@@ -727,7 +727,7 @@ var mediator = (function(){
             obj.publish = publish;
         }
     };
- 
+
 }());
 
 // jQuery module pattern
@@ -739,7 +739,7 @@ function library(module) {
   });
   return module;
 }
- 
+
 var myLibrary = library(function() {
    return {
      init: function() {
@@ -773,4 +773,4 @@ if (event.pageX == null && event.clientX != null) {
 
 //缓存cache-control优先级
 Cache-Control > max-age > Expires,Last-Modified
-max-age在Last-Modified之上
+max-age在Last-Modified之
