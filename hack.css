@@ -28,3 +28,9 @@ table td,  table thead th {
     overflow:hidden;
     white-space:nowrap;
 }
+/*解决块级元素设置为inline-block浏览器兼容问题*/
+div{
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+}
