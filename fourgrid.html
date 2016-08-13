@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>四宫格</title>
+  <style>
+    /*float*/
+    .grid {
+      margin-bottom: 10px;
+      width: 50px;
+      height: 50px;
+      background-color: #00f;
+    }
+    .left {
+      float: left;
+      margin-right: 10px;
+    }
+    .right-c {
+      overflow: hidden;
+    }
+
+    /*margin-left负*/
+    .c-grid {
+      margin-bottom: 10px;
+      width: 50px;
+      height: 50px;
+      background-color: #00f;
+    }
+    .right-c {
+      margin-left: 60px;
+    }
+
+    .container-flex {
+      width: 200px;
+    }
+    .flex-1, .flex-2 {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+    }
+    .flex-1 {
+      margin-bottom: 10px;
+    }
+    .f-grid {
+      margin-right:10px;
+      width: 50px;
+      height: 50px;
+      background-color: #00f;
+    }
+
+    .tb-1, .tb-2 {
+      display: table;
+      margin-bottom: 10px;
+    }
+    .tb-1 .t-grid, .tb-1 .e-grid, .tb-2 .t-grid, .tb-2 .e-grid {
+      display: table-cell;
+    }
+    .t-grid {
+      width: 50px;
+      height: 50px;
+      background-color: #00f;
+    }
+    .tb-1 .e-grid, .tb-2 .e-grid {
+      width: 10px;
+
+    }
+    .con-tb {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h3>四宫格</h3>
+  <!-- float margin -->
+  <div class="container">
+    <div class="left">
+      <div class="grid"></div>
+      <div class="grid"></div>
+    </div>
+    <div class="right-c">
+      <div class="grid"></div>
+      <div class="grid"></div>
+    </div>
+  </div>
+
+  <!-- margin-left为负 -->
+  <div class="container-m">
+    <div class="left">
+      <div class="c-grid"></div>
+      <div class="c-grid"></div>
+    </div>
+    <div class="right-c">
+      <div class="c-grid"></div>
+      <div class="c-grid"></div>
+    </div>
+  </div>
+
+  <!-- flex布局 -->
+  <div class="container-flex">
+    <div class="flex-1">
+      <div class="f-grid"></div>
+      <div class="f-grid"></div>
+    </div>
+    <div class="flex-2">
+      <div class="f-grid"></div>
+      <div class="f-grid"></div>
+    </div>
+  </div>
+
+  <!-- table -->
+  <div class="con-tb">
+    <div class="tb-1">
+      <div class="t-grid"></div>
+      <div class="e-grid"></div>
+      <div class="t-grid"></div>
+    </div>
+    <div class="tb-2">
+      <div class="t-grid"></div>
+      <div class="e-grid"></div>
+      <div class="t-grid"></div>
+    </div>
+  </div>
+</body>
+</html>

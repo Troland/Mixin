@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>不定宽列和自适应一列</title>
+  <link rel="stylesheet" href="reset.css">
+  <style>
+    .parent {
+      margin-bottom: 30px;
+    }
+    .left {
+      float: left;
+      width: 200px;
+      margin-right: 20px;
+      background-color: #f00;
+    }
+    .right {
+      overflow: hidden;
+      background-color: #0f0;
+    }
+
+    /*运用表格*/
+    .parent-tb {
+      display: table;
+      width: 100%;
+    }
+    .tb-left, .tb-right {
+      display: table-cell;
+    }
+    .tb-left {
+      width: 0.1%;
+      padding-right: 20px;
+      background-color: #f00;
+    }
+    .tb-left p {
+      width: 200px;
+    }
+    .tb-right {
+      background-color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="left"><p>left</p></div>
+
+  <div class="right">
+    <p>right</p>
+    <p>right</p>
+  </div>
+  </div>
+
+  <!-- 运用表格 -->
+  <div class="parent-tb">
+    <div class="tb-left">
+      <p>left</p>
+    </div>
+
+  <div class="tb-right">
+    <p>right</p>
+    <p>right</p>
+  </div>
+  </div>
+</body>
+</html>

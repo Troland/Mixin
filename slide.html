@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>slide</title>
+  <link rel="stylesheet" href="reset.css">
+  <style type="text/css">
+    .slide {
+      position: relative;
+      height: 100px;
+    }
+    .pointer {
+      position: absolute;
+      height: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 10px;
+    }
+    .pointer i {
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      margin-right: 5px;
+      width: 10px;
+      height: 10px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      border-radius: 5px;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <!-- slide with noset width and height pointer with noset width and height, align the pointer horizontally centered-->
+  <div class="slide">
+    <div class="pointer">
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+  </div>
+</body>
+</html>

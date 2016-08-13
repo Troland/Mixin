@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>get style</title>
+  <style>
+    .style-1 {
+      line-height: 30px;
+      color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <div id="getstyle" class="style-1">
+    这是元素
+  </div>
+  <script>
+  // 获取元素的样式
+  function getStyle(element, cssPropertyName) {
+    var el = document.getElementById(element);
+
+    // if getComputedStyle is supported
+    if (window.getComputedStyle) {
+      return window.getComputedStyle(el)[cssPropertyName];
+    } else {
+      var cssPropertyNameArr, cssCamelCaseName;
+      cssPropertyNameArr = cssPropertyName.split('-');
+      if (cssPropertyNameArr.length > 1) {
+        cssCamelCaseName = cssPropertyNameArr[0] + cssPropertyNameArr[1][0].toUpperCase() + cssPropertyNameArr[1].slice(1);
+      } else {
+        cssCamelCaseName = cssPropertyName;
+      }
+      return el.currentStyle[cssCamelCaseName];
+    }
+  }
+
+  </script>
+</body>
+</html>

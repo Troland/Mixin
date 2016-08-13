@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>全局布局</title>
+  <link rel="stylesheet" href="reset.css">
+  <style>
+    html, body, .parent {
+      height: 100%;
+      overflow: hidden;
+    }
+    .top {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      height: 50px;
+    }
+    .left {
+      position: absolute;
+      left: 0;
+      top: 50px;
+      bottom: 50px;
+      width: 100px;
+    }
+    .right {
+      position: absolute;
+      left: 100px;
+      right: 0;
+      top: 50px;
+      bottom: 50px;
+      overflow: auto;
+    }
+    .right-inner {
+      min-height: 500px;
+    }
+    .bottom {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 50px;
+    }
+
+    /*flex*/
+    .flex-c {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .top-f {
+      height: 100px;
+    }
+    .mid-f {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      flex: 1;
+    }
+    .bottom-f {
+      height: 50px;
+    }
+    .m-left {
+      width: 100px;
+    }
+    .m-right {
+      flex: 1;
+      overflow: auto;
+    }
+    .m-right-inner {
+      min-height: 1000px;
+    }
+
+    /*全自适应*/
+    .flex-a {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .top-a {
+    }
+    .mid-a {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      flex: 1;
+    }
+    .bottom-a {
+    }
+    .a-left {
+      width: 100px;
+    }
+    .a-right {
+      flex: 1;
+      overflow: auto;
+    }
+    .a-right-inner {
+      min-height: 1000px;
+    }
+  </style>
+
+</head>
+<body>
+  <!-- position方案 -->
+  <div class="parent" style="display: none">
+    <div class="top">top</div>
+    <div class="left">left</div>
+    <div class="right">
+      <div class="right-inner">
+        right
+      </div>
+    </div>
+    <div class="bottom">bottom</div>
+  </div>
+
+  <!-- flex -->
+  <div class="flex-c">
+    <div class="top-f">header</div>
+    <div class="mid-f">
+      <div class="m-left">侧边栏</div>
+      <div class="m-right">
+        <div class="m-right-inner">主要</div>
+      </div>
+    </div>
+    <div class="bottom-f">bottom</div>
+  </div>
+
+  <!-- 全适应 -->
+  <div class="flex-a">
+    <div class="top-a">header</div>
+    <div class="mid-a">
+      <div class="a-left">侧边栏</div>
+      <div class="a-right">
+        <div class="a-right-inner">主要</div>
+      </div>
+    </div>
+    <div class="bottom-a">bottom</div>
+  </div>
+</body>
+</html>

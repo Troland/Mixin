@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>三行自适应布局</title>
+  <style>
+    .head {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100px;
+      background-color: #ccc;
+    }
+    .body {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      bottom: 100px;
+      right: 0;
+      overflow: auto;
+    }
+    .content {
+      height: 2000px;
+    }
+    .foot {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+      background-color: #ccc;
+    }
+    .left {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 400px;
+      height: 400px;
+    }
+    .right {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="head">这是头部</div>
+  <div class="body">
+    <div class="content">
+      这是内容
+    </div>
+  </div>
+  <div class="foot">这是尾部</div>
+</body>
+</html>

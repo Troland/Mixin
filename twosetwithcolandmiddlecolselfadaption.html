@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>两固定列中间列自适应</title>
+  <link rel="stylesheet" href="reset.css">
+  <style>
+    .parent {
+      margin-bottom: 20px;
+      height: 40px;
+    }
+    .left-col, .r-col {
+      width: 100px;
+
+    }
+    .left-col {
+      float: left;
+      margin-right: 10px;
+      background-color: #f00;
+    }
+    .r-col {
+      float: right;
+      margin-left: 10px;
+      background-color: #0f0;
+    }
+    .m-col {
+      overflow: hidden;
+      background-color: #00f;
+    }
+
+    /*flex*/
+    .parent-f {
+      display: flex;
+      margin-bottom: 40px;
+    }
+    .left, .right {
+      width: 100px;
+    }
+    .left {
+      background-color: #f00;
+    }
+    .center {
+      flex: 1;
+      margin: 0px 10px;
+      background-color: #00f;
+    }
+    .right {
+      background-color: #0f0;
+    }
+
+    /*利用margin的负值来做*/
+    .parent-m {
+
+    }
+    .lc {
+      float: left;
+      width: 100px;
+      background-color: #f00;
+    }
+    .rc {
+      float: right;
+      width: 100px;
+      background-color: #0f0;
+    }
+    .mc-fix {
+      margin: 0px 110px;
+      background-color: #00f;
+    }
+
+    /*tablecell*/
+    .tb {
+      display: table;
+      width: 100%;
+    }
+    .tc {
+      display: table-cell;
+      table-layout: fixed;
+    }
+    .ltc {
+      width: 100px;
+      background-color: #f00;
+    }
+    .mtc {
+      background-color: #00f;
+    }
+    .rtc {
+      width: 100px;
+      background-color: #0f0;
+    }
+    .m10 {
+      width: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="left-col">左边定宽</div>
+    <div class="r-col">右边定宽</div>
+    <div class="m-col">中间自适应</div>
+  </div>
+  <div style="clear:both"></div>
+  <div class="parent-f">
+    <div class="left">左边定宽</div>
+    <div class="center">中间自适应</div>
+    <div class="right">右边定宽</div>
+  </div>
+
+  <div class="parent-m">
+    <div class="lc">左边定宽</div>
+    <div class="rc">右边定宽</div>
+    <div class="mc-fix">
+      <div class="mc">中间自适应</div>
+    </div>
+  </div>
+
+  <!-- table cell -->
+  <div class="tb">
+    <div class="ltc tc">左边定宽</div>
+    <div class="m10 tc"></div>
+    <div class="mtc tc">中间自适应</div>
+    <div class="m10 tc"></div>
+    <div class="rtc tc">右边定宽</div>
+  </div>
+</body>
+</html>

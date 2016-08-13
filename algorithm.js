@@ -21,4 +21,21 @@ function bubbleSort(array) {
         return array;
 }
 
-// 
+//binary search
+​function binarySearch(arr, start, end, dst) {
+  // 判断是否只剩下最后两个数字
+  if ((end - start) == 1) {
+    if (arr[start] == dst) {
+      return start;
+    }
+    if (arr[end] == dst) {
+      return end;
+    }
+    return -1;
+  }
+  var center =  Math.floor((start + end) / 2);
+  if (dst != arr[center]) {
+    return arr[center] > dst ? binarySearch(arr, start, center, dst) :
+      binarySearch(arr, center, end, dst);
+  }
+}

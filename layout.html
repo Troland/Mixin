@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>layout</title>
+  <link rel="stylesheet" href="reset.css">
+  <style>
+    .color-wrapper {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      align-items: flex-end;
+    }
+    .color-wrapper-2 {
+      position: relative;
+      height: 400px;
+    }
+    .color-wrapper-2 li {
+      position: absolute;
+      width: 40px;
+      bottom: 0;
+    }
+    .color-wrapper-2 .blue {
+      left: 0;
+    }
+    .color-wrapper-2 .red {
+      left: 40px;
+    }
+    .color-wrapper-2 .green {
+      left: 80px;
+    }
+    .color-wrapper-2 .cyan {
+      left: 120px;
+    }
+    .color-wrapper-2 {
+      margin-bottom: 50px;
+    }
+    .blue {
+      background-color: #00f;
+      height: 30px;
+    }
+    .red {
+      background-color: #f00;
+      height: 60px;
+    }
+    .green {
+      background-color: #0f0;
+      height: 70px;
+    }
+    .cyan {
+      background-color: #ff0;
+      height: 220px;
+    }
+    .color-wrapper-3 {
+      display: table-cell;
+      width: 500px;
+      vertical-align: bottom;
+      font-size: 0;
+    }
+    .color-wrapper-3 div {
+      display: inline-block;
+      width: 40px;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <h3>三行自适应布局</h3>
+    <iframe src="selfadaptionofthreerows.html" frameborder="0"></iframe>
+  </section>
+  <section>
+    <h3>水平列表底部对齐</h3>
+    <ul class="color-wrapper">
+      <li class="blue">蓝色</li>
+      <li class="red">红色</li>
+      <li class="green">绿色</li>
+      <li class="cyan">青色</li>
+    </ul>
+    <ul class="color-wrapper-2">
+      <li class="blue">蓝色</li>
+      <li class="red">红色</li>
+      <li class="green">绿色</li>
+      <li class="cyan">青色</li>
+    </ul>
+    <div class="color-wrapper-3">
+      <div class="blue">蓝色</div>
+      <div class="red">红色</div>
+      <div class="green">绿色</div>
+      <div class="cyan">青色</div>
+    </div>
+    <div style="clear:both"></div>
+  </section>
+  <section>
+    <h3>一列固定另一列自适应</h3>
+    <iframe src="onecolsetwidthandOneselfadaptioncol.html" frameborder="0"></iframe>
+  </section>
+  <section>
+    <h3>一列不固定另一列自适应</h3>
+    <iframe src="onecolnosetandoneselfadapationcol.html" frameborder="0"></iframe>
+  </section>
+  <section>
+    <h3>多列等宽布局</h3>
+    <iframe src="multipleequalcol.html" frameborder="0"></iframe>
+  </section>
+  <section>
+    <h3>一列定宽另一列自适应并且两列等高</h3>
+    <iframe src="onecolsetwithandoneselfadaptioncolwithequalheight.html" frameborder="0"></iframe>
+  </section>
+  <section>
+    <h3>两列定宽中间列自适应</h3>
+    <iframe src="twosetwithcolandmiddlecolselfadaption.html" frameborder="0"></iframe>
+  </section>
+  <section>
+    <h3>两列定宽中间列自适应</h3>
+    <iframe src="twosetwithcolandmiddlecolselfadaption.html" frameborder="0"></iframe>
+  </section>
+  <section>
+    <h3>全局布局</h3>
+    <iframe src="fullpage.html" frameborder="0"></iframe>
+  </section>
+</body>
+</html>

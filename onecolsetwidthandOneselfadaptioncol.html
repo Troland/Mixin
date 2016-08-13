@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>一列固定另一列自适应</title>
+  <link rel="stylesheet" href="reset.css">
+  <style>
+    /*如果在right里面清除浮动如在p上写会造成第一个right段落下陷*/
+    /*IE6会有bug可以在left上面设置margin-right:-左边一列的宽*/
+    .parent {
+      margin-bottom: 30px;
+    }
+    .left {
+      float: left;
+      width: 100px;
+      background-color: #f00;
+    }
+    .right {
+      margin-left: 120px;
+      background-color: #0f0;
+    }
+
+    /*第二种方案*/
+    .left {
+      position: relative;
+      float: left;
+      width: 100px;
+    }
+    .right-fix {
+      margin-left: -100px;
+      float: right;
+      width: 100%;
+    }
+
+    /*第三种方案利用bfc模式，ie6下面不支持*/
+    .left-2 {
+      float: left;
+      width: 100px;
+      background-color: #f00;
+      margin-right: 20px;
+    }
+    .right-2 {
+      overflow: hidden;
+      background-color: #0f0;
+    }
+
+    /*表格布局*/
+    .tb {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+    }
+    .tb-left, .tb-right {
+      display: table-cell;
+    }
+    .tb-left {
+      width: 120px;
+      /*padding-right: 20px;*/
+      background-color: #f00;
+    }
+    .tb-right {
+      background-color: #0f0;
+    }
+
+    /*flex*/
+    .flex-p {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+    }
+    .flex-l {
+      width: 100px;
+      margin-right: 20px;
+      background-color: #f00;
+    }
+    .flex-r {
+      flex: 1;
+      background-color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="left">
+      <p>left</p>
+    </div>
+    <div class="right">
+      <p>right</p>
+      <p>right</p>
+    </div>
+  </div>
+
+  <!--  第二种方案-->
+  <div class="parent">
+    <div class="left">
+      <p>left</p>
+    </div>
+    <div class="right-fix">
+      <div class="right">
+        <p>right</p>
+        <p>right</p>
+      </div>
+    </div>
+    <div style="clear:both"></div>
+  </div>
+  <div style="clear:both"></div>
+  <!-- 第三种方案 -->
+  <div class="parent">
+    <div class="left-2">
+      <p>left</p>
+    </div>
+    <div class="right-2">
+      <p>right</p>
+      <p>right</p>
+    </div>
+  </div>
+
+  <!-- 第四种方案 -->
+  <div class="parent tb">
+    <div class="tb-left">
+      <p>left</p>
+    </div>
+    <div class="tb-right">
+      <p>right</p>
+      <p>right</p>
+    </div>
+  </div>
+
+  <!-- flex -->
+  <div class="flex-p">
+    <div class="flex-l">
+      <p>left</p>
+    </div>
+    <div class="flex-r">
+      <p>right</p>
+      <p>right</p>
+    </div>
+  </div>
+</body>
+</html>

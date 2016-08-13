@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event</title>
+</head>
+<body>
+  <span>clickme</span>
+  <div class="section" id="mousemove_event">MouseMove</div>
+  <script>
+    function $(id) {
+      return document.getElementById(id);
+    }
+    // window.onclick = function (e) {
+    //   e = e || window.event;
+    //   var target = e.srcElement || e.target;
+    //   alert(target)
+    // };
+    var isMoving;
+    $('mousemove_event').onmousemove = function () {
+      isMoving = true;
+      console.log(isMoving);
+    }
+  </script>
+</body>
+</html>
