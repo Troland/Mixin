@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>弹窗</title>
+  <style>
+    /*a可以写定位或者w100%和h100%*/
+    .a {
+      position: absolute;/*or fixed*/
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .b {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="a">
+    <div class="b">Hello World</div>
+  </div>
+</body>
+</html>

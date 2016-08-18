@@ -13,7 +13,10 @@ The problem is that overflow: hidden won't work in IE7 unless the parent contain
     min-width: 100px;
     *width: 100px;
 }
-
+/*fixed 可以加快渲染,某一列宽是通过表格的宽度来决定的*/
+table {
+  table-layout: fixed/auto;
+}
 /*scrollbar-arrow-color 滚动时滚动条的箭头的颜色IE专有*/
 
 /*表格定宽超出用省略号*/

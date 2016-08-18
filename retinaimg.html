@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>高清屏的图像适配</title>
+  <style>
+    .bg-retina {
+      background: url(abc.jpg) 0 0 no-repeat;
+    }
+    @media screen and (-webkit-min-device-pixel-ratio: 2) {
+      .bg-retina {
+        background: url(abcx2.jpg) 0 0 no-repeat;
+      }
+    }
+    .bg-retina {
+      background-image: url(assets/no-image-set.png);
+      background-image: -webkit-image-set(url(assets/test.png) 1x,
+             url(assets/test-hires.png) 2x);
+      background-image: -moz-image-set(url(assets/test.png) 1x,
+             url(assets/test-hires.png) 2x);
+      background-image: -o-image-set(url(assets/test.png) 1x,
+             url(assets/test-hires.png) 2x);
+      background-image: -ms-image-set(url(assets/test.png) 1x,
+             url(assets/test-hires.png) 2x);
+      width:200px;
+      height:75px;
+    }
+    /*background-image image-set*/
+  </style>
+</head>
+<body>
+  <!-- 1. media query + pixel-ratio 实现
+2. img标签引用的不同大小图片，通过retina.js根据设备自动替换图片地址
+3. image-set 实现（不兼容微信浏览器）
+4. svg 实现
+5. 使用第三方库 -->
+  <div class="bg-retina">这是图片</div>
+</body>
+</html>
