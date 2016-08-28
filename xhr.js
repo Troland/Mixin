@@ -50,10 +50,10 @@ function get(url, options, callback) {
 
 function post(url, options, callback) {
   var xhr = createXMLHTTPObject();
-  xhr.open('post', url, true);
+  xhr.open('POST', url, true);
   xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-  xhr.onreadystatechange = function (callback) {
-    if (xhr.readystate == 4) {
+  xhr.onreadyStatechange = function (callback) {
+    if (xhr.readyState == 4) {
       if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
         callback(xhr.responseText);
       }

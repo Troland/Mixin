@@ -5,6 +5,32 @@
   <title>ifrmae upload</title>
 </head>
 <body>
-  
+  <iframe frameborder="0" name="uploadTarget"></iframe>
+  <form target="uploadTarget" enctype="multipart/form-data">
+    <input type="text" name="username">
+    <input type="file" name="file" id="js_file">
+    <input type="submit" value="submit">
+  </form>
+  <div id="message"></div>
+  <script>
+  var EventUtil = {
+      addHandler: function(element, type, handler){
+          if (element.addEventListener){
+              element.addEventListener(type, handler, false);
+          } else if (element.attachEvent){
+              element.attachEvent("on" + type, handler);
+          } else {
+              element["on" + type] = handler;
+          }
+      }
+    };
+    var $form = document.forms[0], $frame = document.getElementsByTagName('iframe')[0], $message = document.getElementById('message');
+    EventUtil.addHandler($frame, 'load', function (e) {
+      var iframeContent = $frame.contentDocument || $frame.contentwindow.document;
+      if (iframeContent) {
+        $message.innerHTML = iframeContent.body.innerHTML;
+      }
+    });
+  </script>
 </body>
 </html>

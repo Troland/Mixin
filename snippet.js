@@ -27,7 +27,7 @@ var pageWidth = window.innerWidth || document.documentElement.clientWidth,
 
 // 这个兼容所有
 // pageWidth = document.documentElement.clientWidth
-// 
+//
 if (typeof pageWidth !== "number") {
     if (document.compatMode === "CSS1Compat") {
         pageWidth = document.documentElement.clientWidth;
@@ -242,3 +242,5 @@ function isSameOrigin(el) {
     } catch (e) {}
     return ret;
 }
+// 获取iframe内容
+oFrame.contentDocument || oFrame.contentwindow.document;
