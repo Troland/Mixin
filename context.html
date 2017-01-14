@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>contextmenu</title>
+</head>
+<body>
+  <div id="showMenu">Show Menu</div>
+  <script>
+    var $menu = document.getElementById('showMenu');
+    var EventUtil = {
+        addHandler: function(element, type, handler){
+            if (element.addEventListener){
+                element.addEventListener(type, handler, false);
+            } else if (element.attachEvent){
+                element.attachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = handler;
+            }
+        }
+    };
+    EventUtil.addHandler($menu, 'contextmenu', function (e) {
+      alert('菜单')
+      e.preventDefault();
+    });
+  </script>
+</body>
+</html>

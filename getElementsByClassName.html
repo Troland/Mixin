@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>getElementsByClassName</title>
+</head>
+<body>
+  <div id="parent">
+    <li class="item">item1</li>
+    <li class="item">item2</li>
+    <li class="item">item3</li>
+  </div>
+  <script>
+  // 获取元素下的具有指定类名的元素
+  function getElementsByClassName(target, className) {
+    // if support getElementsByClassName
+    if (target.getElementsByClassName) {
+      return target.getElementsByClassName(className);
+    } else {
+      var childList = target.getElementsByTagName('*'), result = [];
+      for (var i = 0; i < childList.length; i++) {
+        var child = childList[i];
+        if (child.className.indexOf(className) > -1) {
+          result.push(child);
+        }
+      }
+      return result;
+    }
+  }
+  window.onload = function () {
+    var r = getElementsByClassName(document.getElementById('parent'), 'item');
+    alert(r[0].innerHTML);
+  };
+  </script>
+</body>
+</html>

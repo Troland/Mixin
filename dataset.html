@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dataset</title>
+</head>
+<body>
+  <div data-action="lock" data-man="male" id="dataset">这是什么</div>
+  <script>
+    function getDataSet(dom) {
+      // if support dataset
+      if (dom.dataset) {
+        return dom.dataset;
+      } else {
+        var attributes = dom.attributes, r_data = /data-[^-]/, i, dataset = {};
+        for (i = 0; i < attributes.length; i++) {
+
+        }
+      }
+    }
+
+    function manageDataSet() {
+
+    }
+    window.onload = function () {
+      var attributes = document.getElementById('dataset').attributes, attributeText = '';
+      for (var i = 0; i < attributes.length; i++) {
+        var attr = attributes[i];
+        attributeText += 'name:' + attr.name + ' value:' + attr.value;
+      }
+      alert(attributeText);
+    }
+  </script>
+</body>
+</html>

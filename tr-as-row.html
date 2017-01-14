@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>把表格的tr当行来样式化</title>
+  <style>
+    table {
+      width: 300px;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    td {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+
+    .col-1 {
+      margin-bottom: 20px;
+      background-color: #f00;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <div class="col-1">td1</div>
+        </td>
+        <td>td2</td>
+        <td>td3</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="col-1">td4</div>
+        </td>
+        <td>td5</td>
+        <td>td6</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="col-1">td7</div>
+        </td>
+        <td>td8</td>
+        <td>td9</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
