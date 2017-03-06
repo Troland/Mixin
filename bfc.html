@@ -9,14 +9,14 @@
         position: relative;
     }
 
-    .aside {
+    .aside, .al {
         width: 100px;
         height: 150px;
         float: left;
         background: #f66;
     }
 
-    .main {
+    .main , .rl {
         height: 200px;
         background: #fcc;
         overflow: hidden;/*触发bfc模式*/
@@ -27,7 +27,7 @@
         width: 200px;
         line-height: 100px;
         text-align:center;
-        margin: 100px;
+        margin: 0px;
     }
     .wrap {
       overflow: hidden;
@@ -49,7 +49,9 @@ BFC就是页面上的一个隔离的独立容器，容器里面的子元素不�
 float属性不为none
 position为absolute或fixed
 display为inline-block, table-cell, table-caption, flex, inline-flex
-overflow不为visible-->
+overflow不为visible
+外面的高度是右边的那个清除的浮动的高度而不是左边的那个浮动的高度除非外面用clearfix
+-->
 
   <div class="aside"></div>
   <div class="main"></div>
@@ -57,5 +59,10 @@ overflow不为visible-->
   <div class="wrap">
     <p>hehe</p>
   </div>
+  <div class="ml">
+    <div class="al">这是左边</div>
+    <div class="rl">这是右边</div>
+  </div>
+  <p>这是什么</p>
 </body>
 </html>

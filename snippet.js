@@ -1,108 +1,108 @@
 document.addEventListener("DOMContentLoaded", function() {
-    if ("indexedDB" in window) {
-        console.log("Yes supported indexedDb");
-    } else {
-        console.log("No supported indexedDb");
-    }
+  if ("indexedDB" in window) {
+    console.log("Yes supported indexedDb");
+  } else {
+    console.log("No supported indexedDb");
+  }
 }, false);
 
 // 阶乘
 var factorial = (function f(num) {
-    if (num <= 1) {
-        return 1;
-    } else {
-        return num * f(num - 1);
-    }
+  if (num <= 1) {
+    return 1;
+  } else {
+    return num * f(num - 1);
+  }
 });
 
 // 取得窗口相对于屏幕左边和上边的距离
 var leftPos = (typeof window.screenLeft = "number") ?
-    window.screenLeft : window.screenX;
+  window.screenLeft : window.screenX;
 var topPos = (typeof window.screenTop = "number") ?
-    window.screenTop : window.screenY;
+  window.screenTop : window.screenY;
 
 // 取得页面视口宽高 IE9+
 var pageWidth = window.innerWidth || document.documentElement.clientWidth,
-    pageHeight = window.innerHeight || document.documentElement.clientHeight;
+  pageHeight = window.innerHeight || document.documentElement.clientHeight;
 
 // 这个兼容所有
 // pageWidth = document.documentElement.clientWidth
 //
 if (typeof pageWidth !== "number") {
-    if (document.compatMode === "CSS1Compat") {
-        pageWidth = document.documentElement.clientWidth;
-        pageHeight = document.documentElement.clientHeight;
-    } else {
-        pageWidth = document.body.clientWidth;
-        pageHeight = document.body.clientHeight;
-    }
+  if (document.compatMode === "CSS1Compat") {
+    pageWidth = document.documentElement.clientWidth;
+    pageHeight = document.documentElement.clientHeight;
+  } else {
+    pageWidth = document.body.clientWidth;
+    pageHeight = document.body.clientHeight;
+  }
 }
 
 // 页面宽(包含滚动条和隐藏的部分)
 // offsetWidth
 var pageWidth = Math.max(document.documentElement.scrollWidth,
-                         document.documentElement.offsetWidth, document.documentElement.clientWidth,
-                         document.body.scrollWidth, document.body.offsetWidth);
+  document.documentElement.offsetWidth, document.documentElement.clientWidth,
+  document.body.scrollWidth, document.body.offsetWidth);
 // 解析地址中的参数
 
 function getQueryStringArgs() {
-    // 取得查询字符串并去掉开关头问号
-    var qs = (location.search.length > 0 ? location.search.substring(1) : ""),
-        // 保存数据对象
-        args = {},
-        items = qs.length ? qs.split('&') : [],
-        item = null,
-        name = null,
-        value = null,
-        i = 0,
-        len = items.length;
+  // 取得查询字符串并去掉开关头问号
+  var qs = (location.search.length > 0 ? location.search.substring(1) : ""),
+    // 保存数据对象
+    args = {},
+    items = qs.length ? qs.split('&') : [],
+    item = null,
+    name = null,
+    value = null,
+    i = 0,
+    len = items.length;
 
-    for (i = 0; i < len; i++) {
-        item = tems[i].split('=');
-        name = decodeURIComponent(item[0]);
-        value = decodeURIComponent(item[1]);
+  for (i = 0; i < len; i++) {
+    item = tems[i].split('=');
+    name = decodeURIComponent(item[0]);
+    value = decodeURIComponent(item[1]);
 
-        if (name.length) {
-            args[name] = value;
-        }
+    if (name.length) {
+      args[name] = value;
     }
+  }
 
-    return args;
+  return args;
 }
 
 // 非IE下检测浏览器插件
 
 function hasPlugin(name) {
-    name = name.toLowerCase();
+  name = name.toLowerCase();
 
-    for (var i = 0; i < navigator.plugins.length; i++) {
-        if (navigator.plugins[i].name.toLowerCase.indexOf(name) > -1) {
-            return true;
-        }
+  for (var i = 0; i < navigator.plugins.length; i++) {
+    if (navigator.plugins[i].name.toLowerCase.indexOf(name) > -1) {
+      return true;
     }
+  }
 
-    return false;
+  return false;
 }
 
 // IE下检测插件
 function hasIEPlugin(name) {
-    try {
-        new ActiveXObject(name);
-        return true;
-    } catch (ex) {
-        return false;
-    }
+  try {
+    new ActiveXObject(name);
+    return true;
+  } catch (ex) {
+    return false;
+  }
 }
 
 // 检测Flash
 
 function hasFlash(name) {
-    var result = hasPlugin("Flash");
+  var result = hasPlugin("Flash");
 
-    if (!result) {
-        result = hasIEPlugin("ShockwaveFlash.ShockwaveFlash");
-        return result;
-    }
+  if (!result) {
+    result = hasIEPlugin("ShockwaveFlash.ShockwaveFlash");
+    return result;
+  }
 }
 
 // 窗口可用宽和高
@@ -117,18 +117,18 @@ history.forward();
 // 判断IE兼容模式
 engine = null;
 if (window.navigator.appName == "Microsoft Internet Explorer") {
-    // This is an IE browser. What mode is the engine in?
-    if (document.documentMode) // IE8
-        engine = document.documentMode;
-    else // IE 5-7
-    {
-        engine = 5; // Assume quirks mode unless proven otherwise
-        if (document.compatMode) {
-            if (document.compatMode == "CSS1Compat")
-                engine = 7; // standards mode
-        }
+  // This is an IE browser. What mode is the engine in?
+  if (document.documentMode) // IE8
+    engine = document.documentMode;
+  else // IE 5-7
+  {
+    engine = 5; // Assume quirks mode unless proven otherwise
+    if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+        engine = 7; // standards mode
     }
-    // the engine variable now contains the document compatibility mode.
+  }
+  // the engine variable now contains the document compatibility mode.
 }
 
 // 输出脚本
@@ -141,89 +141,90 @@ IE8中新增加的标记
 // 检测元素是否被包含在refNode中
 
 function contains(refNode, otherNode) {
-    if (typeof refNode.contains == "function" &&
-        (!client.engine.webkit || client.engine.webkit >= 522)) {
-        return refNode.contains(otherNode);
-    } else if (typeof refNode.compareDocumentPosition == "function") {
-        return !!(refNode.compareDocumentPosition(otherNode) & 16);
-    } else {
-        var node = otherNode.parentNode;
-        do {
-            if (node === refNode) {
-                return true;
-            } else {
-                node = node.parentNode;
-            }
-        } while (node !== null);
-        return false;
-    }
+  if (typeof refNode.contains == "function" &&
+    (!client.engine.webkit || client.engine.webkit >= 522)) {
+    return refNode.contains(otherNode);
+  } else if (typeof refNode.compareDocumentPosition == "function") {
+    return !!(refNode.compareDocumentPosition(otherNode) & 16);
+  } else {
+    var node = otherNode.parentNode;
+    do {
+      if (node === refNode) {
+        return true;
+      } else {
+        node = node.parentNode;
+      }
+    } while (node !== null);
+    return false;
+  }
 }
 
 function getContains() {
-    alert(contains(document.documentElement, document.body));
+  alert(contains(document.documentElement, document.body));
 
 }
 
 // 获得元素的innerText
 function getInnerText(element) {
-    return (typeof element.textContent == 'string') ?
-        element.textContent : element.innerText;
+  return (typeof element.textContent == 'string') ?
+    element.textContent : element.innerText;
 }
 
 // 设置元素innerText
 function setInnerText(element, text) {
-    if (typeof element.textContent == 'string') {
-        element.textContent = text;
-    } else {
-        element.innerText = text;
-    }
+  if (typeof element.textContent == 'string') {
+    element.textContent = text;
+  } else {
+    element.innerText = text;
+  }
 }
 
 // get方法往url上加数据
 function addURLParam(url, name, value) {
-    url += (url.indexOf("?") == -1 ? "?" : "&");
-    url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
-    return url;
+  url += (url.indexOf("?") == -1 ? "?" : "&");
+  url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
+  return url;
 }
 
-var isExplorer = /msie [\w.]+/.exec(navigator.userAgent.toLowerCase());判断是否ie
-var docMode           = document.documentMode;
-var oldIE             = (isExplorer.exec(navigator.userAgent.toLowerCase()) && (!docMode || docMode <= 7));
+var isExplorer = /msie [\w.]+/.exec(navigator.userAgent.toLowerCase());
+判断是否ie
+var docMode = document.documentMode;
+var oldIE = (isExplorer.exec(navigator.userAgent.toLowerCase()) && (!docMode || docMode <= 7));
 // content-types
-text/plain //文字
-text/HTML //html
-text/xml /xml
-test/javascript
-application/json //当传输的是json字符串例如对象数组需要用到var objs = [{name: 'mike', val: 1}, {name: 'scot', val:2}];JSON.stringify(objs)
-image/GIF
-image/JPEG
+text / plain //文字
+text / HTML //html
+text / xml / xml
+test / javascript
+application / json //当传输的是json字符串例如对象数组需要用到var objs = [{name: 'mike', val: 1}, {name: 'scot', val:2}];JSON.stringify(objs)
+image / GIF
+image / JPEG
 
 // http://larryzhao.com/2011/10/28/arguments-dot-callee-dot-caller-bug-in-internet-explorer-9/
 // IE9 bug
-function func1(flag){
-   if(flag){
-      alert("Caller is here!");
-   }else {
-      func2();
-   }
+function func1(flag) {
+  if (flag) {
+    alert("Caller is here!");
+  } else {
+    func2();
+  }
 }
 
-function func2(){
-    arguments.callee.caller(true);
+function func2() {
+  arguments.callee.caller(true);
 }
 func1(false);
 //bugfix:
-function func1(flag){
-   if(flag){
-      alert("Caller is here!");
-   }else {
-      func2();
-   }
+function func1(flag) {
+  if (flag) {
+    alert("Caller is here!");
+  } else {
+    func2();
+  }
 }
 
-function func2(){
-   var callerFunc = func2.caller; //func2.caller或者是arguments.callee.caller
-   callerFunc(true);
+function func2() {
+  var callerFunc = func2.caller; //func2.caller或者是arguments.callee.caller
+  callerFunc(true);
 }
 func1(false);
 
@@ -231,15 +232,15 @@ func1(false);
 // 比如页面上有hash值#sec,页面上有元素<div id="sec"></div>
 $(':target')
 
-"1"[0] IE6,IE7返回undefined
+"1" [0] IE6, IE7返回undefined
 
 // 判断是否同源
 function isSameOrigin(el) {
-    var ret = false;
-    try {
-        ret = !!el.contentWindow.location.href;
-    } catch (e) {}
-    return ret;
+  var ret = false;
+  try {
+    ret = !!el.contentWindow.location.href;
+  } catch (e) {}
+  return ret;
 }
 // 获取iframe内容
 oFrame.contentDocument || oFrame.contentwindow.document;
@@ -441,132 +442,132 @@ function makeMenu(items, tags) {
       value = items[i].split(':')[1];
     }
     // Wrap the item in tag
-    items[i] = '<'+ child +' '+
-      (value && 'value="'+value+'"') +'>'+ // add value if present
-        item +'</'+ child +'>';
+    items[i] = '<' + child + ' ' +
+      (value && 'value="' + value + '"') + '>' + // add value if present
+      item + '</' + child + '>';
   }
 
-  return '<'+ parent +'>'+ items.join('') +'</'+ parent +'>';
+  return '<' + parent + '>' + items.join('') + '</' + parent + '>';
 }
 
 // 创建原型方法的函数
 if (typeof Function.prototype.method !== "function") {
-    Function.prototype.method = function(name, func) {
-        if (!this.prototype[name]) {
-            this.prototype[name] = func;
-            return this;
-        }
-    };
+  Function.prototype.method = function(name, func) {
+    if (!this.prototype[name]) {
+      this.prototype[name] = func;
+      return this;
+    }
+  };
 }
 
 
 // trim trailing spaces
 String.method("trim", function() {
-    return this.replace(/^\s+|\s+$/g, "");
+  return this.replace(/^\s+|\s+$/g, "");
 });
 
 // get the nodes by className
 
 function getByClass(oParent, sClass) {
-    var aEle = oParent.getElementsByTagName('*');
-    var aResult = [];
-    var i = 0;
+  var aEle = oParent.getElementsByTagName('*');
+  var aResult = [];
+  var i = 0;
 
-    for (i = 0; i < aEle.length; i++) {
-        if (aEle[i].className == sClass) {
-            aResult.push(aEle[i]);
-        }
+  for (i = 0; i < aEle.length; i++) {
+    if (aEle[i].className == sClass) {
+      aResult.push(aEle[i]);
     }
+  }
 
-    return aResult;
+  return aResult;
 }
 
 // detect array
 
 function isArray(value) {
-    if (typeof Array.isArray === "function") {
-        return Array.isArray(value);
-    }
-    return Object.prototype.toString.call(value) === "[object Array]";
+  if (typeof Array.isArray === "function") {
+    return Array.isArray(value);
+  }
+  return Object.prototype.toString.call(value) === "[object Array]";
 }
 
 //query nodes under node
 var walk_the_DOM = function walk(node, func) {
-    func(node);
+  func(node);
 
-    node = node.firstChild;
-    while (node) {
-        walk(node, func);
-        node = node.nextSibling;
-    }
+  node = node.firstChild;
+  while (node) {
+    walk(node, func);
+    node = node.nextSibling;
+  }
 };
 
 // getElementsByAttribute return the matched nodes which has the attr
 
 var getElementsByAttribute = function(attr, value) {
-    var results = [];
+  var results = [];
 
-    walk_the_DOM(document.body, function(node) {
-        var actual = node.nodeType === 1 && node.getAttribute(attr);
-        if (typeof actual === "string" &&
-            (actual === value || typeof value !== "string")) {
-            results.push(node);
-        }
-    });
+  walk_the_DOM(document.body, function(node) {
+    var actual = node.nodeType === 1 && node.getAttribute(attr);
+    if (typeof actual === "string" &&
+      (actual === value || typeof value !== "string")) {
+      results.push(node);
+    }
+  });
 
-    return results;
+  return results;
 }
 
 // namespace创建命名空间防止重复
 // useage:myApp.namespace("myApp.utils")
 myApp.namesapce = function namespace(ns) {
-    var parts = ns.split('.'),
-        object = this,
-        i, len;
+  var parts = ns.split('.'),
+    object = this,
+    i, len;
 
-    for (i = 0, len = parts.length; i < len; i++) {
-        if (!object[parts[i]]) {
-            object[parts[i]] = {};
-        }
-        object = object[parts[i]];
+  for (i = 0, len = parts.length; i < len; i++) {
+    if (!object[parts[i]]) {
+      object[parts[i]] = {};
     }
+    object = object[parts[i]];
+  }
 
-    return object;
+  return object;
 }
 
 // 替换实体符
 String.method("deentityify", function() {
-    // The entity table.实体字符映射表
-    var entity = {
-        quot: "''",
-        lt: "<",
-        gt: ">"
-    };
+  // The entity table.实体字符映射表
+  var entity = {
+    quot: "''",
+    lt: "<",
+    gt: ">"
+  };
 
-    // return deentityify method
-    return function() {
-        return this.replace(/&([^&;]+);/g,
-            function(a, b) {
-                var r = entity[b];
-                return typeof r === "string" ? r : a;
-            }
-        );
-    };
+  // return deentityify method
+  return function() {
+    return this.replace(/&([^&;]+);/g,
+      function(a, b) {
+        var r = entity[b];
+        return typeof r === "string" ? r : a;
+      }
+    );
+  };
 }());
 
 // 数是前两个数的总和
 var fibonacci = (function() {
-    var memo = [0, 1];
-    var fib = function(n) {
-        var result = memo[n];
-        if (typeof result !== "number") {
-            result = fib(n - 1) + fib(n - 2);
-            memo[n] = result;
-        }
+  var memo = [0, 1];
+  var fib = function(n) {
+    var result = memo[n];
+    if (typeof result !== "number") {
+      result = fib(n - 1) + fib(n - 2);
+      memo[n] = result;
+    }
 
-        return result;
-    };
-    return fib;
+    return result;
+  };
+  return fib;
 }());
 
 /*记忆函数
@@ -574,15 +575,15 @@ var fibonacci = (function() {
     return recur(n - 1) + recur(n - 2);
 })*/
 var memoizer = function(memo, formula) {
-    var recur = function(n) {
-        var result = memo[n];
-        if (typeof result !== "number") {
-            result = formula(recur, n);
-            memo[n] = result;
-        }
-        return result;
-    };
-    return recur;
+  var recur = function(n) {
+    var result = memo[n];
+    if (typeof result !== "number") {
+      result = formula(recur, n);
+      memo[n] = result;
+    }
+    return result;
+  };
+  return recur;
 };
 
 /**
@@ -590,230 +591,230 @@ var memoizer = function(memo, formula) {
  * @return {[type]}
  */
 Function.method("curry", function() {
-    var slice = Array.prototype.slice,
-        args = slice.apply(arguments),
-        that = this;
+  var slice = Array.prototype.slice,
+    args = slice.apply(arguments),
+    that = this;
 
-    return function() {
-        return that.apply(null, args.concat(slice.apply(arguments)));
-    };
+  return function() {
+    return that.apply(null, args.concat(slice.apply(arguments)));
+  };
 });
 
 // global namespace
 var chat = {
-    // Create this closure to contain the cached modules
-    module: function() {
-        // Internal module cache.
-        var modules = {};
+  // Create this closure to contain the cached modules
+  module: function() {
+    // Internal module cache.
+    var modules = {};
 
-        // Create a new module reference scaffold or load an
-        // existing module.
-        return function(name) {
-            // If this module has already been created, return it.
-            if (modules[name]) {
-                return modules[name];
-            }
+    // Create a new module reference scaffold or load an
+    // existing module.
+    return function(name) {
+      // If this module has already been created, return it.
+      if (modules[name]) {
+        return modules[name];
+      }
 
-            // Create a module and save it under this name
-            return modules[name] = {
-                Views: {}
-            };
-        };
-    }()
+      // Create a module and save it under this name
+      return modules[name] = {
+        Views: {}
+      };
+    };
+  }()
 };
 
 // extend namespace
 
 function extend(destination, source) {
-    var toString = Object.prototype.toString,
-        objTest = toString.call({});
-    for (var property in source) {
-        if (source[property] && objTest == toString.call(source[property])) {
-            destination[property] = destination[property] || {};
-            extend(destination[property], source[property]);
-        } else {
-            destination[property] = source[property];
-        }
+  var toString = Object.prototype.toString,
+    objTest = toString.call({});
+  for (var property in source) {
+    if (source[property] && objTest == toString.call(source[property])) {
+      destination[property] = destination[property] || {};
+      extend(destination[property], source[property]);
+    } else {
+      destination[property] = source[property];
     }
-    return destination;
+  }
+  return destination;
 };
 
 // 为任意的对象添加事件
 var eventuality = function(that) {
-    var registry = {};
+  var registry = {};
 
-    that.fire = function(event) {
-        // 对象上触发事件,事件参数可是事件名或者是事件对象
-        // on注册的事件将被调用
+  that.fire = function(event) {
+    // 对象上触发事件,事件参数可是事件名或者是事件对象
+    // on注册的事件将被调用
 
-        var array,
-            func,
-            handler,
-            i,
-            type = typeof event === "string" ? event : event.type;
+    var array,
+      func,
+      handler,
+      i,
+      type = typeof event === "string" ? event : event.type;
 
-        // 如果有这个事件的事件句柄则会按顺序执行函数
-        if (registry.hasOwnProperty(type)) {
-            array = registry[type];
-            for (i = 0; i < array.length; i++) {
-                handler = array[i];
+    // 如果有这个事件的事件句柄则会按顺序执行函数
+    if (registry.hasOwnProperty(type)) {
+      array = registry[type];
+      for (i = 0; i < array.length; i++) {
+        handler = array[i];
 
 
-                // 事件句柄含有一个方法和一个可选的数列参数如果函数是一个名字就会
-                // 遍历整个函数
-                func = handler.method;
-                if (typeof func == "string") {
-                    func = this[func];
-                }
-
-                // 调用事件句柄。如果用传入的参数或者事件参数
-
-                func.apply(this,
-                    handler.parameters || [event]);
-            }
+        // 事件句柄含有一个方法和一个可选的数列参数如果函数是一个名字就会
+        // 遍历整个函数
+        func = handler.method;
+        if (typeof func == "string") {
+          func = this[func];
         }
-        return this;
+
+        // 调用事件句柄。如果用传入的参数或者事件参数
+
+        func.apply(this,
+          handler.parameters || [event]);
+      }
+    }
+    return this;
+  };
+
+  that.on = function(type, method, parameters) {
+    // 注册事件。如果没有事件句柄纪录就把它放入事件句柄数列中
+
+    var handler = {
+      method: method,
+      parameters: parameters
     };
 
-    that.on = function(type, method, parameters) {
-        // 注册事件。如果没有事件句柄纪录就把它放入事件句柄数列中
+    if (registry.hasOwnProperty(type)) {
+      registry[type].push(handler);
+    } else {
+      registry[type] = [handler];
+    }
+    return this;
+  };
 
-        var handler = {
-            method: method,
-            parameters: parameters
-        };
-
-        if (registry.hasOwnProperty(type)) {
-            registry[type].push(handler);
-        } else {
-            registry[type] = [handler];
-        }
-        return this;
-    };
-
-    return that;
+  return that;
 };
 
 // reduce 传入一个callback进行相应的操作
 // usage: var add = function(a, b) { return a + b; }
 // var data = [1, 2, 3];data.reduce(add, 4);
 Array.method("reduce", function(f, value) {
-    var i;
+  var i;
 
-    for (i = 0; i < this.length; i++) {
-        value = f(this[i], value);
-    }
+  for (i = 0; i < this.length; i++) {
+    value = f(this[i], value);
+  }
 
-    return value;
+  return value;
 });
 
 // Array.dim初始化数组的值
 Array.dim = function(dimension, initial) {
-    var a = [],
-        i;
-    for (i = 0; i < dimension; i++) {
-        a[i] = initial;
-    }
-    return a;
+  var a = [],
+    i;
+  for (i = 0; i < dimension; i++) {
+    a[i] = initial;
+  }
+  return a;
 }
 
 // Array.matrix初始化多维数组
 Array.matrix = function(m, n, initial) {
-    var a, i, j, mat = [];
-    for (i = 0; i < m; i++) {
-        a = [];
-        for (j = 0; j < n; j++) {
-            a[j] = initial;
-        }
-        mat[i] = a;
+  var a, i, j, mat = [];
+  for (i = 0; i < m; i++) {
+    a = [];
+    for (j = 0; j < n; j++) {
+      a[j] = initial;
     }
+    mat[i] = a;
+  }
 
-    return mat;
+  return mat;
 };
 
 // 比较数列中的字母和数字
 // 比如["a", 1, 6, 3, "d", "c"]
 m.sort(function(a, b) {
-    if (a === b) {
-        return 0;
-    }
+  if (a === b) {
+    return 0;
+  }
 
-    if (typeof a === typeof b) {
-        return a < b ? -1 : 1;
-    }
+  if (typeof a === typeof b) {
+    return a < b ? -1 : 1;
+  }
 
-    return typeof a < typeof b ? -1 : 1;
+  return typeof a < typeof b ? -1 : 1;
 });
 
 // 数组对象中的排序
 var by = function(name, minor) {
-    return function(o, p) {
-        var a, b;
+  return function(o, p) {
+    var a, b;
 
-        if (o && p && typeof o === "object" && typeof p === "object") {
-            a = o[name];
-            b = p[name];
-            if (a === b) {
-                return typeof minor === "function" ? minor(o, p) : 0;
-            }
+    if (o && p && typeof o === "object" && typeof p === "object") {
+      a = o[name];
+      b = p[name];
+      if (a === b) {
+        return typeof minor === "function" ? minor(o, p) : 0;
+      }
 
-            if (typeof a === typeof b) {
-                return a < b ? -1 : 1;
-            }
+      if (typeof a === typeof b) {
+        return a < b ? -1 : 1;
+      }
 
-            return typeof a < typeof b ? -1 : 1;
-        } else {
-            throw {
-                name: "Error",
-                message: "Expected an object when sorting by " + name;
-            };
-        }
-    };
+      return typeof a < typeof b ? -1 : 1;
+    } else {
+      throw {
+        name: "Error",
+        message: "Expected an object when sorting by " + name;
+      };
+    }
+  };
 };
 
 // 绑定函数
 Function.method("bind", function(that) {
-    var method = this,
-        slice = Array.prototype.slice,
-        args = slice.apply(arguments, [1]);
+  var method = this,
+    slice = Array.prototype.slice,
+    args = slice.apply(arguments, [1]);
 
-    return function() {
-        return method.apply(that,
-            args.concat(slice.apply(arguments, [0])));
-    };
+  return function() {
+    return method.apply(that,
+      args.concat(slice.apply(arguments, [0])));
+  };
 });
 
 // 返回replace方法返回的结果
 String.method("entityify", function() {
 
-    var character = {
-        "<": "&lt;",
-        ">": "&gt;",
-        "&": "&amp",
-        "'": "&quot;"
-    };
+  var character = {
+    "<": "&lt;",
+    ">": "&gt;",
+    "&": "&amp",
+    "'": "&quot;"
+  };
 
-    return function() {
-        return this.replace(/[<>&"]/g, function(c) {
-            return character[c];
-        });
-    };
+  return function() {
+    return this.replace(/[<>&"]/g, function(c) {
+      return character[c];
+    });
+  };
 }());
 
 // 判断是否数字
 var isNumber = function isNumber(value) {
-    return typeof value === "number" && isFinite(value);
+  return typeof value === "number" && isFinite(value);
 }
 
 // 检测对象中的属性是否存在
 
-    function hasPrototypeProperty(object, name) {
-        return !object.hasOwnProperty(name) && (name in object);
-    }
+function hasPrototypeProperty(object, name) {
+  return !object.hasOwnProperty(name) && (name in object);
+}
 
-    // 注意jQuery或者原生也是这样的中当利用data获取元素的data属性的时候data-后面的脚本里面都必须写成小写HTML上面可以写大写
-    比如
-data('nameId')必须写成 data('nameid')
+// 注意jQuery或者原生也是这样的中当利用data获取元素的data属性的时候data-后面的脚本里面都必须写成小写HTML上面可以写大写
+比如
+data('nameId') 必须写成 data('nameid')
 
 // innerHTML元素里面添加脚本
 div.innerHTML = "_<script defer>alert('hi');<\/script>";
@@ -827,27 +828,27 @@ ff8 + 和其它
 
 // scrollIntoView html5
 让某元素进入视图: el.scrollIntoView(),
-IE,
-Firefox,
-Safari和 Opera
+  IE,
+  Firefox,
+  Safari和 Opera
 
 把数据切成块？
 var data = [12, 123, 1234, 453, 436, 23, 23, 5, 4123, 45, 346, 5634, 2234, 345, 342];
 
 function chunk(array, process, context) {
-    setTimeout(function() {
-        var item = array.shift();
-        process.call(context, item);
+  setTimeout(function() {
+    var item = array.shift();
+    process.call(context, item);
 
-        if (array.length > 0) {
-            setTimeout(arguments.callee, 100);
-        }
-    }, 100);
+    if (array.length > 0) {
+      setTimeout(arguments.callee, 100);
+    }
+  }, 100);
 }
 
 function printValue(item) {
-    var div = document.getElementById("myDiv");
-    div.innerHTML += item + "<br>";
+  var div = document.getElementById("myDiv");
+  div.innerHTML += item + "<br>";
 }
 
 chunk(data, printValue);
@@ -855,79 +856,80 @@ chunk(data, printValue);
 // 函数节流防止重复执行代码例如resize设定定时器先清除再执行
 
 var constant = (function() {
-    var constants = {},
-        ownProp = Object.prototype.hasOwnProperty,
-        allowed = {
-            string: 1,
-            number: 1
-        };
-    prefix = (Math.random() + "_").slice(2);
+  var constants = {},
+    ownProp = Object.prototype.hasOwnProperty,
+    allowed = {
+      string: 1,
+      number: 1
+    };
+  prefix = (Math.random() + "_").slice(2);
 
-    return {
-        set: function(name, value) {
-            if (this.isDefined(name)) {
-                return false;
-            }
+  return {
+    set: function(name, value) {
+      if (this.isDefined(name)) {
+        return false;
+      }
 
-            if (!ownProp.call(allowed, typeof value)) {
-                return false;
-            }
+      if (!ownProp.call(allowed, typeof value)) {
+        return false;
+      }
 
-            constants[prefix + name] = value;
-            return true;
-        },
-        isDefined: function(name) {
-            return ownProp.call(constants, prefix + name);
-        },
-        get: function(name) {
-            if (this.isDefined(name)) {
-                return constants[prefix + name];
-            }
+      constants[prefix + name] = value;
+      return true;
+    },
+    isDefined: function(name) {
+      return ownProp.call(constants, prefix + name);
+    },
+    get: function(name) {
+      if (this.isDefined(name)) {
+        return constants[prefix + name];
+      }
 
-            return null;
-        }
+      return null;
     }
+  }
 });
 
 //判断是否是数字
-+ data + "" === data
++
+data + "" === data
 
 // 获得元素的在屏幕上的位置坐标绝对坐标
 function findPos(obj) {
-    var curleft = curtop = 0;
+  var curleft = curtop = 0;
 
-    if (obj.offsetParent) {
-        do {
-            curleft += obj.offsetLeft;
-            curtop += obj.offsetTop;
-        } while (obj = obj.offsetParent);
-    }
+  if (obj.offsetParent) {
+    do {
+      curleft += obj.offsetLeft;
+      curtop += obj.offsetTop;
+    } while (obj = obj.offsetParent);
+  }
 
-    return [curleft, curtop];
+  return [curleft, curtop];
 }
 
 function offset(node) {
-    var left = 0,
-        top = 0;
+  var left = 0,
+    top = 0;
 
-    do {
-        left += node.offsetLeft;
-        top += node.offsetTop;
-    } while (node = node.offsetParent);
+  do {
+    left += node.offsetLeft;
+    top += node.offsetTop;
+  } while (node = node.offsetParent);
 
-    return {
-        left: left,
-        top: top
-    };
+  return {
+    left: left,
+    top: top
+  };
 
 }
 // 设置一个唯一标识符
 var uuid = function() {
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
-        var r = Math.random() * 16 | 0,
-            v = c == 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
-    });
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0,
+      v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
 };
 
 // 函数的形参个数
@@ -936,9 +938,9 @@ fn.length
 //字符串内按任意位数的字符进行反转
 
 function flip(s, offset) {
-    var len = s.length;
-    offset = offset < len ? offset : (offset % len);
-    return s.replace(new RegExp('^(.{' + offset + '})(.*)$'), '$2$1');
+  var len = s.length;
+  offset = offset < len ? offset : (offset % len);
+  return s.replace(new RegExp('^(.{' + offset + '})(.*)$'), '$2$1');
 }
 
 // getAttribute 第二个参数 DOM2
@@ -958,23 +960,23 @@ for URL attributes.
 
 // 快速排序
 var quickSort = function(arr) {　　
-    if (arr.length <= 1) {
-        return arr;
-    }　　
-    var pivotIndex = Math.floor(arr.length / 2);　　
-    var pivot = arr[pivotIndex];　　
-    var left = [];　　
-    var right = [];　　
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i] != pivot) {
-            if (arr[i] < pivot) {　　　　　　
-                left.push(arr[i]);　　　　
-            } else {
-                right.push(arr[i]);　　　
-            }　
-        }
-    }　　　　
-    return quickSort(left).concat([pivot], quickSort(right));
+  if (arr.length <= 1) {
+    return arr;
+  }　　
+  var pivotIndex = Math.floor(arr.length / 2);　　
+  var pivot = arr[pivotIndex];　　
+  var left = [];　　
+  var right = [];　　
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] != pivot) {
+      if (arr[i] < pivot) {　　　　　　
+        left.push(arr[i]);　　　　
+      } else {
+        right.push(arr[i]);　　　
+      }　
+    }
+  }　　　　
+  return quickSort(left).concat([pivot], quickSort(right));
 };
 
 // 输入一个整数数组，调整数组中数字的顺序，使得所有奇数位于数组的前半部分，并排序。
@@ -982,18 +984,18 @@ var quickSort = function(arr) {　　
 // 如： [4,6,5,3,7] -> [3,5,7,4,6]
 var a = [1, 3, 11, 2, 4, 10];
 a.sort(function(a, b) {
-    return b - a;
+  return b - a;
 }).sort(function(a, b) {
-    return a % 2 ? b % 2 : 1;
+  return a % 2 ? b % 2 : 1;
 })
 
 // 对象的toString或者valueOf会在进行运算的时候进行转化
 var a = {
     toString: function() { //或者valueOf
-        return 2;
+      return 2;
     }
-}
-// IE6-IE8 substr参数不支持负数应该用substring
+  }
+  // IE6-IE8 substr参数不支持负数应该用substring
 substring
 
 // 测试是否是空数组
@@ -1007,89 +1009,91 @@ NaN !== NaN //true
 //是否是IE6，7，8
 var isIE678 = !+'\v1';
 // IE6,IE7
-!"1"[0]
+!"1" [0]
 // trim
 
 function trim(str) {
-    var whitespace = ' \n\r\t\f\x0b\xa0\u2000\u2001\u2002\u2003\n\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u200b\u2028\u2029\u3000';
-    for (var i = 0; i < str.length; i++) {
-        if (whitespace.indexOf(str.charAt(i)) === -1) {
-            str = str.substring(i);
-            break;
-        }
+  var whitespace = ' \n\r\t\f\x0b\xa0\u2000\u2001\u2002\u2003\n\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u200b\u2028\u2029\u3000';
+  for (var i = 0; i < str.length; i++) {
+    if (whitespace.indexOf(str.charAt(i)) === -1) {
+      str = str.substring(i);
+      break;
     }
+  }
 
-    for (i = str.length - 1; i >= 0; i--) {
-        if (whitespace.indexOf(str.charAt(i)) === -1) {
-            str = str.substring(0, i + 1);
-            break;
-        }
+  for (i = str.length - 1; i >= 0; i--) {
+    if (whitespace.indexOf(str.charAt(i)) === -1) {
+      str = str.substring(0, i + 1);
+      break;
     }
+  }
 
-    return whitespace.indexOf(str.charAt(0)) === -1 ? str : '';
+  return whitespace.indexOf(str.charAt(0)) === -1 ? str : '';
 }
 
 // window.open
 
 function openUrl(url) {
-    var f = document.createElement("form");
-    f.setAttribute("action", url);
-    f.setAttribute("method", 'get');
-    f.setAttribute("target", '_black');
-    document.body.appendChild(f)
-    f.submit();
+  var f = document.createElement("form");
+  f.setAttribute("action", url);
+  f.setAttribute("method", 'get');
+  f.setAttribute("target", '_black');
+  document.body.appendChild(f)
+  f.submit();
 }
 
 ~~双取反可以转换浮点数为整数
 
 单取反为~
-num如果为 - 1的话返回为 0
+num如果为 - 1 的话返回为 0
 // IE6,IE7下不返回数组长度
 if ([].unshift(1) !== 1) {
-    var _unshift = Array.prototype.unshift;
-    Array.prototype.unshift = function() {
-        _unshift.apply(this, arguments);
-        return this.length;
-    }
+  var _unshift = Array.prototype.unshift;
+  Array.prototype.unshift = function() {
+    _unshift.apply(this, arguments);
+    return this.length;
+  }
 }
 if ([1, 2, 3].splice(1).length == 0) { //IE6,7,8默认第二个参数为0,其它浏览器为数组长度
-    var _splice = Array.prototype.splice;
-    Array.prototype.splice = function(a) {
-        if (arguments.length == 1) {
-            return _splice.call(this, a, this.length);
-        } else {
-            return _splice.apply(this, arguments);
-        }
+  var _splice = Array.prototype.splice;
+  Array.prototype.splice = function(a) {
+    if (arguments.length == 1) {
+      return _splice.call(this, a, this.length);
+    } else {
+      return _splice.apply(this, arguments);
     }
+  }
 }
 // IE6,IE7中的日期存在bug
 if ((new Date).getYear() > 1990) {
-    Date.prototype.getYear = function () {
-        return this.getFullYear() - 1900;
-    };
-    Date.prototype.setYear = function (year) {
-        return this.setFullYear(year);
-    }
+  Date.prototype.getYear = function() {
+    return this.getFullYear() - 1900;
+  };
+  Date.prototype.setYear = function(year) {
+    return this.setFullYear(year);
+  }
 }
 // IE7 a 标签href.replace(/.*(?=#[^\s]*$)/, '')否则会自动添加域名+href里面的内容.
 // 循环
-outerLoop: for (var i = 0; i < 5; i++) {
+outerLoop:
+  for (var i = 0; i < 5; i++) {
     if (i == 4) {
-        break outerLoop;
+      break outerLoop;
     }
-}
+  }
 
-// 继承
-function extend(destination, source) {
+  // 继承
+  function extend(destination, source) {
     for (var property in source) {
-        destination[property] = source[property];
+      destination[property] = source[property];
     }
     return destination;
-}
-function inherit(init, Parent, proto) {
+  }
+
+  function inherit(init, Parent, proto) {
     function Son() {
-        Parent.apply(this, argument); //先继承父类的特权成员
-        init.apply(this.arguments); //再执行自己的构造器
+      Parent.apply(this, argument); //先继承父类的特权成员
+      init.apply(this.arguments); //再执行自己的构造器
     }
 
     Son.prototype = Object.create(Parent.prototype, {});
@@ -1099,373 +1103,396 @@ function inherit(init, Parent, proto) {
     extend(Son.prototype, proto);
     extend(Son, Parent);
     return Son;
-}
+  }
 
-// 获取所有的子节点
-function getChildren(el) {
+  // 获取所有的子节点
+  function getChildren(el) {
     if (el.childElementCount) {
-        return [].slice.call(el.children);
+      return [].slice.call(el.children);
     }
     var ret = [];
     for (var node = el.firstChild; node; node = node.nextSibling) {
-        node.nodeType = 1 && ret.push(node);
+      node.nodeType = 1 && ret.push(node);
     }
     return ret;
-}
+  }
 
-// element.insertAdjacentHTML(position, html),在元素对应位置插入html
-// position:beforebegin
+  // element.insertAdjacentHTML(position, html),在元素对应位置插入html
+  // position:beforebegin
 
-// create 不可见的document
-// var doc = document.implementation.createHTMLDocument('Test');
+  // create 不可见的document
+  // var doc = document.implementation.createHTMLDocument('Test');
 
-// HTML5
-// <input value="data" id="data-field">
-// var textbox = document.getElementById('data-field');
-// textbox.setSelectionRange(1, 3), 选取单词
-// textbox.selectionStart,textbox.selectionEnd选取的单词的头的索引和尾的索引
+  // HTML5
+  // <input value="data" id="data-field">
+  // var textbox = document.getElementById('data-field');
+  // textbox.setSelectionRange(1, 3), 选取单词
+  // textbox.selectionStart,textbox.selectionEnd选取的单词的头的索引和尾的索引
 
-// xhr2
-var data = new FormData();
-data.append('age', 25);
-// elementFromPoint
-// 在离viewport的相对坐标以内的元素
-// IE8以下 getElementById会有bug元素的name与id会混淆
+  // xhr2
+  var data = new FormData();
+  data.append('age', 25);
+  // elementFromPoint
+  // 在离viewport的相对坐标以内的元素
+  // IE8以下 getElementById会有bug元素的name与id会混淆
 
-// document.createElement
-// IE6-8中input和iframe创建元素name属性不能够修改只能通过类似document.createElement('<input name="mike" />');
+  // document.createElement
+  // IE6-8中input和iframe创建元素name属性不能够修改只能通过类似document.createElement('<input name="mike" />');
 
-// createContextualFragment FF的私有实现与insertAdjacentHTML差不多只是允许转换为文档碎片再插入.
+  // createContextualFragment FF的私有实现与insertAdjacentHTML差不多只是允许转换为文档碎片再插入.
 
-// createRange创建一组节点
-// clearAttribures 清除元素属性
-// mergeAttributes 复制对象的属性
+  // createRange创建一组节点
+  // clearAttribures 清除元素属性
+  // mergeAttributes 复制对象的属性
 
-// iframe当在IE6,IE7的时候不能够直接用.name必须直接写在属性上面
+  // iframe当在IE6,IE7的时候不能够直接用.name必须直接写在属性上面
 
-// 动态创建iframe chrome会触发两次iframe的onload事件(当src是在创建元素之后才赋与src值)
+  // 动态创建iframe chrome会触发两次iframe的onload事件(当src是在创建元素之后才赋与src值)
 
-// document.documentMode只IE支持
+  // document.documentMode只IE支持
 
-// getComputedStyle IE9+现代浏览器
+  // getComputedStyle IE9+现代浏览器
 
-// window.exeScript IE6,7,8.window.eval IE9+标准浏览器
+  // window.exeScript IE6,7,8.window.eval IE9+标准浏览器
 
-// mediator pattern
-var mediator = (function(){
-    var subscribe = function(channel, fn){
+  // mediator pattern
+  var mediator = (function() {
+    var subscribe = function(channel, fn) {
         if (!mediator.channels[channel]) mediator.channels[channel] = [];
-        mediator.channels[channel].push({ context: this, callback: fn });
+        mediator.channels[channel].push({
+          context: this,
+          callback: fn
+        });
         return this;
-    },
+      },
 
-    publish = function(channel){
+      publish = function(channel) {
         if (!mediator.channels[channel]) return false;
         var args = Array.prototype.slice.call(arguments, 1);
         for (var i = 0, l = mediator.channels[channel].length; i < l; i++) {
-            var subscription = mediator.channels[channel][i];
-            subscription.callback.apply(subscription.context, args);
+          var subscription = mediator.channels[channel][i];
+          subscription.callback.apply(subscription.context, args);
         }
         return this;
-    };
+      };
 
     return {
-        channels: {},
-        publish: publish,
-        subscribe: subscribe,
-        installTo: function(obj){
-            obj.subscribe = subscribe;
-            obj.publish = publish;
-        }
+      channels: {},
+      publish: publish,
+      subscribe: subscribe,
+      installTo: function(obj) {
+        obj.subscribe = subscribe;
+        obj.publish = publish;
+      }
     };
 
-}());
+  }());
 
-// jQuery module pattern
-function library(module) {
-  $(function() {
-    if (module.init) {
-      module.init();
-    }
-  });
-  return module;
-}
+  // jQuery module pattern
+  function library(module) {
+    $(function() {
+      if (module.init) {
+        module.init();
+      }
+    });
+    return module;
+  }
 
-var myLibrary = library(function() {
-   return {
-     init: function() {
-       /*implementation*/
-     }
-   };
-}());
+  var myLibrary = library(function() {
+    return {
+      init: function() {
+        /*implementation*/
+      }
+    };
+  }());
 
-// 样式字符串
-cssText
+  // 样式字符串
+  cssText
 
-// tabIndex在标准浏览器下,表单元素和链接返回0，IE6-IE8返回0
+  // tabIndex在标准浏览器下,表单元素和链接返回0，IE6-IE8返回0
 
-// a 标签比如<a href="www.baidu.com">www.baidu.com</a> 链接的href属性和innerText值一样并且没有子节点就会导致$('#link').attr('href', 'www.baidu.com');的时候会改变innerText的值
+  // a 标签比如<a href="www.baidu.com">www.baidu.com</a> 链接的href属性和innerText值一样并且没有子节点就会导致$('#link').attr('href', 'www.baidu.com');的时候会改变innerText的值
 
-// IE下的pageX,pageY有出入
-// scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-// scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
-// e.pageX = e.clientX + scrollLeft,e.pageY = e.clientY + scrollTop
+  // IE下的pageX,pageY有出入
+  // scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  // scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+  // e.pageX = e.clientX + scrollLeft,e.pageY = e.clientY + scrollTop
 
-// IE5-7及全系列怪异模式下会有左面左上角2px
-if (event.pageX == null && event.clientX != null) {
+  // IE5-7及全系列怪异模式下会有左面左上角2px
+  if (event.pageX == null && event.clientX != null) {
     var doc = event.target.ownerDocument || document,
-        box = document.compatMode == 'BackCompat' ? doc.body : doc.documentElement;
+      box = document.compatMode == 'BackCompat' ? doc.body : doc.documentElement;
 
     event.pageX = event.clientX + (box && box.scrollLeft || 0) - (box && box.clientLeft || 0);
     event.pageY = event.clientY + (box && box.scrollTop || 0) - (box && box.clientTop || 0);
-}
+  }
 
-// this.select,input 为text的时候聚焦
+  // this.select,input 为text的时候聚焦
 
-//缓存cache-control优先级
-Cache-Control > max-age > Expires,Last-Modified
-max-age在Last-Modified之
+  //缓存cache-control优先级
+  Cache - Control > max - age > Expires, Last - Modified
+  max - age在Last - Modified之
 
-function sendRequest(url,callback,postData) {
-	var req = createXMLHTTPObject();
-	if (!req) return;
-	var method = (postData) ? "POST" : "GET";
-	req.open(method,url,true);
-	req.setRequestHeader('User-Agent','XMLHTTP/1.0');
-	if (postData)
-		req.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-	req.onreadystatechange = function () {
-		if (req.readyState != 4) return;
-		if (req.status != 200 && req.status != 304) {
-//			alert('HTTP error ' + req.status);
-			return;
-		}
-		callback(req);
-	}
-	if (req.readyState == 4) return;
-	req.send(postData);
-}
+  function sendRequest(url, callback, postData) {
+    var req = createXMLHTTPObject();
+    if (!req) return;
+    var method = (postData) ? "POST" : "GET";
+    req.open(method, url, true);
+    req.setRequestHeader('User-Agent', 'XMLHTTP/1.0');
+    if (postData)
+      req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    req.onreadystatechange = function() {
+      if (req.readyState != 4) return;
+      if (req.status != 200 && req.status != 304) {
+        //			alert('HTTP error ' + req.status);
+        return;
+      }
+      callback(req);
+    }
+    if (req.readyState == 4) return;
+    req.send(postData);
+  }
 
-var XMLHttpFactories = [
-	function () {return new XMLHttpRequest()},
-	function () {return new ActiveXObject("Msxml2.XMLHTTP")},
-	function () {return new ActiveXObject("Msxml3.XMLHTTP")},
-	function () {return new ActiveXObject("Microsoft.XMLHTTP")}
-];
+  var XMLHttpFactories = [
+    function() {
+      return new XMLHttpRequest()
+    },
+    function() {
+      return new ActiveXObject("Msxml2.XMLHTTP")
+    },
+    function() {
+      return new ActiveXObject("Msxml3.XMLHTTP")
+    },
+    function() {
+      return new ActiveXObject("Microsoft.XMLHTTP")
+    }
+  ];
 
-function createXMLHTTPObject() {
-	var xmlhttp = false;
-	for (var i=0;i<XMLHttpFactories.length;i++) {
-		try {
-			xmlhttp = XMLHttpFactories[i]();
-		}
-		catch (e) {
-			continue;
-		}
-		break;
-	}
-	return xmlhttp;
-}
+  function createXMLHTTPObject() {
+    var xmlhttp = false;
+    for (var i = 0; i < XMLHttpFactories.length; i++) {
+      try {
+        xmlhttp = XMLHttpFactories[i]();
+      } catch (e) {
+        continue;
+      }
+      break;
+    }
+    return xmlhttp;
+  }
 
-// 对字符串的操作
-function contains(target, it) {
+  // 对字符串的操作
+  function contains(target, it) {
     return target.indexOf(it) != -1;
-}
+  }
 
-// 判断是否以字符串开头或结尾
-function startsWith(target, str, ignorecase) {
+  // 判断是否以字符串开头或结尾
+  function startsWith(target, str, ignorecase) {
     var start_str = target.substr(0, str.length);
     return ignorecase ? start_str.toLowerCase() === str.toLowerCase() :
-        start_str === str;
-}
-function endsWith(target, str, ignorecase) {
+      start_str === str;
+  }
+
+  function endsWith(target, str, ignorecase) {
     var end_str = target.substr(target.length - str.length);
     return ignorecase ? end_str.toLowerCase() === str.toLowerCase() :
-        end_str === str;
-}
-// 重复生成字符
-function repeat(target, n) {
-    var s = target, total = '';
+      end_str === str;
+  }
+  // 重复生成字符
+  function repeat(target, n) {
+    var s = target,
+      total = '';
     while (n > 0) {
-        if (n % 2 == 1) {
-            total += s;
-        }
-        if (n == 1) break;
-        s += s;
-        n = n >> 1;
+      if (n % 2 == 1) {
+        total += s;
+      }
+      if (n == 1) break;
+      s += s;
+      n = n >> 1;
     }
     return total;
-}
-// 字符串长度包含汉字
-function byteLen(target) {
-    var byteLength = target.length, i = 0;
+  }
+  // 字符串长度包含汉字
+  function byteLen(target) {
+    var byteLength = target.length,
+      i = 0;
     for (; i < target.length; i++) {
-        if (target.charCodeAt(i) > 255) {
-            byteLength++;
-        }
+      if (target.charCodeAt(i) > 255) {
+        byteLength++;
+      }
     }
     return byteLength;
-}
-// 可设定保存的汉字的长度fix为汉字长度
-function byteLen(target, fix) {
+  }
+  // 可设定保存的汉字的长度fix为汉字长度
+  function byteLen(target, fix) {
     fix = fix ? fix : 2;
     var str = new Array(fix + 1).join('-');
     return target.replace(/[^\x00-\xff]/g, str).length;
-}
-// 截取字符
-function truncate(target, length, truncation) {
+  }
+  // 截取字符
+  function truncate(target, length, truncation) {
     length = length || 30;
     truncation = truncation == void(0) ? '...' : truncation;
     return target.length > length ?
-            target.slice(0, length - truncation.length) + truncation : String(target);
-}
-// pad数字补0或者其它比如日期
-function pad(target, n, filling, right, radix) {
+      target.slice(0, length - truncation.length) + truncation : String(target);
+  }
+  // pad数字补0或者其它比如日期
+  function pad(target, n, filling, right, radix) {
     var num = target.toString(radix || 10);
     filling = filling || '0';
     while (num.length < n) {
-        if (!right) {
-            num = filling + num;
-        } else {
-            num += filling;
-        }
-    }
-    return num;
-}
-
-// 简单的format
-// example: var a = format('Result is #{0} #{1}', 22, 23);
-function format(str, object) {
-    var array = Array.prototype.slice.call(arguments, 1);
-    return str.replace(/\\?\#{([^{}]+)\}/gm, function (match, name) {
-        if (match.charAt(0) == '\\') {
-            return match.slice(1);
-        }
-        var index = Number(name);
-        if (index >= 0) {
-            return array[index];
-        }
-        if (object && object[name] !== void 0) {
-            return object[name];
-        }
-        return '';
-    });
-}
-
-// quote方法在字符串两端添加双引号在内部需要转义的地方进行转义
-
-IE9以下不支持数组indexOf
-img onerror IE下Stack overflow at line: 0错误是由于onerror的图片也不存在引起的.
-onerror="this.onerror='';this.src='/Images/img/error-car.png'"来解决.
-IE7上的a href会自动加上域名. href = $(this).attr('href').replace(/.*(?=#[^\s]*$)/, ''), //strip for ie7
-关于tbodyIE8在创建table的时候ie6,7会
-
-//关于parseInt,IE9以下有bug
-parseInt("09")之类的以0开头的会转化为0必须写上进制parseInt("09", 10)
-
-function type(param) {
-​    return Object.prototype.toString.call(param).slice(8, -1);
-}
-
-// 数字填补
-function padding(number) {
-  return number < 10 ? '0' + number : '' + number;
-}
-
-// 类型判断
-function type(obj) {
-  return Object.prototype.toString.call(obj).slice(8, -1);
-}
-
-// 获取对象的构造函数名称
-function getConstructorName(obj) {
-  return obj && obj.constructor && obj.constructor.toString().match(/function\s*([^(]*)/)[1];
-}
-
-// 获取参数列表
-var args = Array.prototype.slice.apply(arguments);
-
-// 原型继承
-var clone = (function () {
-  var F = function () {};
-  return function (proto) {
-    F.prototype = proto;
-    return new F();
-  }
-})();
-
-// 获取子节点兼容低版本的IE
-function getElementChildren(node) {
-
-}
-
-// 获取指定id元素
-function $(id) {
-  return document.getElementById(id);
-}
-
-// 获取元素的样式
-function getStyle(element, cssPropertyName) {
-  var el = document.getElementById(element);
-
-  // if getComputedStyle is supported, ie8 and below is not supported
-  if (window.getComputedStyle) {
-    return window.getComputedStyle(el)[cssPropertyName];
-  } else {
-    // http://www.quirksmode.org/dom/getstyles.html ie should use lineHeight instead
-    var cssPropertyNameArr, cssCamelCaseName;
-    cssPropertyNameArr = cssPropertyName.split('-');
-    if (cssPropertyNameArr.length > 1) {
-      cssCamelCaseName = cssPropertyNameArr[0] + cssPropertyNameArr[1][0].toUpperCase() + cssPropertyNameArr[1].slice(1);
-    } else {
-      cssCamelCaseName = cssPropertyName;
-    }
-
-    return el.currentStyle[cssCamelCaseName];
-  }
-}
-
-// 获取元素下的具有指定类名的元素
-function getElementsByClassName(target, className) {
-  // if support getElementsByClassName
-  if (target.getElementsByClassName) {
-    return target.getElementsByClassName(className);
-  } else {
-    var childList = target.getElementsByTagName('*'), result = [];
-    for (var i = 0; i < childList.length; i++) {
-      var child = childList[i];
-      if (child.className.indexOf(className) > -1) {
-        result.push(child);
+      if (!right) {
+        num = filling + num;
+      } else {
+        num += filling;
       }
     }
-    return result;
+    return num;
   }
-}
 
-// 设置元素的内容firefox不支持innerText
-// ie support innerText which is a ie-specified of w3c standard textContent
-// innerText is IE's implementation of the actual W3C standard of textContent
-// textContent IE9 and above
-if (dom.innerText) {
+  // 简单的format
+  // example: var a = format('Result is #{0} #{1}', 22, 23);
+  function format(str, object) {
+    var array = Array.prototype.slice.call(arguments, 1);
+    return str.replace(/\\?\#{([^{}]+)\}/gm, function(match, name) {
+      if (match.charAt(0) == '\\') {
+        return match.slice(1);
+      }
+      var index = Number(name);
+      if (index >= 0) {
+        return array[index];
+      }
+      if (object && object[name] !== void 0) {
+        return object[name];
+      }
+      return '';
+    });
+  }
 
-} else {
-  dom.textContent
-}
-// 兼容element.dataset
-function getDataSet(dom) {
-  // if support dataset
-  if (dom.dataset) {
-    return dom.dataset;
+  // quote方法在字符串两端添加双引号在内部需要转义的地方进行转义
+
+  IE9以下不支持数组indexOf
+  img onerror IE下Stack overflow at line: 0 错误是由于onerror的图片也不存在引起的.
+  onerror = "this.onerror='';this.src='/Images/img/error-car.png'"
+  来解决.
+  IE7上的a href会自动加上域名.href = $(this).attr('href').replace(/.*(?=#[^\s]*$)/, ''), //strip for ie7
+    关于tbodyIE8在创建table的时候ie6, 7 会
+
+  //关于parseInt,IE9以下有bug
+  parseInt("09") 之类的以0开头的会转化为0必须写上进制parseInt("09", 10)
+
+  function type(param) {​
+    return Object.prototype.toString.call(param).slice(8, -1);
+  }
+
+  // 数字填补
+  function padding(number) {
+    return number < 10 ? '0' + number : '' + number;
+  }
+
+  // 类型判断
+  function type(obj) {
+    return Object.prototype.toString.call(obj).slice(8, -1);
+  }
+
+  // 获取对象的构造函数名称
+  function getConstructorName(obj) {
+    return obj && obj.constructor && obj.constructor.toString().match(/function\s*([^(]*)/)[1];
+  }
+
+  // 获取参数列表
+  var args = Array.prototype.slice.apply(arguments);
+
+  // 原型继承
+  var clone = (function() {
+    var F = function() {};
+    return function(proto) {
+      F.prototype = proto;
+      return new F();
+    }
+  })();
+
+  // 获取子节点兼容低版本的IE
+  function getElementChildren(node) {
+
+  }
+
+  // 获取指定id元素
+  function $(id) {
+    return document.getElementById(id);
+  }
+
+  // 获取元素的样式
+  function getStyle(element, cssPropertyName) {
+    var el = document.getElementById(element);
+
+    // if getComputedStyle is supported, ie8 and below is not supported
+    if (window.getComputedStyle) {
+      return window.getComputedStyle(el)[cssPropertyName];
+    } else {
+      // http://www.quirksmode.org/dom/getstyles.html ie should use lineHeight instead
+      var cssPropertyNameArr, cssCamelCaseName;
+      cssPropertyNameArr = cssPropertyName.split('-');
+      if (cssPropertyNameArr.length > 1) {
+        cssCamelCaseName = cssPropertyNameArr[0] + cssPropertyNameArr[1][0].toUpperCase() + cssPropertyNameArr[1].slice(1);
+      } else {
+        cssCamelCaseName = cssPropertyName;
+      }
+
+      return el.currentStyle[cssCamelCaseName];
+    }
+  }
+
+  // 获取元素下的具有指定类名的元素
+  function getElementsByClassName(target, className) {
+    // if support getElementsByClassName
+    if (target.getElementsByClassName) {
+      return target.getElementsByClassName(className);
+    } else {
+      var childList = target.getElementsByTagName('*'),
+        result = [];
+      for (var i = 0; i < childList.length; i++) {
+        var child = childList[i];
+        if (child.className.indexOf(className) > -1) {
+          result.push(child);
+        }
+      }
+      return result;
+    }
+  }
+
+  // 设置元素的内容firefox不支持innerText
+  // ie support innerText which is a ie-specified of w3c standard textContent
+  // innerText is IE's implementation of the actual W3C standard of textContent
+  // textContent IE9 and above
+  if (dom.innerText) {
+
   } else {
-
+    dom.textContent
   }
-}
+  // 兼容element.dataset
+  function getDataSet(dom) {
+    // if support dataset
+    if (dom.dataset) {
+      return dom.dataset;
+    } else {
 
-function setDataSet(dom) {
-  // if support dataset
-  if (dom.dataset) {
-    return dom.dataset;
-  } else {
-    // if ()
+    }
   }
-}
+
+  function setDataSet(dom) {
+    // if support dataset
+    if (dom.dataset) {
+      return dom.dataset;
+    } else {
+      // if ()
+    }
+  }
+
+  //设置过期时间
+  function setCookie(c_name, value, expiredays) {
+    var exdate = new Date()
+    exdate.setDate(exdate.getDate() + expiredays)
+    document.cookie = c_name + "=" + escape(value) +
+      ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString())
+  }

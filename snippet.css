@@ -190,7 +190,6 @@ font-family: -apple-system, "Helvetica Neue", Arial, Tahoma, "PingFang SC", "Mic
 }
 
 /*texoverflow with only one line*/
-
 .line-clamp {
   display: box;
   display: -webkit-box;
@@ -200,4 +199,19 @@ font-family: -apple-system, "Helvetica Neue", Arial, Tahoma, "PingFang SC", "Mic
   -webkit-line-clamp: 1;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+/*
+css hover 图片放大
+ */
+.img-scale {
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+.img-scale:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
 }
