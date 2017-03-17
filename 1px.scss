@@ -1,0 +1,142 @@
+.box-1px {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 20px;
+  height: 60px;
+}
+.box-1px-top:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  border-top: 1px solid #000;
+  height: 1px;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+  -ms-transform: scaleY(0.5);
+  -o-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.box-1px-bottom:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 1px solid #000;
+  height: 1px;
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+  -ms-transform: scaleY(0.5);
+  -o-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.box-1px-left:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  border-left: 1px solid #000;
+  width: 1px;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleX(0.5);
+  -ms-transform: scaleX(0.5);
+  -o-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+.box-1px-right:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  border-right: 1px solid #000;
+  width: 1px;
+  -webkit-transform-origin: 100% 0;
+  -moz-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  -o-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: scaleX(0.5);
+  -ms-transform: scaleX(0.5);
+  -o-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+/**
+ * retina 1px
+ */
+.border-1px:before {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-right: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+/**
+ * retina 1px support radius
+ * .border-top, .border-bottom, .border-left, .border-right, .border-all for any type of borders
+ * and can set border-radius
+ */
+.border-1px.border-top:after {
+  border-top: 1px solid #dedfe0;
+  border-radius: 5px;
+}
+.border-1px.border-bottom:after {
+  border-bottom: 1px solid #dedfe0;
+  border-radius: 5px;
+}
+.border-1px.border-left:after {
+  border-left: 1px solid #dedfe0;
+  border-radius: 5px;
+}
+.border-1px.border-right:after {
+  border-right: 1px solid #dedfe0;
+  border-radius: 5px;
+}
+.border-1px.border-all:after {
+  border: 1px solid #dedfe0;
+  border-radius: 5px;
+}
+.border-1px {
+  position: relative;
+}
+.border-1px:after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform-origin: 0 0;
+  -webkit-transform: scale(1);
+  pointer-events: none;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .border-1px:after {
+    right: -100%;
+    bottom: -100%;
+    -webkit-transform: scale(0.5);
+  }
+}

@@ -1,6 +1,98 @@
-/*font-family*/
+/* some hacks */
+html {
+  overflow-y: scroll;
+}
+
+/* IE7 overflow hackThe problem is that overflow: hidden won't work in IE7 unless the parent container has position: relative. */
+
+/* http://stackoverflow.com/questions/9629698/css-overflow-issue-with-ie7/9629774#9629774 */
+
+.ov {
+  *position: relative;
+  overflow: auto;
+}
+
+/*IE7 min-width会有bug 用*来写*/
+
+.mWidth {
+  min-width: 100px;
+  *width: 100px;
+}
+
+/*fixed 可以加快渲染,某一列宽是通过表格的宽度来决定的*/
+
+table {
+  table-layout: fixed/auto;
+}
+
+/* scrollbar-arrow-color 滚动时滚动条的箭头的颜色IE专有 */
 
 
+/* 表格定宽超出用省略号 */
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td,
+table thead th {
+  border: 1px dashed #333;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* 解决块级元素设置为inline-block浏览器兼容ie6,7问题 */
+
+div {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/*css3 circle*/
+
+
+/*style input placeholder*/
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: pink;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: pink;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: pink;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: pink;
+}
+
+/* hide the cross in input 隐藏那个X号在输入框中 */
+
+input::-ms-clear {
+  display: none;
+}
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*vertical align*/
+
+v-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* font-family */
 /*
 System Font https://www.webkit.org/blog/3709/using-the-system-font-in-web-content/
 OSX ^10.11 & iOS ^9  San Francisco & 苹方

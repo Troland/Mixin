@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>1像素</title>
+  <style>
+    body {
+      background-color: #f8f8f8;
+    }
+    ul, li {
+      list-style: none;
+    }
+    .box {
+      width: 500px;
+      padding: 10px;
+    }
+    .house {
+      padding: 10px;
+    }
+    .border-1px.border-all:after {
+      border: 1px solid #000;
+      border-radius: 10px;
+    }
+    .border-1px {
+      position: relative;
+    }
+    .border-1px:after {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      -webkit-transform-origin: 0 0;
+      -moz-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+      -o-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scaleY(1);
+      transform: scaleY(1);
+      pointer-events: none;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+      .border-1px:after {
+        right: -100%;
+        bottom: -100%;
+        -webkit-transform: scale(0.5);
+        -ms-transform: scale(0.5);
+        -o-transform: scale(0.5);
+        transform: scale(0.5);
+      }
+    }
+    .hairlines li {
+      position: relative;
+      height: 80px;
+      /* border: 1px solid #ccc; */
+      border: none;
+      font-size: 30px;
+    }
+    .hairlines li:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 1px solid #000;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 200%;
+      height: 200%;
+      -webkit-transform: scale(0.5);
+      -ms-transform: scaleY(0.5);
+      -o-transform: scaleY(0.5);
+      transform: scale(0.5);
+      -webkit-transform-origin: 0 0;
+      -moz-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+      -o-transform-origin: 0 0;
+      transform-origin: 0 0;
+    }
+    .house {
+      height: 80px;
+      font-size: 30px;
+    }
+    .box-1px {
+      position: relative;
+      margin-bottom: 20px;
+      padding: 20px;
+      height: 60px;
+    }
+    .box-1px-top:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      border-top: 1px solid #000;
+      height: 1px;
+      -webkit-transform-origin: 0 0;
+      -moz-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+      -o-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -webkit-transform: scaleY(0.5);
+      -ms-transform: scaleY(0.5);
+      -o-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
+    .box-1px-bottom:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-bottom: 1px solid #000;
+      height: 1px;
+      -webkit-transform-origin: 0 100%;
+      -moz-transform-origin: 0 100%;
+      -ms-transform-origin: 0 100%;
+      -o-transform-origin: 0 100%;
+      transform-origin: 0 100%;
+      -webkit-transform: scaleY(0.5);
+      -ms-transform: scaleY(0.5);
+      -o-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
+    .box-1px-left:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      border-left: 1px solid #000;
+      width: 1px;
+      -webkit-transform-origin: 0 0;
+      -moz-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+      -o-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -webkit-transform: scaleX(0.5);
+      -ms-transform: scaleX(0.5);
+      -o-transform: scaleX(0.5);
+      transform: scaleX(0.5);
+    }
+    .box-1px-right:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      border-right: 1px solid #000;
+      width: 1px;
+      -webkit-transform-origin: 100% 0;
+      -moz-transform-origin: 100% 0;
+      -ms-transform-origin: 100% 0;
+      -o-transform-origin: 100% 0;
+      transform-origin: 100% 0;
+      -webkit-transform: scaleX(0.5);
+      -ms-transform: scaleX(0.5);
+      -o-transform: scaleX(0.5);
+      transform: scaleX(0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="house border-all border-1px">我真的是恶魔吗?</div>
+  </div>
+  <ul class="hairlines">
+    <li>这是什么</li>
+  </ul>
+  <div class="box-1px box-1px-top">上边框</div>
+  <div class="box-1px box-1px-bottom">下边框</div>
+  <div class="box-1px box-1px-left">左边框</div>
+  <div class="box-1px box-1px-right">右边框</div>
+</body>
+
+</html>

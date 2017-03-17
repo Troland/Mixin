@@ -1496,3 +1496,8 @@ outerLoop:
     document.cookie = c_name + "=" + escape(value) +
       ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString())
   }
+
+// 获取window对象但是在严格模式下不起作用
+var global = (function () {
+   return this;
+}());
