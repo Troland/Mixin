@@ -1,9 +1,11 @@
 /* some hacks */
+
 html {
   overflow-y: scroll;
 }
 
 /* IE7 overflow hackThe problem is that overflow: hidden won't work in IE7 unless the parent container has position: relative. */
+
 
 /* http://stackoverflow.com/questions/9629698/css-overflow-issue-with-ie7/9629774#9629774 */
 
@@ -27,6 +29,30 @@ table {
 
 /* scrollbar-arrow-color 滚动时滚动条的箭头的颜色IE专有 */
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track:hover {
+  background-color: rgba(0, 0, 0, .2);
+}
+::-webkit-scrollbar-track:active {
+  background-color: rgba(0, 0, 0, .1);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, .2);
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: rgba(0, 0, 0, .6);
+}
 
 /* 表格定宽超出用省略号 */
 
@@ -35,9 +61,7 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-
-table td,
-table thead th {
+table td, table thead th {
   border: 1px dashed #333;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -55,18 +79,31 @@ div {
 /*css3 circle*/
 
 
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
 /*style input placeholder*/
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
   color: pink;
 }
-::-moz-placeholder { /* Firefox 19+ */
+::-moz-placeholder {
+  /* Firefox 19+ */
   color: pink;
 }
-:-ms-input-placeholder { /* IE 10+ */
+:-ms-input-placeholder {
+  /* IE 10+ */
   color: pink;
 }
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder {
+  /* Firefox 18- */
   color: pink;
 }
 
@@ -93,6 +130,8 @@ v-center {
 }
 
 /* font-family */
+
+
 /*
 System Font https://www.webkit.org/blog/3709/using-the-system-font-in-web-content/
 OSX ^10.11 & iOS ^9  San Francisco & 苹方
@@ -161,6 +200,7 @@ font-family: sans-serif;
 font-family: -apple-system, "Helvetica Neue", Arial, Tahoma, "PingFang SC", "Microsoft YaHei", SimSun, sans-serif;
 
 /*css3 vertical-align center and horizonal-align center*/
+
 .flex-direction-vertical {
   display: -webkit-box;
   display: -webkit-flex;
@@ -179,7 +219,9 @@ font-family: -apple-system, "Helvetica Neue", Arial, Tahoma, "PingFang SC", "Mic
   display: flex;
   flex-direction: row;
 }
+
 /*Vertically center*/
+
 .flex-vertical-center {
   display: -webkit-box;
   display: -webkit-flex;
@@ -198,7 +240,9 @@ font-family: -apple-system, "Helvetica Neue", Arial, Tahoma, "PingFang SC", "Mic
   justify-content: center;
   /* IE 11+,Firefox 22+,Chrome 29+,Opera 12.1*/
 }
+
 /*Horizontally center*/
+
 .flex-horizonal-center {
   display: -webkit-box;
   display: -webkit-flex;
@@ -275,6 +319,7 @@ font-family: -apple-system, "Helvetica Neue", Arial, Tahoma, "PingFang SC", "Mic
 }
 
 /*texoverflow*/
+
 .ellipsis {
   text-overflow: ellipsis;
   overflow: hidden;
@@ -282,6 +327,7 @@ font-family: -apple-system, "Helvetica Neue", Arial, Tahoma, "PingFang SC", "Mic
 }
 
 /*texoverflow with only one line*/
+
 .line-clamp {
   display: box;
   display: -webkit-box;
@@ -296,6 +342,7 @@ font-family: -apple-system, "Helvetica Neue", Arial, Tahoma, "PingFang SC", "Mic
 /*
 css hover 图片放大
  */
+
 .img-scale {
   -webkit-transition: .3s;
   -o-transition: .3s;
@@ -306,4 +353,54 @@ css hover 图片放大
   -ms-transform: scale(1.2);
   -o-transform: scale(1.2);
   transform: scale(1.2);
+}
+
+/*
+三角
+ */
+
+.left-triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  border-width: 6px;
+  border-right-color: #f00;
+}
+.top-triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  border-width: 6px;
+  border-bottom-color: #f00;
+}
+.right-triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  border-width: 6px;
+  border-left-color: #f00;
+}
+.bottom-triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  border-width: 6px;
+  border-top-color: #f00;
+}
+
+/*
+select中文字对齐
+ */
+/*
+右对齐,option要写为ltr是因为当有括号的时候需要这个ltr不然括号会显示有问题,反之亦然
+ */
+select {
+  direction: rtl;
+}
+option {
+  direction: ltr;
 }
