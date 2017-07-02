@@ -106,6 +106,16 @@
     .grid-b {
       background-color: #00f;
     }
+
+    .row {
+      overflow: hidden;
+      margin-left: -10px;
+    }
+    .row .col-30 {
+      float: left;
+      margin-left: 10px;
+      width: 29.333333333333332%;
+    }
   </style>
 </head>
 <body>
@@ -130,6 +140,10 @@
       </div>
     </div>
     <div class="grid-b">尾部</div>
+  </div>
+  <!-- make grid -->
+  <div class="row">
+    <div class="col-30 col-item1">第一项</div><div class="col-30 col-item2">第二项</div><div class="col-30 col-item3">第三项</div>
   </div>
 </body>
 </html>
