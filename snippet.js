@@ -27,6 +27,12 @@ var topPos = (typeof window.screenTop = "number")
 var pageWidth = window.innerWidth || document.documentElement.clientWidth,
   pageHeight = window.innerHeight || document.documentElement.clientHeight;
 
+// 获取视窗宽度这个是虚拟的像素不是实际的设备像素
+window.document.documentElement.getBoundingClientRect().width
+
+// 获取手机的设备宽度
+var width = screen.width;
+
 // 这个兼容所有
 // pageWidth = document.documentElement.clientWidth
 //
@@ -1834,3 +1840,547 @@ $.post('/create_binary_file.php', postData, function(retData) {
   $("body").append("<iframe src='" + retData.url + "' style='display: none;' ></iframe>");
 });
 // via form
+
+// 获得屏幕的dpr
+window.devicePixelRatio
+/*
+它的 Thunk 函数含义有所不同
+在 JavaScript 语言中，Thunk 函数替换的不是表达式，而是多参数函数，将其替换成一个只接受回调函数作为参数的单参数函数
+*/
+// ES5版本
+var Thunk = function(fn) {
+  return function() {
+    var args = Array.prototype.slice.call(arguments);
+    return function(callback) {
+      args.push(callback);
+      return fn.apply(this, args);
+    }
+  };
+};
+
+// ES6版本
+const Thunk = function(fn) {
+  return function(...args) {
+    return function(callback) {
+      return fn.call(this, ...args, callback);
+    }
+  };
+};
+// Example
+var readFileThunk = Thunk(fs.readFile);
+readFileThunk(fileA)(callback);
+
+// 异步加载图片
+function loadImageAsync(url) {
+  return new Promise(function(resolve, reject) {
+    var image = new Image()
+
+    image.onload = function() {
+      resolve(image)
+    }
+
+    image.onerror = function() {
+      reject(new Error('Could not load image at ' + url))
+    }
+
+    image.src = url
+  })
+}
+
+// getJSON用法
+var getJSON = function(url) {
+  var promise = new Promise(function(resolve, reject) {
+    var client = new XMLHttpRequest();
+    client.open("GET", url);
+    client.onreadystatechange = handler;
+    client.responseType = "json";
+    client.setRequestHeader("Accept", "application/json");
+    client.send();
+
+    function handler() {
+      if (this.readyState !== 4) {
+        return;
+      }
+      if (this.status === 200) {
+        resolve(this.response);
+      } else {
+        reject(new Error(this.statusText));
+      }
+    };
+  });
+
+  return promise;
+};
+
+// 用法
+getJSON("/posts.json").then(function(json) {
+  console.log('Contents: ' + json);
+}, function(error) {
+  console.error('出错了', error);
+});
+
+// Proxy
+function selfish(target) {
+  const cache = new WeakMap();
+  const handler = {
+    get(target, key) {
+      const value = Reflect.get(target, key);
+      if (typeof value !== 'function') {
+        return value;
+      }
+      if (!cache.has(value)) {
+        cache.set(value, value.bind(target));
+      }
+      return cache.get(value);
+    }
+  };
+  const proxy = new Proxy(target, handler);
+  return proxy;
+}
+
+// example
+// const logger = selfish(new Logger()); Logger为一个类为解决
+// class Logger {
+//   printName(name = 'there') {
+//     this.print(`Hello ${name}`);
+//   }
+//
+//   print(text) {
+//     console.log(text);
+//   }
+// }
+//
+// const logger = new Logger();
+// const { printName } = logger;
+// printName(); // TypeError: Cannot read property 'print' of undefined
+// 类继承
+Object.setPrototypeOf = function(obj, proto) {
+  obj.__proto__ = proto;
+  return obj;
+}
+
+// 将多个类的接口“混入”（mix in）另一个类
+function mix(...mixins) {
+  class Mix {}
+
+  for (let mixin of mixins) {
+    copyProperties(Mix, mixin);
+    copyProperties(Mix.prototype, mixin.prototype);
+  }
+
+  return Mix;
+}
+function copyProperties(target, source) {
+  for (let key of Reflect.ownKeys(source)) {
+    if (key !== "constructor" && key !== "prototype" && key !== "name") {
+      let desc = Object.getOwnPropertyDescriptor(source, key);
+      Object.defineProperty(target, key, desc);
+    }
+  }
+}
+
+// example:
+// class DistributedEdit extends mix(Loggable, Serializable) {
+//   // ...
+// }
+
+function co(gen) {
+  var it = gen();
+  var ret = it.next();
+  if (!ret.done) {
+    ret.value.then(function(res) {
+      it.next(res);
+    });
+  }
+}
+
+// set header before ajax call
+$(document).ajaxSend(function(event, request, settings) {
+  var token = localStorage.getItem('token');
+  // detect if token exists
+  if (token) {
+    request.setRequestHeader('Authorization', 'Bearer ' + token);
+  }
+});
+
+// ES6将对象本身及对象的属性都冻结
+var constantize = (obj) => {
+  Object.freeze(obj);
+  Object.keys(obj).forEach( (key, i) => {
+    if ( typeof obj[key] === 'object' ) {
+      constantize( obj[key] );
+    }
+  });
+};
+
+// 获取顶层对象的方法
+// 方法一
+(typeof window !== 'undefined'
+   ? window
+   : (typeof process === 'object' &&
+      typeof require === 'function' &&
+      typeof global === 'object')
+     ? global
+     : this);
+
+// 方法二
+var getGlobal = function () {
+  if (typeof self !== 'undefined') { return self; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  throw new Error('unable to locate global object');
+};
+
+// 正确识别4字节UTF-16字符
+// 比如
+// var s = '𠮷a'
+for (let ch of s) {
+  console.log(ch.codePointAt(0).toString(16));
+}
+// 20bb7
+// 61
+
+// 判断一个字符是否是四字节
+function is32Bit(c) {
+  return c.codePointAt(0) > 0xFFFF;
+}
+
+// 由码点返回对应字符
+String.fromCharCode(87)
+
+// 字符返回相应码点
+var s = 'ab';s.charCodeAt(0)
+
+// 识别字符大于0xFFFF
+String.fromCodePoint(0x20BB7) // "吉"
+
+// 取出字符对应的码点
+var s = '𠮷a';
+for (let ch of s) {
+  console.log(ch.codePointAt(0).toString(16));
+}
+// 20bb7
+// 61
+
+// 返回字符串给定位置的字符
+var s = 'nick';
+s.charAt(0)
+
+// ES6
+
+// ES6扩展
+const TOKEN_Y = /\s*(\+|[0-9]+)\s*/y;
+const TOKEN_G  = /\s*(\+|[0-9]+)\s*/g;
+
+tokenize(TOKEN_Y, '3 + 4')
+// [ '3', '+', '4' ]
+tokenize(TOKEN_G, '3 + 4')
+// [ '3', '+', '4' ]
+
+function tokenize(TOKEN_REGEX, str) {
+  let result = [];
+  let match;
+  while (match = TOKEN_REGEX.exec(str)) {
+    result.push(match[1]);
+  }
+  return result;
+}
+
+
+// 匹配各种文字的所有字母，等同于Unicode版的\w
+[\p{Alphabetic}\p{Mark}\p{Decimal_Number}\p{Connector_Punctuation}\p{Join_Control}]
+
+// 匹配各种文字的所有非字母的字符，等同于Unicode版的\W
+[^\p{Alphabetic}\p{Mark}\p{Decimal_Number}\p{Connector_Punctuation}\p{Join_Control}]
+
+// 匹配所有的箭头字符
+const regexArrows = /^\p{Block=Arrows}+$/u;
+regexArrows.test('←↑→↓↔↕↖↗↘↙⇏⇐⇑⇒⇓⇔⇕⇖⇗⇘⇙⇧⇩') // true
+
+// 误判检查函数
+function withinErrorMargin (left, right) {
+  return Math.abs(left - right) < Number.EPSILON;
+}
+withinErrorMargin(0.1 + 0.2, 0.3)
+// true
+withinErrorMargin(0.2 + 0.2, 0.3)
+// false
+
+// 计算数值，参与计算的值也得进行判断是否在那个值的范围内
+function trusty (left, right, result) {
+  if (
+    Number.isSafeInteger(left) &&
+    Number.isSafeInteger(right) &&
+    Number.isSafeInteger(result)
+  ) {
+    return result;
+  }
+  throw new RangeError('Operation cannot be trusted!');
+}
+
+trusty(9007199254740993, 990, 9007199254740993 - 990)
+// RangeError: Operation cannot be trusted!
+trusty(1, 2, 3)
+
+// 避免由于大于\uFFFF而导致字符串长度计算bug
+function countSymbols(string) {
+  return Array.from(string).length;
+}
+
+// 返回字符串长度即使有32位Unicode字符也不会错
+function length(str) {
+  return [...str].length;
+}
+
+function trampoline(f) {
+  while (f && f instanceof Function) {
+    f = f();
+  }
+  return f;
+}
+
+// 没保持继承链
+function clone(origin) {
+  return Object.assign({}, origin);
+}
+
+// 保持继承链
+function clone(origin) {
+  let originProto = Object.getPrototypeOf(origin);
+  return Object.assign(Object.create(originProto), origin);
+}
+
+// merge
+const merge =
+  (target, ...sources) => Object.assign(target, ...sources);
+
+// merge return new object
+const merge =
+  (...sources) => Object.assign({}, ...sources);
+
+// 自身实现Object.entries()
+// Generator函数的版本
+function* entries(obj) {
+  for (let key of Object.keys(obj)) {
+    yield [key, obj[key]];
+  }
+}
+
+// 非Generator函数的版本
+function entries(obj) {
+  let arr = [];
+  for (let key of Object.keys(obj)) {
+    arr.push([key, obj[key]]);
+  }
+  return arr;
+}
+
+// getOwnPropertyDescriptors polyfill
+function getOwnPropertyDescriptors(obj) {
+  const result = {};
+  for (let key of Reflect.ownKeys(obj)) {
+    result[key] = Object.getOwnPropertyDescriptor(obj, key);
+  }
+  return result;
+}
+// 合并对象
+const shallowMerge = (target, source) => Object.defineProperties(
+  target,
+  Object.getOwnPropertyDescriptors(source)
+);
+
+// 克隆对象
+const clone = Object.create(Object.getPrototypeOf(obj),
+  Object.getOwnPropertyDescriptors(obj));
+
+// 或者
+
+const shallowClone = (obj) => Object.create(
+  Object.getPrototypeOf(obj),
+  Object.getOwnPropertyDescriptors(obj)
+);
+// 继承
+const obj = Object.create(
+  prot,
+  Object.getOwnPropertyDescriptors({
+    foo: 123,
+  })
+);
+
+// Mixin模式
+let mix = (object) => ({
+  with: (...mixins) => mixins.reduce(
+    (c, mixin) => Object.create(
+      c, Object.getOwnPropertyDescriptors(mixin)
+    ), object)
+});
+
+// multiple mixins example
+let a = {a: 'a'};
+let b = {b: 'b'};
+let c = {c: 'c'};
+let d = mix(c).with(a, b);
+
+d.c // "c"
+d.b // "b"
+d.a // "a"
+
+// 去重
+function dedupe(array) {
+  return Array.from(new Set(array));
+}
+dedupe([1, 1, 2, 3]) // [1, 2, 3]
+
+// map->obj
+function strMapToObj(strMap) {
+  let obj = Object.create(null);
+  for (let [k,v] of strMap) {
+    obj[k] = v;
+  }
+  return obj;
+}
+
+const myMap = new Map()
+  .set('yes', true)
+  .set('no', false);
+strMapToObj(myMap)
+// { yes: true, no: false }
+
+// obj->Map
+function objToStrMap(obj) {
+  let strMap = new Map();
+  for (let k of Object.keys(obj)) {
+    strMap.set(k, obj[k]);
+  }
+  return strMap;
+}
+
+objToStrMap({yes: true, no: false})
+// Map {"yes" => true, "no" => false}
+//
+// Map->JSON
+function strMapToJson(strMap) {
+  return JSON.stringify(strMapToObj(strMap));
+}
+
+let myMap = new Map().set('yes', true).set('no', false);
+strMapToJson(myMap)
+function mapToArrayJson(map) {
+  return JSON.stringify([...map]);
+}
+
+let myMap = new Map().set(true, 7).set({foo: 3}, ['abc']);
+mapToArrayJson(myMap)
+// '[[true,7],[{"foo":3},["abc"]]]'
+
+// JSON->Map
+// '{"yes":true,"no":false}'
+function jsonToStrMap(jsonStr) {
+  return objToStrMap(JSON.parse(jsonStr));
+}
+jsonToStrMap('{"yes": true, "no": false}')
+// Map {'yes' => true, 'no' => false}
+
+function jsonToMap(jsonStr) {
+  return new Map(JSON.parse(jsonStr));
+}
+jsonToMap('[[true,7],[{"foo":3},["abc"]]]')
+// Map {true => 7, Object {foo: 3} => ['abc']}
+//
+// pipe链式操作
+var pipe = (function () {
+  return function (value) {
+    var funcStack = [];
+    var oproxy = new Proxy({} , {
+      get : function (pipeObject, fnName) {
+        if (fnName === 'get') {
+          return funcStack.reduce(function (val, fn) {
+            return fn(val);
+          },value);
+        }
+        funcStack.push(window[fnName]);
+        return oproxy;
+      }
+    });
+
+    return oproxy;
+  }
+}());
+
+var double = n => n * 2;
+var pow    = n => n * n;
+var reverseInt = n => n.toString().split("").reverse().join("") | 0;
+
+pipe(3).double.pow.reverseInt.get; // 63
+
+// 生成dom
+const dom = new Proxy({}, {
+  get(target, property) {
+    return function(attrs = {}, ...children) {
+      const el = document.createElement(property);
+      for (let prop of Object.keys(attrs)) {
+        el.setAttribute(prop, attrs[prop]);
+      }
+      for (let child of children) {
+        if (typeof child === 'string') {
+          child = document.createTextNode(child);
+        }
+        el.appendChild(child);
+      }
+      return el;
+    }
+  }
+});
+
+const el = dom.div({},
+  'Hello, my name is ',
+  dom.a({href: '//example.com'}, 'Mark'),
+  '. I like:',
+  dom.ul({},
+    dom.li({}, 'The web'),
+    dom.li({}, 'Food'),
+    dom.li({}, '…actually that\'s it')
+  )
+);
+
+document.body.appendChild(el);
+
+// 私有属性不被访问
+var handler = {
+  get (target, key) {
+    invariant(key, 'get');
+    return target[key];
+  },
+  set (target, key, value) {
+    invariant(key, 'set');
+    target[key] = value;
+    return true;
+  }
+};
+function invariant (key, action) {
+  if (key[0] === '_') {
+    throw new Error(`Invalid attempt to ${action} private "${key}" property`);
+  }
+}
+var target = {};
+var proxy = new Proxy(target, handler);
+proxy._prop
+// Error: Invalid attempt to get private "_prop" property
+proxy._prop = 'c'
+// Error: Invalid attempt to set private "_prop" property
+
+// proxy 实现web服务
+function createWebService(baseUrl) {
+  return new Proxy({}, {
+    get(target, propKey, receiver) {
+      return () => httpGet(baseUrl+'/' + propKey);
+    }
+  });
+}
+
+// mixins.js
+export function mixins(...list) {
+  return function (target) {
+    Object.assign(target.prototype, ...list)
+  }
+}

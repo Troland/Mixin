@@ -39,3 +39,33 @@ function bubbleSort(array) {
       binarySearch(arr, center, end, dst);
   }
 }
+
+
+// 将递归执行转为循环执行
+function trampoline(f) {
+  while (f && f instanceof Function) {
+    f = f();
+  }
+  return f;
+}
+// problem
+// 未和
+function sum(x, y) {
+  if (y > 0) {
+    return sum(x + 1, y - 1);
+  } else {
+    return x;
+  }
+}
+
+sum(1, 100000)
+// Uncaught RangeError: Maximum call stack size exceeded(…)
+// 改写
+function sum(x, y) {
+  if (y > 0) {
+    return sum.bind(null, x + 1, y - 1);
+  } else {
+    return x;
+  }
+}
+trampoline(sum(1, 100000))
