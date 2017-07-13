@@ -417,3 +417,10 @@ option {
 .clearfix {
   zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
+
+/*扇形 这个是1/4个圆*/
+.sector {
+  border-radius: 100px 0 0;
+  width: 100px;
+  height: 100px;
+}

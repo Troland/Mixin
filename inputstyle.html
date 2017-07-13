@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Input样式</title>
+  <link rel="stylesheet" href="dev/reset.css">
+  <style>
+    html {
+      font-size: 20px;
+    }
+    /**
+     * 移动端input一般width:100%,height随便写input2即是
+     * input2也可以写成定高
+     * 若想要光标小点就用padding吧，这样光标就不会占据整个输入框
+     * 一般就是写上那个line-height加上那个font-size,line-height的高度即为整个输入框的高度然后再加上padding即为
+     * 整个input框的高度,再画边框线即可
+     * 尽量不要在input上设置高度否则可能会有bug
+     * 一般设置line-height1.375或者写成像素稍微比那个字体多一点即可,然后再写padding
+     * 可以写box-sizing: border-box
+     */
+    .input2 {
+
+    }
+    .input1 {
+      width: 100px;
+      line-height: 1.8;
+      font-size: 18px;
+      box-sizing: border-box;
+      padding: 5px;
+      border: 1px solid #f00;
+    }
+    .input-w {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+    }
+    .input-con {
+      flex: 1;
+    }
+    label {
+      display: inline-block;
+      width: 100px;
+    }
+    .input2 {
+      width: 100%;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    p {
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="icon-add-2.png" alt="">
+  <div>
+    <h2>input style1</h2>
+    <input type="text" class="input1">
+  </div>
+  <div>
+    <h2>input style2</h2>
+    <div class="input-w">
+      <label for="">电话</label>
+      <div class="input-con">
+        <input type="text" class="input2">
+      </div>
+    </div>
+  </div>
+  <p>unde laboriosam, ducimus, iure. Dolore eveniet exercitationem</p>
+</body>
+
+</html>
