@@ -348,3 +348,63 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
     transform: scaleY(0.5);
   }
 }
+@mixin setBottomLine($c: #C7C7C7) {
+  & {
+    position: relative;
+  }
+
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid $c;
+  }
+
+  [data-dpr="1"] &:before {
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+  }
+}
+@mixin setLeftLine($c: #C7C7C7) {
+  & {
+    position: relative;
+  }
+
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid $c;
+  }
+
+  [data-dpr="1"] &:before {
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+  }
+}
+@mixin setRightLine($c: #C7C7C7) {
+  & {
+    position: relative;
+  }
+
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid $c;
+  }
+
+  [data-dpr="1"] &:before {
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+  }
+}

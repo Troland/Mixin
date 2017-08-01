@@ -183,8 +183,7 @@ getContains() {
 }
 
 // 获得元素的innerText
-function
-getInnerText(element) {
+function getInnerText(element) {
   return (typeofelement.textContent == 'string')
     ? element.textContent
     : element.innerText;
@@ -524,8 +523,7 @@ getByClass(oParent, sClass) {
 
 // detect array
 
-function
-isArray(value) {
+function isArray(value) {
   if (typeofArray.isArray === "function") {
     return
     Array.isArray(value);
@@ -1164,8 +1162,7 @@ trim(str) {
 
 // window.open
 
-function
-openUrl(url) {
+function openUrl(url) {
   var f = document.createElement("form");
   f.setAttribute("action", url);
   f.setAttribute("method", 'get');
@@ -1214,8 +1211,7 @@ outerLoop : for (vari = 0; i < 5; i++) {
 }
 
 // 继承
-function
-extend(destination, source) {
+function extend(destination, source) {
   for (varproperty in source) {
     destination[property] = source[property];
   }
@@ -1223,8 +1219,7 @@ extend(destination, source) {
   destination;
 }
 
-function
-inherit(init, Parent, proto) {
+function inherit(init, Parent, proto) {
   function
   Son() {
     Parent.apply(this, argument); //先继承父类的特权成员
@@ -1242,8 +1237,7 @@ inherit(init, Parent, proto) {
 }
 
 // 获取所有的子节点
-function
-getChildren(el) {
+function getChildren(el) {
   if (el.childElementCount) {
     return [].slice.call(el.children);
   }
@@ -1563,9 +1557,9 @@ onerror IE下Stack overflow at line : 0 错误是由于onerror的图片也不存
 
 //关于parseInt,IE9以下有bug
 parseInt("09")之类的以0开头的会转化为0必须写上进制parseInt("09", 10)function
+
 type(param) {
-  ​ return
-  Object.prototype.toString.call(param).slice(8, -1);
+  ​ return Object.prototype.toString.call(param).slice(8, -1);
 }
 
 // 数字填补
@@ -2384,3 +2378,36 @@ export function mixins(...list) {
     Object.assign(target.prototype, ...list)
   }
 }
+
+// 银行家算法处理小数位数
+// 四舍六入五考虑，五后非零就进一，五后为零看奇偶，五前为偶应舍去，五前为奇要进一
+function evenRound(num, decimalPlaces) {
+  var d = decimalPlaces || 0;
+  var m = Math.pow(10, d);
+  var n = +(d ? num * m : num).toFixed(8); // Avoid rounding errors
+  var i = Math.floor(n), f = n - i;
+  var e = 1e-8; // Allow for rounding errors in f
+  var r = (f > 0.5 - e && f < 0.5 + e) ?
+              ((i % 2 == 0) ? i : i + 1) : Math.round(n);
+  return d ? r / m : r;
+}
+
+// 跨域ajax请求传递cookie添加xhrFields: { withCredentials: true }
+$.ajax({
+  url: a_cross_domain_url,
+  xhrFields: {
+    withCredentials: true
+  }
+});
+
+$(document).ajaxSend(function(event, request, settings) {
+  var token = localStorage.getItem('token');
+  request.setRequestHeader('Authorization', 'Bearer 1234');
+  // detect if token exists
+  if (token) {
+
+  }
+
+  console.log(settings)
+  settings.xhrFields = true
+})

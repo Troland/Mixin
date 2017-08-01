@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>form</title>
+</head>
+
+<body>
+  <form id="js_signinForm" class="login-form" autocomplete="off">
+    <input type="hidden" name="ip" value="192.168.1.155">
+    <input type="hidden" name="address" value="厦门市思明区软件园二期望海路55号303">
+    <div class="row">
+      <label class="icon-user" for="js_uinput"></label>
+      <i class="v-spliter"></i>
+      <input type="text" class="u-input" id="js_uinput" name="login_code">
+    </div>
+    <div class="row">
+      <label class="icon-pass" for="js_passInput"></label>
+      <i class="v-spliter"></i>
+      <input type="password" name="password" class="pass-input" id="js_passInput">
+    </div>
+    <div class="row-spec clearfix">
+      <input type="text" class="v-code" id="js_codeInput">
+      <div class="verify-img" id="js_vCode"></div>
+      <a href="forgot-pass.html" target="_blank" class="for-pass">忘记密码</a>
+    </div>
+    <div class="row">
+      <button type="submit" class="btn-login" id="js_login">登 录</button>
+    </div>
+  </form>
+</body>
+
+</html>
+<script>
+  $('#js_signinForm').on('submit', function() {
+    var login_code = page.$userInput.val(),
+      password = page.$passInput.val();
+
+    // validate verification code
+    if (!$.idcode.validateCode()) {
+      alert('验证码出错!');
+      return false;
+    }
+
+    self.$loginBtn.text('登陆中...');
+    if (self.$loginBtn.hasClass('loading-status')) return;
+    self.$loginBtn.toggleClass('loding-status', true);
+    $.post('http://occtest1.iwop.cn/biz/user/login?' + $('#js_signinForm').serialize()).done(function(res) {
+      if (res.Code !== '0') {
+        alert('登陆失败');
+        return false;
+      }
+      var account = JSON.parse(res.Result);
+      // write cookie
+      $.cookie('user_id', account.userId);
+      $.cookie('user_name', account.userName);
+      $.cookie('roleType', account.roleType.code);
+      $.cookie('is_login', true);
+      window.location.replace('home.html');
+    }).always(function() {
+      self.$loginBtn.text('登陆');
+      self.$loginBtn.removeClass('loading-status');
+    });
+    return false;
+  });
+</script>

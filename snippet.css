@@ -424,3 +424,8 @@ option {
   width: 100px;
   height: 100px;
 }
+
+/*not first-child*/
+div ul:not(:first-child) {
+
+}

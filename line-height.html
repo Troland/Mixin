@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>行高</title>
+  <style>
+    /*请注意看那个只需要设置line-height即可以垂直居中内联元素*/
+    /*只在行元素内写行高就可以垂直居中里面的文字不过不可以换行*/
+    p {
+      /*background-color: #f00;*/
+      line-height: 200px;
+    }
+    .single-line {
+
+    }
+    .a {
+      font-size: 60px;
+      padding: 10px;
+      background-color: green;
+    }
+    .single-line {
+      line-height: 30px;
+      border: 1px dashed #cccccc;
+      padding-left: 5px;
+    }
+    .mul-line {
+      border: 1px dashed #cccccc;
+      font-size: 0;
+    }
+    .mul-line span {
+      display: inline-block;
+      font-size: 20px;
+      line-height: 1.4;
+      vertical-align: middle;
+    }
+    .mb10 {
+      margin-bottom: 10px;
+    }
+    .img-w {
+      background-color: green;
+      height: 150px;
+      line-height: 150px;
+    }
+    /*img 垂直居中*/
+    img {
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <h3>单行文字居中</h3>
+
+  <p class="single-line mb10">
+    这是高度为30像素的居中
+  </p>
+
+  <h3>多行文字居中</h3>
+
+  <p class="mul-line">
+    <span>这里是高度为150像素的标签内的多行文字，文字大小为12像素<br>这里是高度为150像素的标签内的多行文字，文字大小为20像素。</span>
+  </p>
+
+  <p class="img-w">
+    <img src="http://image.zhangxinxu.com/image/study/s/s128/mm3.jpg" alt="">
+  </p>
+</body>
+</html>
