@@ -429,3 +429,8 @@ option {
 div ul:not(:first-child) {
 
 }
+
+/* input[type="file"]*/
+.upload-input {
+
+}

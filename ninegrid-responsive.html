@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+    div,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .pic-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -1.5px;
+    }
+
+    .pic-list-item {
+      flex: 0 0 33%;
+      padding-top: 33%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-clip: padding-box;
+      box-sizing: border-box;
+      border: 1.5px solid transparent;
+    }
+
+    .pic-list-item:first-child:nth-last-child(4):nth-child(2),
+    .pic-list-item:first-child:nth-last-child(4)~.pic-list-item:nth-child(2) {
+      margin-right: 33%;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="pic-list">
+    <div class="pic-list-item" style="background-image: url(https://facebook.github.io/react/img/logo.svg)"></div>
+    <div class="pic-list-item" style="background-image: url(https://facebook.github.io/react/img/logo.svg)"></div>
+    <div class="pic-list-item" style="background-image: url(https://facebook.github.io/react/img/logo.svg)"></div>
+    <div class="pic-list-item" style="background-image: url(https://facebook.github.io/react/img/logo.svg)"></div>
+    <div class="pic-list-item" style="background-image: url(https://facebook.github.io/react/img/logo.svg)"></div>
+  </section>
+  <br />
+  <section class="pic-list">
+    <div class="pic-list-item" style="background-image: url(https://facebook.github.io/react/img/logo.svg)"></div>
+    <div class="pic-list-item" style="background-image: url(https://facebook.github.io/react/img/logo.svg)"></div>
+    <div class="pic-list-item" style="background-image: url(https://facebook.github.io/react/img/logo.svg)"></div>
+    <div class="pic-list-item" style="background-image: url(https://facebook.github.io/react/img/logo.svg)"></div>
+  </section>
+</body>
+
+</html>

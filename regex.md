@@ -314,3 +314,6 @@ ISO日期格式
 
 MAC Adress
 /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/
+
+图片正则表示image/开头然后以jpg,jpeg或者png结尾
+/^image\/jpg|jpeg|png|$/
