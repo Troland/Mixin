@@ -259,8 +259,7 @@ $(':target')"1"
 IE7返回undefined
 
 // 判断是否同源
-function
-isSameOrigin(el) {
+function isSameOrigin(el) {
   var ret = false;
   try
   {
@@ -995,39 +994,33 @@ var constant = (function() {
 +data + "" === data
 
 // 获得元素的在屏幕上的位置坐标绝对坐标
-function
-findPos(obj) {
+function findPos(obj) {
   var curleft = curtop = 0;
   if (obj.offsetParent) {
-    do
-    {
+    do {
       curleft += obj.offsetLeft;
       curtop += obj.offsetTop;
-    }
-    while (obj = obj.offsetParent) ;
-    }
+    } while (obj = obj.offsetParent) ;
+  }
 
   return [curleft, curtop];
 }
 
-function
-offset(node) {
+function offset(node) {
   var left = 0,
     top = 0;
   do
   {
     left += node.offsetLeft;
     top += node.offsetTop;
-  }
-  while (node = node.offsetParent)
-  ;
+  } while (node = node.offsetParent)
   return
   {
     left : left,
     top : top
-  };
-
+  }
 }
+
 // 设置一个唯一标识符
 var uuid = function() {
   return
@@ -2391,7 +2384,7 @@ function evenRound(num, decimalPlaces) {
               ((i % 2 == 0) ? i : i + 1) : Math.round(n);
   return d ? r / m : r;
 }
-
+https://stackoverflow.com/questions/3108986/gaussian-bankers-rounding-in-javascript
 // 跨域ajax请求传递cookie添加xhrFields: { withCredentials: true }
 $.ajax({
   url: a_cross_domain_url,
@@ -2411,3 +2404,59 @@ $(document).ajaxSend(function(event, request, settings) {
   console.log(settings)
   settings.xhrFields = true
 })
+
+// promise then nest callback in nodejs
+var Promise = require('bluebird')
+var login = Promise.promisify(Parse.User.logIn);
+var find = Promise.promisify(Parse.Query.find);
+return login(yourArgsHere)
+  .then(function(user) {
+    return find(user.someValue);
+  })
+  .then(function(results) {
+    var innerOutput = [];
+  });
+
+// 使用vue-resource的时候
+this.$http.get('orders/1', { params: { id: 1 } })
+  .then((response) => {
+    console.log(response)
+    return this.$http.get('comments', { params: { name: response.body.name } })
+  }, (response) => {
+
+  })
+  .then((response) => {
+    console.log(response)
+  }, (response) => {
+    console.log(response)
+  })
+
+// 滚动容器
+
+// 是否闰年
+function isLeapYear(year) {
+  //能被4整除并且不能够被100整除或者能够被400整除
+  return !(year % 400) || (!(year % 4) && !!(year % 100));
+}
+
+// 数组元素调换, 元素进行调换
+var a = [1, 2, 3];
+var temp = a[0]
+a.splice(0, 1, a[2])
+a[2] = temp;
+
+// insert元素 https://stackoverflow.com/questions/586182/how-to-insert-an-item-into-an-array-at-a-specific-index
+var arr = [];
+arr[0] = "Jani";
+arr[1] = "Hege";
+arr[2] = "Stale";
+arr[3] = "Kai Jim";
+arr[4] = "Borge";
+
+console.log(arr.join());
+arr.splice(2, 0, "Lene");
+console.log(arr.join());
+
+// output
+// Jani,Hege,Stale,Kai Jim,Borge
+// Jani,Hege,Lene,Stale,Kai Jim,Borge

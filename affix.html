@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>affix</title>
+  <style>
+    .header {
+      height: 50px;
+    }
+    .main-content {
+      overflow: hidden;
+    }
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+    /**
+     * clearfix
+     */
+    .clearfix:before,
+    .clearfix:after {
+      content: "";
+      display: table;
+    }
+    .clearfix:after {
+      clear: both;
+    }
+    .clearfix {
+      zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+    }
+    .sidebar {
+      float: left;
+      width: 200px;
+    }
+    .content {
+      position: relative;
+      float: left;
+      width: 400px;
+      height: 500px;
+      overflow: auto;
+    }
+    .navs {
+      position: fixed;
+      top: 50px;
+    }
+    .content-hd.fixed {
+      position: fixed;
+      top: 70px;
+      width: 100%;
+    }
+    body {
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">这是头部</div>
+  <div class="main-content clearfix">
+    <div class="sidebar">
+      这是侧边栏
+      <div class="navs" id="navs">
+        <ul class="nav">
+          <li>
+            <a href="#c1">这是1</a>
+          </li>
+          <li>
+            <a href="#c2">这是2</a>
+          </li>
+          <li>
+            <a href="#c3">这是3</a>
+          </li>
+          <li>
+            <a href="#c4">这是4</a>
+          </li>
+          <li>
+            <a href="#c5">这是5</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content" data-spy="scroll" data-target="#navs">
+      <!-- <div class="content-hd">这是主内容头部滚动到一定距离会fixed</div> -->
+      <h2 id="c1">c1</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis voluptas vel, magnam quidem doloribus aliquid molestias magni minima enim, dolorem error deleniti in quae distinctio pariatur dolorum fuga accusamus iste?
+      </p>
+      <h2 id="c2">c2</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error repudiandae repellendus voluptatibus sequi quam quisquam consequatur aperiam, similique, explicabo ea laudantium reprehenderit dolore cumque, dolor deserunt harum esse ab voluptatum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore sapiente tempore esse quos, doloribus, id et eveniet repellendus numquam velit voluptatum quae deleniti voluptatem voluptate totam ipsam nemo dolorem est!
+      </p>
+      <h2 id="c3">c3</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error repudiandae repellendus voluptatibus sequi quam quisquam consequatur aperiam, similique, explicabo ea laudantium reprehenderit dolore cumque, dolor deserunt harum esse ab voluptatum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore sapiente tempore esse quos, doloribus, id et eveniet repellendus numquam velit voluptatum quae deleniti voluptatem voluptate totam ipsam nemo dolorem est!
+      </p>
+      <h2 id="c4">c4</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error repudiandae repellendus voluptatibus sequi quam quisquam consequatur aperiam, similique, explicabo ea laudantium reprehenderit dolore cumque, dolor deserunt harum esse ab voluptatum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore sapiente tempore esse quos, doloribus, id et eveniet repellendus numquam velit voluptatum quae deleniti voluptatem voluptate totam ipsam nemo dolorem est!
+      </p>
+      <h2 id="c5">c5</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error repudiandae repellendus voluptatibus sequi quam quisquam consequatur aperiam, similique, explicabo ea laudantium reprehenderit dolore cumque, dolor deserunt harum esse ab voluptatum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore sapiente tempore esse quos, doloribus, id et eveniet repellendus numquam velit voluptatum quae deleniti voluptatem voluptate totam ipsam nemo dolorem est!
+      </p>
+    </div>
+  </div>
+  <script src="jquery.js"></script>
+  <script src="scrollspy.js"></script>
+  <script>
+    $(window).scroll(function () {
+      var $this = $(this),
+        scrollTop = $this.scrollTop()
+
+      $('.content-hd').toggleClass('fixed', scrollTop > 50);
+    })
+  </script>
+</body>
+</html>
