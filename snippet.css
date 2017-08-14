@@ -434,3 +434,23 @@ div ul:not(:first-child) {
 .upload-input {
 
 }
+
+/* 元素内部的margin,当指定元素的height的时候，元素内部第一个元素写margin-top的时候
+父元素得写over-flow:hidden
+*/
+.header {
+  height: 200px;
+  background-color: #f00;
+  overflow: hidden;
+}
+.header__hd {
+  margin: 0;
+  margin-top: 20px;
+}
+.nav__header {
+  background-color: #00f;
+}
+/*<div class="nav__header">这是导航顶部</div>
+<div class="header">
+  <h3 class="header__hd">这是头部</h3>
+</div>*/

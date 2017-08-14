@@ -2460,3 +2460,13 @@ console.log(arr.join());
 // output
 // Jani,Hege,Stale,Kai Jim,Borge
 // Jani,Hege,Lene,Stale,Kai Jim,Borge
+
+// 生成微信oAuth要求的nonce_str随机数
+var randomString = function(length) {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  for(var i = 0; i < length; i++) {
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return text;
+}
