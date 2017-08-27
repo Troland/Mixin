@@ -150,8 +150,7 @@ IE8中新增加的标记
 
 // 检测元素是否被包含在refNode中
 
-function
-contains(refNode, otherNode) {
+function contains(refNode, otherNode) {
   if (typeofrefNode.contains == "function" && (!client.engine.webkit || client.engine.webkit >= 522)) {
     return
     refNode.contains(otherNode);
@@ -190,8 +189,7 @@ function getInnerText(element) {
 }
 
 // 设置元素innerText
-function
-setInnerText(element, text) {
+function setInnerText(element, text) {
   if (typeofelement.textContent == 'string') {
     element.textContent = text;
   } else {
@@ -273,8 +271,7 @@ oFrame.contentDocument || oFrame.contentwindow.document;
 
 // custom date format and validate date
 // usage: isValidDate('dd-mm-yyyy', '31/11/2012')
-function
-isValidDate(value, userFormat) {
+function isValidDate(value, userFormat) {
 
   // Set default format if format is not provided
   userFormat = userFormat || 'mm/dd/yyyy';
@@ -289,8 +286,7 @@ isValidDate(value, userFormat) {
 
   // Create array from user date
   var theDate = value.split(delimiter);
-  function
-  isDate(date, format) {
+  function isDate(date, format) {
     var m,
       d,
       y,
@@ -310,8 +306,7 @@ isValidDate(value, userFormat) {
     // Check if it's a valid day of the month d <= (newDate(y, m, 0)).getDate());
   }
 
-  return
-  isDate(theDate, theFormat);
+  return isDate(theDate, theFormat);
 }
 
 // get the maxHeight of the elements
@@ -336,9 +331,7 @@ var getMaxHeight = function($elms) {
     'strong' // custom tag
 ));
 */
-function
-highlight(text, words, tag) {
-
+function highlight(text, words, tag) {
   // Default tag if no tag is provided
   tag = tag || 'span';
   var i,
@@ -996,12 +989,11 @@ var constant = (function() {
 // 获得元素的在屏幕上的位置坐标绝对坐标
 function findPos(obj) {
   var curleft = curtop = 0;
-  if (obj.offsetParent) {
-    do {
-      curleft += obj.offsetLeft;
-      curtop += obj.offsetTop;
-    } while (obj = obj.offsetParent) ;
-  }
+
+  do {
+    curleft += obj.offsetLeft;
+    curtop += obj.offsetTop;
+  } while (obj = obj.offsetParent);
 
   return [curleft, curtop];
 }
@@ -1009,15 +1001,16 @@ function findPos(obj) {
 function offset(node) {
   var left = 0,
     top = 0;
+
   do
   {
     left += node.offsetLeft;
     top += node.offsetTop;
   } while (node = node.offsetParent)
-  return
-  {
-    left : left,
-    top : top
+
+  return {
+    left: left,
+    top: top
   }
 }
 
@@ -1556,12 +1549,10 @@ type(param) {
 }
 
 // 数字填补
-function
-padding(number) {
-  return
-  number < 10
-    ? '0' + number
-    : '' + number;
+function padding(number) {
+  return number < 10
+      ? '0' + number
+      : '' + number;
 }
 
 // 类型判断
@@ -1571,8 +1562,7 @@ function type(obj) {
 }
 
 // 获取对象的构造函数名称
-function
-getConstructorName(obj) {
+function getConstructorName(obj) {
   return
   obj && obj.constructor && obj.constructor.toString().match(/function\s*([^(]*)/)[1];
 }
@@ -2384,6 +2374,10 @@ function evenRound(num, decimalPlaces) {
               ((i % 2 == 0) ? i : i + 1) : Math.round(n);
   return d ? r / m : r;
 }
+console.log( evenRound(1.5) ); // 2
+console.log( evenRound(2.5) ); // 2
+console.log( evenRound(1.535, 2) ); // 1.54
+console.log( evenRound(1.525, 2) ); // 1.52
 https://stackoverflow.com/questions/3108986/gaussian-bankers-rounding-in-javascript
 // 跨域ajax请求传递cookie添加xhrFields: { withCredentials: true }
 $.ajax({
