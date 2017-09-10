@@ -161,13 +161,13 @@ url
 
 用正则表达式限制只能输入数字
 
-    onkeyup=/value=value.replace(/[^d]/g,'') /
+    onkeyup=/value=value.replace(/[^\d]/g,'') /
     onbeforepaste=/clipboardData.setData('text',clipboardData.getData('text').replace(/[^d]/g,''))/
 
 用正则表达式限制只能输入数字和英文
 
     onkeyup=/value=value.replace(/[W]/g,'') /
-    onbeforepaste=/clipboardData.setData('text',clipboardData.getData('text').replace(/[^d]/g,''))/
+    onbeforepaste=/clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))/
 
 匹配首尾空格的正则表达式
 
@@ -214,7 +214,7 @@ url
 
  手机号码
 
-  /^((\(\d{2,3}\))|(\d{3}\-))?13\d{9}$/
+ /1[3|5|7|8|]\d{9}/
 
  匹配HTML标记
 

@@ -72,18 +72,22 @@
       background: url(icon-add-2.png) 0 0 no-repeat;
       vertical-align: middle;
     }
-
+    .icon-add2 {
+      display: inline-block;
+      margin-right: 5px;
+      width: 20px;
+      height: 20px;
+      background: url(icon-add-2.png) 0 0 no-repeat;
+    }
     .btn-h {
       display: inline-block;
       height: 50px;
       line-height: 50px;
     }
-
     .text {
       display: inline-block;
       line-height: 50px;
     }
-
     .icon-settings {
       height: 50px;
       line-height: 50px;
@@ -96,6 +100,33 @@
       line-height: 50px;
       border: 1px solid #ccc;
     }
+    .button-item {
+      position: relative;
+      margin-top: 30px;
+      width: 80px;
+      height: 80px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    .btn-l {
+      display: inline-block;
+      position: relative;
+      padding-left: 25px;
+      height: 50px;
+      line-height: 50px;
+      border: 1px solid #ccc;
+    }
+    .btn-l .icon-add {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -10px;
+    }
+    .button-t {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
   </style>
 </head>
 
@@ -105,11 +136,15 @@
   <hr>
   <a class="btn-m"><i class="icon-add"></i>按钮</a>
 
+
   <a href="" class="btn-link ie-hack">踩<i></i></a>
-
-
+  <a href="" class="btn-l"><i class="icon-add"></i>这是按钮</a>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quam corporis dignissimos provident quos cum ullam debitis sapiente repellat rerum beatae, blanditiis animi ex velit veritatis vitae. Labore, aliquid tempora.</p>
   <a href="javascript:void(0);" class="icon-group"><span class="btn-h"><i class="icon iconfont icon-settings"></i><span class="text">添加</span></span></a>
+  <div class="button-item">
+    <div class="icon-am icon-add2"></div>
+    <div class="button-t">这是文字</div>
+  </div>
 </body>
 
 </html>

@@ -2464,3 +2464,11 @@ var randomString = function(length) {
   }
   return text;
 }
+
+// 表示在数组元素index前加一个元素
+let arr = [1, 2, 3]
+arr.splice(index, 0, 10)
+
+// 复制数组这样复制的数组修改后不会影响之前的数组
+var arr1 = [1, 3, 5]
+var arr2 = arr1.slice()

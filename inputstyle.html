@@ -18,6 +18,7 @@
      * 尽量不要在input上设置高度否则可能会有bug
      * 一般设置line-height1.375或者写成像素稍微比那个字体多一点即可,然后再写padding
      * 可以写box-sizing: border-box
+     * input的vertical-align:middle是在当input元素和其它元素诸如button等在同一个div的时候input可以垂直居中
      */
     .input2 {
 
@@ -29,7 +30,9 @@
       box-sizing: border-box;
       padding: 5px;
       border: 1px solid #f00;
+      height: 50px;
     }
+
     .input-w {
       display: -webkit-flex;
       display: -moz-flex;
@@ -55,6 +58,36 @@
     p {
       font-size: 18px;
     }
+    .input3 {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-color: #fff;
+      background-image: none;
+      border-radius: 4px;
+      border: 1px solid #bfcbd9;
+      box-sizing: border-box;
+      color: #1f2d3d;
+      display: inline-block;
+      font-size: inherit;
+      height: 36px;
+      line-height: 1;
+      outline: none;
+      padding: 3px 10px;
+      transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+      width: 100%;
+    }
+    .input4 {
+      height: 30px;
+      line-height: 30px;
+      padding: 0 10px;
+      border: 1px solid #f00;
+    }
+    .btn {
+      height: 100px;
+      background-color: yellow;
+      line-height: 100px;
+    }
   </style>
 </head>
 
@@ -73,6 +106,16 @@
       </div>
     </div>
   </div>
+  <div>
+    inputStyl3
+    <div><input type="text" class="input3"> <button class="btn">这是按钮</button></div>
+  </div>
+  <div>
+    inputStyl4
+    <input type="text" class="input4">
+  </div>
+
+  <input type="text">
   <p>unde laboriosam, ducimus, iure. Dolore eveniet exercitationem</p>
 </body>
 
