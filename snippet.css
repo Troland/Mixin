@@ -242,7 +242,6 @@ font-family: -apple-system, "Helvetica Neue", Arial, Tahoma, "PingFang SC", "Mic
 }
 
 /*Horizontally center*/
-
 .flex-horizonal-center {
   display: -webkit-box;
   display: -webkit-flex;
@@ -341,6 +340,7 @@ font-family: -apple-system, "Helvetica Neue", Arial, Tahoma, "PingFang SC", "Mic
 
 /*
 css hover 图片放大
+<a><img class="img-scale" /></a>
  */
 
 .img-scale {
@@ -348,11 +348,11 @@ css hover 图片放大
   -o-transition: .3s;
   transition: .3s;
 }
-.img-scale:hover {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  transform: scale(1.2);
+a:hover .img-scale {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /*
@@ -454,3 +454,11 @@ div ul:not(:first-child) {
 <div class="header">
   <h3 class="header__hd">这是头部</h3>
 </div>*/
+
+/*不定宽高的元素水平垂直居中*/
+.v-h {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

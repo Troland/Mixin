@@ -820,7 +820,7 @@ var by = function(name, minor) {
           : 0;
       }
 
-      if (typeofa === typeof b) {
+      if (typeof a === typeof b) {
         return
         a < b
           ? -1
@@ -1341,6 +1341,13 @@ cssText
 // scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 // scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
 // e.pageX = e.clientX + scrollLeft,e.pageY = e.clientY + scrollTop
+
+// 获得文档在垂直或者水平方向上的滚动距离
+let supportPageOffset = window.pageXOffset !== undefined
+let isCSS1Compat = ((document.compatMode || "") === "CSS1Compat")
+
+let x = supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft
+let y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop
 
 // IE5-7及全系列怪异模式下会有左面左上角2px
 if (event.pageX == null && event.clientX != null) {
@@ -2472,3 +2479,7 @@ arr.splice(index, 0, 10)
 // 复制数组这样复制的数组修改后不会影响之前的数组
 var arr1 = [1, 3, 5]
 var arr2 = arr1.slice()
+
+// 复制对象数组
+let rows = [{name: 'nick'}, {name: 'mike'}]
+JSON.parse(JSON.stringify(rows))
