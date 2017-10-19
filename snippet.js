@@ -46,6 +46,13 @@ if (typeof pageWidth !== "number") {
   }
 }
 
+// 获取文档垂直或者水平滚动距离
+let supportPageOffset = window.pageXOffset !== undefined
+let isCSS1Compat = ((document.compatMode || "") === "CSS1Compat")
+
+let scrollLeft = supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft;
+let scrollTop = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+
 // 页面宽(包含滚动条和隐藏的部分)
 // offsetWidth
 var pageWidth = Math.max(document.documentElement.scrollWidth, document.documentElement.offsetWidth, document.documentElement.clientWidth, document.body.scrollWidth, document.body.offsetWidth);
@@ -986,7 +993,7 @@ var constant = (function() {
 //判断是否是数字
 +data + "" === data
 
-// 获得元素的在屏幕上的位置坐标绝对坐标
+// 获得元素的在屏幕上的位置坐标绝对坐标而不管元素是否滚动
 function findPos(obj) {
   var curleft = curtop = 0;
 
@@ -1600,14 +1607,14 @@ $(id) {
 }
 
 // 获取元素的样式
-function
-getStyle(element, cssPropertyName) {
+// 如果是IE的话currentStyle但是这个是需要驼峰写法的比如而不是font-size,fontSize
+// 用法getStyle('elementID', 'font-size')css属性
+function getStyle(element, cssPropertyName) {
   var el = document.getElementById(element);
 
   // if getComputedStyle is supported, ie8 and below is not supported
   if (window.getComputedStyle) {
-    return
-    window.getComputedStyle(el)[cssPropertyName];
+    return window.getComputedStyle(el)[cssPropertyName];
   } else {
     // http://www.quirksmode.org/dom/getstyles.html ie should use lineHeight instead
     var cssPropertyNameArr,
@@ -1619,14 +1626,12 @@ getStyle(element, cssPropertyName) {
       cssCamelCaseName = cssPropertyName;
     }
 
-    return
-    el.currentStyle[cssCamelCaseName];
+    return el.currentStyle[cssCamelCaseName];
   }
 }
 
 // 获取元素下的具有指定类名的元素
-function
-getElementsByClassName(target, className) {
+function getElementsByClassName(target, className) {
   // if support getElementsByClassName
   if (target.getElementsByClassName) {
     return
@@ -2483,3 +2488,16 @@ var arr2 = arr1.slice()
 // 复制对象数组
 let rows = [{name: 'nick'}, {name: 'mike'}]
 JSON.parse(JSON.stringify(rows))
+
+// vue-resource插件中写链式即第二个请求要等第一个请求完成再去完成的代码片段
+this.$http.post(url, params)
+  .then((response) => {
+    return response
+  }, (response) => {
+    return response
+  })
+  .then((response) => {
+
+  }, (response) => {
+
+  })

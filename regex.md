@@ -317,3 +317,19 @@ MAC Adress
 
 图片正则表示image/开头然后以jpg,jpeg或者png结尾
 /^image\/jpg|jpeg|png|$/
+
+把link中href以/开头的转换为加上域名前缀的但是必须是link
+var re = /href=\"([\/].*\.css)\"$/gi
+var reJs = /src=\"([\/].*\.js)\"$/gi 替换掉script中以/开头的脚本
+
+```
+var s = 'href="/abc/link.css"';
+var rs = s.replace(re, 'href="http://www.baidu.com$1');
+rs
+```
+
+```
+var s = 'src="/abc/link.js"';
+var rs = s.replace(re, 'src="http://www.baidu.com$1');
+rs
+```

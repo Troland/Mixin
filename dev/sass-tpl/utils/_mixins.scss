@@ -328,83 +328,267 @@ transform px to rem
 /*
 android中在flexible中的1px适配有问题，当在安卓的时候就得写这个样式
  */
-@mixin setTopLine($c: #C7C7C7) {
-  & {
-    position: relative;
-  }
+ @mixin setTopLine($c: #C7C7C7) {
+   border-top: 1PX solid $c;
 
-  &:before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 1px;
-    border-top: 1px solid $c;
-  }
+   [data-dpr="1"] & {
+     border-top: none;
+     @media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+       position: relative;
 
-  [data-dpr="1"] &:before {
-    transform-origin: 0 0;
-    transform: scaleY(0.5);
-  }
+       &:before {
+         content: " ";
+         position: absolute;
+         left: 0;
+         top: 0;
+         right: 0;
+         height: 1PX;
+         border-top: 1PX solid $c;
+         transform-origin: 0 0;
+         transform: scaleY(0.5);
+       }
+       @media (min-resolution: 3dppx), (min-resolution: 288dpi) {
+         &:before {
+           transform: scaleY(0.33);
+         }
+       }
+     }
+   }
+ }
+ @mixin setBottomLine($c: #C7C7C7) {
+   border-bottom: 1PX solid $c;
+
+   [data-dpr="1"] & {
+     border-bottom: none;
+     @media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+       position: relative;
+
+       &:before {
+         content: " ";
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         right: 0;
+         height: 1PX;
+         border-bottom: 1PX solid $c;
+         transform-origin: 0 100%;
+         transform: scaleY(0.5);
+       }
+       @media (min-resolution: 3dppx), (min-resolution: 288dpi) {
+         &:before {
+           transform: scaleY(0.33);
+         }
+       }
+     }
+   }
+ }
+
+ @mixin setLeftLine($c: #C7C7C7) {
+   border-left: 1PX solid $c;
+
+   [data-dpr="1"] & {
+     border-left: none;
+     @media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+       position: relative;
+
+       &:before {
+         content: " ";
+         position: absolute;
+         left: 0;
+         top: 0;
+         bottom: 0;
+         width: 1PX;
+         border-left: 1PX solid $c;
+         transform-origin: 0 0;
+         transform: scaleX(0.5);
+       }
+       @media (min-resolution: 3dppx), (min-resolution: 288dpi) {
+         &:before {
+           transform: scaleX(0.33);
+         }
+       }
+     }
+   }
+ }
+
+ @mixin setRightLine($c: #C7C7C7) {
+   border-right: 1PX solid $c;
+
+   [data-dpr="1"] & {
+     border-right: none;
+     @media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+       position: relative;
+
+       &:before {
+         content: " ";
+         position: absolute;
+         right: 0;
+         top: 0;
+         bottom: 0;
+         width: 1PX;
+         border-right: 1PX solid $c;
+         transform-origin: 100% 0;
+         transform: scaleX(0.5);
+       }
+       @media (min-resolution: 3dppx), (min-resolution: 288dpi) {
+         &:before {
+           transform: scaleX(0.33);
+         }
+       }
+     }
+   }
+ }
+
+ @mixin setLine($c: #C7C7C7, $radius: 0) {
+   border: 1PX solid $c;
+   border-radius: $radius;
+
+   [data-dpr="1"] & {
+     @media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+       position: relative;
+       border: none;
+       transform: translateZ(0);
+
+       &:before {
+         content: '';
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 200%;
+         height: 200%;
+         border: 1PX solid $c;
+         border-radius: $radius * 2;
+         transform-origin: 0 0;
+         transform: scale(0.5);
+         box-sizing: border-box;
+         pointer-events: none;
+         z-index: -1;
+       }
+     }
+   }
+ }
+
+ @mixin leftline-remove() {
+   border-left: 0;
+   &:before {
+     display: none !important;
+   }
+ }
+
+ @mixin rightline-remove() {
+   border-right: 0;
+   &:before {
+     display: none !important;
+   }
+ }
+
+ @mixin topline-remove() {
+   border-top: 0;
+   &:before {
+     display: none !important;
+   }
+ }
+
+ @mixin bottomline-remove() {
+   border-bottom: 0;
+   &:before {
+     display: none !important;
+   }
+ }
+
+@mixin hairline($color: #C7C7C7, $direction: left, $radius: 0) {
+
+ @if $direction != 'all' {
+   border-#{$direction}: 1PX solid $color;
+
+   [data-dpr="1"] & {
+     border-#{$direction}: none;
+     @media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+       position: relative;
+
+       &:before {
+         content: " ";
+         position: absolute;
+         border-#{$direction}: 1PX solid $color;
+         @if $direction == 'top' {
+           left: 0;
+           top: 0;
+           right: 0;
+           height: 1PX;
+           transform-origin: 0 0;
+           transform: scaleY(0.5);
+         } @else if $direction == 'right' {
+           right: 0;
+           top: 0;
+           bottom: 0;
+           width: 1PX;
+           transform-origin: 100% 0;
+           transform: scaleX(0.5);
+         } @else if $direction == 'bottom' {
+           left: 0;
+           bottom: 0;
+           right: 0;
+           height: 1PX;
+           transform-origin: 0 100%;
+           transform: scaleY(0.5);
+         } @else {
+           left: 0;
+           top: 0;
+           bottom: 0;
+           width: 1PX;
+           transform-origin: 0 0;
+           transform: scaleX(0.5);
+         }
+       }
+
+       @media (min-resolution: 3dppx), (min-resolution: 288dpi) {
+         &:before {
+           @if $direction == 'top' {
+             transform: scaleY(0.33);
+           } @else if $direction == 'right' {
+             transform: scaleX(0.33);
+           } @else if $direction == 'bottom' {
+               transform: scaleY(0.33);
+           } @else {
+             transform: scaleX(0.33);
+           }
+         }
+       }
+     }
+   }
+ } @else {
+   border: 1PX solid $color;
+   border-radius: $radius;
+
+   [data-dpr="1"] & {
+     @media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+       position: relative;
+       border: none;
+       transform: translateZ(0);
+
+       &:before {
+         content: '';
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 200%;
+         height: 200%;
+         border: 1PX solid $color;
+         border-radius: $radius * 2;
+         transform-origin: 0 0;
+         transform: scale(0.5);
+         box-sizing: border-box;
+         pointer-events: none;
+         z-index: -1;
+       }
+     }
+   }
+ }
 }
-@mixin setBottomLine($c: #C7C7C7) {
-  & {
-    position: relative;
-  }
 
-  &:before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    border-bottom: 1px solid $c;
-  }
-
-  [data-dpr="1"] &:before {
-    transform-origin: 0 0;
-    transform: scaleY(0.5);
-  }
-}
-@mixin setLeftLine($c: #C7C7C7) {
-  & {
-    position: relative;
-  }
-
-  &:before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 1px;
-    border-top: 1px solid $c;
-  }
-
-  [data-dpr="1"] &:before {
-    transform-origin: 0 0;
-    transform: scaleY(0.5);
-  }
-}
-@mixin setRightLine($c: #C7C7C7) {
-  & {
-    position: relative;
-  }
-
-  &:before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 1px;
-    border-top: 1px solid $c;
-  }
-
-  [data-dpr="1"] &:before {
-    transform-origin: 0 0;
-    transform: scaleY(0.5);
-  }
+@mixin hairline-remove($direction: left) {
+ border-#{$direction}: 0;
+ &:before {
+   display: none !important;
+ }
 }
