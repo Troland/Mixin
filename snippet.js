@@ -505,8 +505,7 @@ String.method("trim", function() {
 
 // get the nodes by className
 
-function
-getByClass(oParent, sClass) {
+function getByClass(oParent, sClass) {
   var aEle = oParent.getElementsByTagName('*');
   var aResult = [];
   var i = 0;
@@ -674,8 +673,7 @@ var chat = {
 
 // extend namespace
 
-function
-extend(destination, source) {
+function extend(destination, source) {
   var toString = Object.prototype.toString,
     objTest = toString.call({});
   for (varproperty in source) {
@@ -1571,14 +1569,12 @@ function padding(number) {
 
 // 类型判断
 function type(obj) {
-  return
-  Object.prototype.toString.call(obj).slice(8, -1);
+  return Object.prototype.toString.call(obj).slice(8, -1);
 }
 
 // 获取对象的构造函数名称
 function getConstructorName(obj) {
-  return
-  obj && obj.constructor && obj.constructor.toString().match(/function\s*([^(]*)/)[1];
+  return obj && obj.constructor && obj.constructor.toString().match(/function\s*([^(]*)/)[1];
 }
 
 // 获取参数列表
@@ -1658,8 +1654,7 @@ if (dom.innerText) {} else {
   dom.textContent
 }
 // 兼容element.dataset
-function
-getDataSet(dom) {
+function getDataSet(dom) {
   // if support dataset
   if (dom.dataset) {
     return
@@ -1667,8 +1662,7 @@ getDataSet(dom) {
   } else {}
 }
 
-function
-setDataSet(dom) {
+function setDataSet(dom) {
   // if support dataset
   if (dom.dataset) {
     return
@@ -1679,8 +1673,7 @@ setDataSet(dom) {
 }
 
 //设置过期时间
-function
-setCookie(c_name, value, expiredays) {
+function setCookie(c_name, value, expiredays) {
   var exdate = new Date()exdate.setDate(exdate.getDate() + expiredays)document.cookie = c_name + "=" + escape(value) + ((expiredays == null)
     ? ""
     : ";expires=" + exdate.toGMTString())
@@ -1698,8 +1691,7 @@ Object.extend = function(destination, source) {
     if (source.hasOwnProperty(property)) {
       destination[property] = source[property];
     }
-  return
-  destination;
+  return destination;
 };
 
 // Download files via ajax or iframe
