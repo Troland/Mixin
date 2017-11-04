@@ -60,9 +60,7 @@ var pageWidth = Math.max(document.documentElement.scrollWidth, document.document
 
 function getQueryStringArgs() {
   // 取得查询字符串并去掉开关头问号
-  var qs = (location.search.length > 0
-      ? location.search.substring(1)
-      : ""),
+  var qs = (location.search.length > 0 ? location.search.substring(1) : ""),
     // 保存数据对象
     args = {},
     items = qs.length
@@ -75,7 +73,7 @@ function getQueryStringArgs() {
     len = items.length;
 
   for (i = 0; i < len; i++) {
-    item = tems[i].split('=');
+    item = items[i].split('=');
     name = decodeURIComponent(item[0]);
     value = decodeURIComponent(item[1]);
 
@@ -445,8 +443,7 @@ embedYouku(
   {'winType=adshow&VideoIDS=XMTE3NzQ0NTky&isAutoPlay=false&isShowRelatedVideo=false'}
 );
 */
-function
-embedYouku(link, ops) {
+function embedYouku(link, ops) {
   var o = $.extend({
     width: 480,
     height: 320,
@@ -676,7 +673,7 @@ var chat = {
 function extend(destination, source) {
   var toString = Object.prototype.toString,
     objTest = toString.call({});
-  for (varproperty in source) {
+  for (var property in source) {
     if (source[property] && objTest == toString.call(source[property])) {
       destination[property] = destination[property] || {};
       extend(destination[property], source[property]);
@@ -738,12 +735,10 @@ var eventuality = function(that) {
     } else {
       registry[type] = [handler];
     }
-    return
-    this;
+    return this;
   };
 
-  return
-  that;
+  return that;
 };
 
 // reduce 传入一个callback进行相应的操作
@@ -755,8 +750,7 @@ Array.method("reduce", function(f, value) {
     value = f(this[i], value);
   }
 
-  return
-  value;
+  return value;
 });
 
 // Array.dim初始化数组的值
@@ -766,8 +760,7 @@ Array.dim = function(dimension, initial) {
   for (i = 0; i < dimension; i++) {
     a[i] = initial;
   }
-  return
-  a;
+  return a;
 }
 
 // Array.matrix初始化多维数组
@@ -784,27 +777,23 @@ Array.matrix = function(m, n, initial) {
     mat[i] = a;
   }
 
-  return
-  mat;
+  return mat;
 };
 
 // 比较数列中的字母和数字
 // 比如["a", 1, 6, 3, "d", "c"]
 m.sort(function(a, b) {
   if (a === b) {
-    return
-    0;
+    return 0;
   }
 
   if (typeofa === typeof b) {
-    return
-    a < b
+    return a < b
       ? -1
       : 1;
   }
 
-  return
-  typeof a < typeof b
+  return typeof a < typeof b
     ? -1
     : 1;
 });
@@ -1021,14 +1010,11 @@ function offset(node) {
 
 // 设置一个唯一标识符
 var uuid = function() {
-  return
-  "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
     var r = Math.random() * 16 | 0,
-      v = c == 'x'
-        ? r
-        : (r & 0x3 | 0x8);
-    return
-    v.toString(16);
+      v = c == 'x' ? r : (r & 0x3 | 0x8);
+
+    return v.toString(16);
   });
 };
 
@@ -1037,14 +1023,12 @@ fn.length
 
 //字符串内按任意位数的字符进行反转
 
-function
-flip(s, offset) {
+function flip(s, offset) {
   var len = s.length;
   offset = offset < len
     ? offset
     : (offset % len);
-  return
-  s.replace(newRegExp('^(.{' + offset + '})(.*)$'), '$2$1');
+  return s.replace(newRegExp('^(.{' + offset + '})(.*)$'), '$2$1');
 }
 
 // getAttribute 第二个参数 DOM2
@@ -1429,15 +1413,13 @@ createXMLHTTPObject() {
 }
 
 // 对字符串的操作
-function
-contains(target, it) {
+function contains(target, it) {
   return
   target.indexOf(it) != -1;
 }
 
 // 判断是否以字符串开头或结尾
-function
-startsWith(target, str, ignorecase) {
+function startsWith(target, str, ignorecase) {
   var start_str = target.substr(0, str.length);
   return
   ignorecase
@@ -1445,8 +1427,7 @@ startsWith(target, str, ignorecase) {
     : start_str === str;
 }
 
-function
-endsWith(target, str, ignorecase) {
+function endsWith(target, str, ignorecase) {
   var end_str = target.substr(target.length - str.length);
   return
   ignorecase
@@ -1583,8 +1564,7 @@ var args = Array.prototype.slice.apply(arguments);
 // 原型继承
 var clone = (function() {
   var F = function() {};
-  return
-  function(proto) {
+  return function(proto) {
     F.prototype = proto;
     return
     new F();
@@ -1592,14 +1572,11 @@ var clone = (function() {
 })();
 
 // 获取子节点兼容低版本的IE
-function
-getElementChildren(node) {}
+function getElementChildren(node) {}
 
 // 获取指定id元素
-function
-$(id) {
-  return
-  document.getElementById(id);
+function $(id) {
+  return document.getElementById(id);
 }
 
 // 获取元素的样式
@@ -1657,18 +1634,25 @@ if (dom.innerText) {} else {
 function getDataSet(dom) {
   // if support dataset
   if (dom.dataset) {
-    return
-    dom.dataset;
+    return dom.dataset;
   } else {}
 }
 
 function setDataSet(dom) {
   // if support dataset
   if (dom.dataset) {
-    return
-    dom.dataset;
+    return dom.dataset;
   } else {
     // if ()
+  }
+}
+
+// 返回元素的data-id类似这样的属性的值
+function getDomData(dom, prop) {
+  if (dom.dataset) {
+    return dom.dataset[prop]
+  } else {
+    return dom.getAttribute('data-' + prop)
   }
 }
 
@@ -2493,3 +2477,11 @@ this.$http.post(url, params)
   }, (response) => {
 
   })
+
+// 去重
+[1,2,3,1,'a',1,'a'].filter(function(ele,index,array){
+  return index===array.indexOf(ele)
+})
+[...new Set([1,2,3,1,'a',1,'a'])]
+
+获得元素上面的data信息

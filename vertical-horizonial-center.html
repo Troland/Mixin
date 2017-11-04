@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>不定宽高的元素在不定宽高的元素之中水平垂直居中</title>
+  <style>
+  .v-h {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .flex-vcenter {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    /* 水平居中*/
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-pack: center;
+    /* IE 10 */
+    /* 垂直居中 */
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-align: center;
+    /* IE 10 */
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    /* IE 11+,Firefox 22+,Chrome 29+,Opera 12.1*/
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+  }
+  .table {
+    display: table;
+    width: 100%;
+  }
+  .table__item {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .parent1 {
+    position: relative;
+  }
+  .w {
+    height: 300px;
+  }
+  </style>
+</head>
+<body>
+  <div class="w">
+    <div class="parent1">
+      <div class="v-item v-h">
+        这是元素要水平垂直居中1运用transform3d
+      </div>
+    </div>
+  </div>
+
+  <div class="flex-w flex-vcenter">
+    <div class="v-item">
+      这是元素要水平垂直居中2运用flex
+    </div>
+  </div>
+  <div class="table">
+    <div class="table__item">
+      这是元素要水平垂直居中3运用table table-cell
+    </div>
+  </div>
+</body>
+</html>
