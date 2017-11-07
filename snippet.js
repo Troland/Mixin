@@ -996,8 +996,7 @@ function offset(node) {
   var left = 0,
     top = 0;
 
-  do
-  {
+  do {
     left += node.offsetLeft;
     top += node.offsetTop;
   } while (node = node.offsetParent)
@@ -1603,6 +1602,39 @@ function getStyle(element, cssPropertyName) {
   }
 }
 
+/**
+ * getStyle 获得元素计算后的样式值
+ * (from http://stackoverflow.com/questions/2664045/how-to-get-an-html-elements-style-values-in-javascript)
+ */
+function getStyle(el, styleProp) {
+    var value, defaultView = (el.ownerDocument || document).defaultView;
+    // W3C standard way:
+    if (defaultView && defaultView.getComputedStyle) {
+        // sanitize property name to css notation
+        // (hypen separated words eg. font-Size)
+        styleProp = styleProp.replace(/([A-Z])/g, '-$1').toLowerCase();
+        return defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+    } else if (el.currentStyle) { // IE
+        // sanitize property name to camelCase
+        styleProp = styleProp.replace(/\-(\w)/g, (str, letter) => {
+            return letter.toUpperCase();
+        });
+        value = el.currentStyle[styleProp];
+        // convert other units to pixels on IE
+        if (/^\d+(em|pt|%|ex)?$/i.test(value)) {
+            return ((value) => {
+                var oldLeft = el.style.left, oldRsLeft = el.runtimeStyle.left;
+                el.runtimeStyle.left = el.currentStyle.left;
+                el.style.left = value || 0;
+                value = el.style.pixelLeft + 'px';
+                el.style.left = oldLeft;
+                el.runtimeStyle.left = oldRsLeft;
+                return value;
+            })(value);
+        }
+        return value;
+    }
+}
 // 获取元素下的具有指定类名的元素
 function getElementsByClassName(target, className) {
   // if support getElementsByClassName
@@ -2485,3 +2517,12 @@ this.$http.post(url, params)
 [...new Set([1,2,3,1,'a',1,'a'])]
 
 获得元素上面的data信息
+
+// 阻止事件冒泡兼容写法
+function doSomething(e) {
+  e = e ? e : window.event;
+	e.cancelBubble = true;
+	if (e.stopPropagation) {
+    e.stopPropagation()
+  }
+}
