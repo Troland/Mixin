@@ -164,7 +164,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      height: 700px;
+      /*height: 700px;*/
       /* top: 15%; */
       background-color: #fff;
       z-index: 10;
@@ -179,6 +179,10 @@
       right: 0;
       top: 0;
       bottom: 0;
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition-duration: 400ms;
+      transition-duration: 400ms;
       /*width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.4);
@@ -187,12 +191,15 @@
       -webkit-transition-duration: 400ms;
       transition-duration: 400ms;*/
     }
-    /*.popup-overlay_visible {
+    .popup-overlay_visible {
       opacity: 1;
       visibility: visible;
-    }*/
+    }
     .tm {
       font-size: 60px;
+    }
+    .pop-dialog__title {
+      height: 500px;
     }
   </style>
 </head>
@@ -204,12 +211,43 @@
 
     </div>
     <div class="pop__content">
-      这是弹出内容
+      <div class="pop-dialog__title">
+        这是弹出内容
+      </div>
     </div>
   </div>
   <script src="../jquery.js"></script>
   <script src="../adapter.js"></script>
   <script>
+    function getStyle(el, styleProp) {
+        var value, defaultView = (el.ownerDocument || document).defaultView;
+        // W3C standard way:
+        if (defaultView && defaultView.getComputedStyle) {
+            // sanitize property name to css notation
+            // (hypen separated words eg. font-Size)
+            styleProp = styleProp.replace(/([A-Z])/g, '-$1').toLowerCase();
+            return defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        } else if (el.currentStyle) { // IE
+            // sanitize property name to camelCase
+            styleProp = styleProp.replace(/\-(\w)/g, (str, letter) => {
+                return letter.toUpperCase();
+            });
+            value = el.currentStyle[styleProp];
+            // convert other units to pixels on IE
+            if (/^\d+(em|pt|%|ex)?$/i.test(value)) {
+                return ((value) => {
+                    var oldLeft = el.style.left, oldRsLeft = el.runtimeStyle.left;
+                    el.runtimeStyle.left = el.currentStyle.left;
+                    el.style.left = value || 0;
+                    value = el.style.pixelLeft + 'px';
+                    el.style.left = oldLeft;
+                    el.runtimeStyle.left = oldRsLeft;
+                    return value;
+                })(value);
+            }
+            return value;
+        }
+    }
     $('#J_close').on('click', function () {
       // addClass('modal-out')
       $('.pop__content').removeClass('modal-in').transitionEnd(function () {
@@ -220,6 +258,7 @@
 
     $('#J_overlay').on('click', function () {
       // addClass('modal-out')
+      $('#J_overlay').removeClass('popup-overlay_visible');
       $('.pop__content').removeClass('modal-in').transitionEnd(function () {
         $('#pop').hide()
         // $('#J_overlay').removeClass('popup-overlay_visible')
@@ -228,9 +267,13 @@
 
     $('#tm').on('click', function () {
       $('#pop').show();
-      setTimeout(function () {
-        $('.pop__content').addClass('modal-in')
-      }, 10);
+      // 只有这样才可以触发动画效果
+      getStyle($('#pop')[0], 'transform');
+      $('#J_overlay').addClass('popup-overlay_visible');
+      $('.pop__content').addClass('modal-in');
+      // setTimeout(function () {
+      //   $('.pop__content').addClass('modal-in')
+      // }, 10);
 
       // $('#J_overlay').addClass('popup-overlay_visible')
     })
