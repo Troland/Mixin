@@ -180,8 +180,7 @@ function contains(refNode, otherNode) {
   }
 }
 
-function
-getContains() {
+function getContains() {
   alert(contains(document.documentElement, document.body));
 
 }
@@ -203,8 +202,7 @@ function setInnerText(element, text) {
 }
 
 // get方法往url上加数据
-function
-addURLParam(url, name, value) {
+function addURLParam(url, name, value) {
   url += (url.indexOf("?") == -1
     ? "?"
     : "&");
@@ -224,8 +222,7 @@ image / GIF image / JPEG
 
 // http://larryzhao.com/2011/10/28/arguments-dot-callee-dot-caller-bug-in-internet-explorer-9/
 // IE9 bug
-function
-func1(flag) {
+function func1(flag) {
   if (flag) {
     alert("Caller is here!");
   } else {
@@ -233,14 +230,12 @@ func1(flag) {
   }
 }
 
-function
-func2() {
+function func2() {
   arguments.callee.caller(true);
 }
 func1(false);
 //bugfix:
-function
-func1(flag) {
+function func1(flag) {
   if (flag) {
     alert("Caller is here!");
   } else {
@@ -248,8 +243,7 @@ func1(flag) {
   }
 }
 
-function
-func2() {
+function func2() {
   var callerFunc = func2.caller; //func2.caller或者是arguments.callee.caller
   callerFunc(true);
 }
@@ -355,8 +349,7 @@ function highlight(text, words, tag) {
 }
 
 // cancel highlight text
-function
-unhighlight(text, tag) {
+function unhighlight(text, tag) {
   // Default tag if no tag is provided
   tag = tag || 'span';
   var re = new RegExp('(<' + tag + '.+?>|<\/' + tag + '>)', 'g');
@@ -461,8 +454,7 @@ makeMenu(
   ['select', 'option']
 );
 */
-function
-makeMenu(items, tags) {
+function makeMenu(items, tags) {
   tags = tags || ['ul', 'li']; // default tags
   var parent = tags[0];
   var child = tags[1];
@@ -840,8 +832,7 @@ Function.method("bind", function(that) {
   var method = this,
     slice = Array.prototype.slice,
     args = slice.apply(arguments, [1]);
-  return
-  function() {
+  return function() {
     return
     method.apply(that, args.concat(slice.apply(arguments, [0])));
   };
@@ -944,8 +935,7 @@ var constant = (function() {
       number: 1
     };
   prefix = (Math.random() + "_").slice(2);
-  return
-  {
+  return {
     set : function(name, value) {
       if (this.isDefined(name)) {
         return
@@ -996,8 +986,7 @@ function offset(node) {
   var left = 0,
     top = 0;
 
-  do
-  {
+  do {
     left += node.offsetLeft;
     top += node.offsetTop;
   } while (node = node.offsetParent)
@@ -1112,10 +1101,9 @@ var isIE678 = !+'\v1';
 !"1" [0]
 // trim
 
-function
-trim(str) {
+function trim(str) {
   var whitespace = ' \n\r\t\f\x0b\xa0\u2000\u2001\u2002\u2003\n\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u200b\u2028\u2029\u3000';
-  for (vari = 0; i < str.length; i++) {
+  for (var i = 0; i < str.length; i++) {
     if (whitespace.indexOf(str.charAt(i)) === -1) {
       str = str.substring(i);
       break;
@@ -1129,10 +1117,7 @@ trim(str) {
     }
   }
 
-  return
-  whitespace.indexOf(str.charAt(0)) === -1
-    ? str
-    : '';
+  return whitespace.indexOf(str.charAt(0)) === -1 ? str: '';
 }
 
 // window.open
@@ -1149,8 +1134,7 @@ if ([].unshift(1) !== 1) {
   var _unshift = Array.prototype.unshift;
   Array.prototype.unshift = function() {
     _unshift.apply(this, arguments);
-    return
-    this.length;
+    return this.length;
   }
 }
 if ([1, 2, 3].splice(1).length == 0) { //IE6,7,8默认第二个参数为0,其它浏览器为数组长度
@@ -1220,8 +1204,7 @@ function getChildren(el) {
   for (varnode = el.firstChild; node; node = node.nextSibling) {
     node.nodeType = 1 && ret.push(node);
   }
-  return
-  ret;
+  return ret;
 }
 
 // element.insertAdjacentHTML(position, html),在元素对应位置插入html
@@ -1274,8 +1257,7 @@ var mediator = (function() {
 
     publish = function(channel) {
       if (!mediator.channels[channel])
-        return
-      false;
+        return false;
       var args = Array.prototype.slice.call(arguments, 1);
       for (vari = 0, l = mediator.channels[channel].length; i < l; i++) {
         var subscription = mediator.channels[channel][i];
@@ -1299,20 +1281,17 @@ var mediator = (function() {
 }());
 
 // jQuery module pattern
-function
-library(module) {
+function library(module) {
   $(function() {
     if (module.init) {
       module.init();
     }
   });
-  return
-  module;
+  return module;
 }
 
 var myLibrary = library(function() {
-  return
-  {
+  return {
     init : function() {
       /*implementation*/
     }
@@ -1414,8 +1393,7 @@ createXMLHTTPObject() {
 
 // 对字符串的操作
 function contains(target, it) {
-  return
-  target.indexOf(it) != -1;
+  return target.indexOf(it) != -1;
 }
 
 // 判断是否以字符串开头或结尾
@@ -1435,8 +1413,7 @@ function endsWith(target, str, ignorecase) {
     : end_str === str;
 }
 // 重复生成字符
-function
-repeat(target, n) {
+function repeat(target, n) {
   var s = target,
     total = '';
   while (n > 0) {
@@ -1448,8 +1425,7 @@ repeat(target, n) {
     s += s;
     n = n >> 1;
   }
-  return
-  total;
+  return total;
 }
 // 字符串长度包含汉字
 function
@@ -2485,3 +2461,12 @@ this.$http.post(url, params)
 [...new Set([1,2,3,1,'a',1,'a'])]
 
 获得元素上面的data信息
+
+// 阻止事件冒泡兼容写法
+function doSomething(e) {
+  e = e ? e : window.event;
+	e.cancelBubble = true;
+	if (e.stopPropagation) {
+    e.stopPropagation()
+  }
+}
