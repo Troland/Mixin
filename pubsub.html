@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>发布者/订阅者</title>
+</head>
+
+<body>
+  <p>发布者订阅者</p>
+  <script type="text/javascript">
+    var pubSub = {
+      subscribers: [],
+      publish: function(eventType) {
+        var slice = Array.prototype.slice;
+        var args = slice.apply(arguments);
+
+        this.subscribers.forEach(function(subscriber) {
+          if (subscriber.eventType === eventType) {
+            subscriber.cb.apply(undefined, args.slice(1))
+          }
+        })
+      },
+      subscribe: function(eventType, cb) {
+        var isSubscribed = false;
+        for (var i = 0; i < this.subscribers.length; i++) {
+          if (this.subscribers.eventType === eventType) {
+            isSubscribed = true;
+            this.subscribers[i].cb = cb;
+            break;
+          }
+        }
+        if (!isSubscribed) {
+          this.subscribers.push({
+            eventType: eventType,
+            cb: cb
+          })
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
