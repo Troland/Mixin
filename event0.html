@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event order</title>
+  <style>
+    .el2, .el4, .el6 {
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h3>都为冒泡</h3>
+  <div class="el1" id="el1">
+    这是元素1
+    <div class="el2" id="el2">这是元素1里面的元素2</div>
+  </div>
+  <h3>一个捕获一个冒泡</h3>
+  <div class="el3" id="el3">
+    这是元素3
+    <div class="el4" id="el4">这是元素3里面的元素4</div>
+  </div>
+  <h3>默认onclick是冒泡阶段事件</h3>
+  <div class="el5" id="el5">
+    这是元素5
+    <div class="el6" id="el6">这是元素5里面的元素6</div>
+  </div>
+  <script type="text/javascript">
+    const $el1 = document.getElementById('el1')
+    const $el2 = document.getElementById('el2')
+    const $el3 = document.getElementById('el3')
+    const $el4 = document.getElementById('el4')
+    const $el5 = document.getElementById('el5')
+    const $el6 = document.getElementById('el6')
+
+    $el1.addEventListener('click', doel3, false)
+    // $el2.addEventListener('click', doel3, false)
+
+    $el3.addEventListener('click', doel3, true)
+    $el4.addEventListener('click', doel4, false)
+
+    $el5.onclick = doel5
+    $el6.onclick = doel6
+
+    function doel5() {
+      console.log('这是在执行元素5事件')
+    }
+    function doel6() {
+      console.log('这是在执行元素6事件')
+    }
+
+    function doel3(e) {
+      console.log('target:', e.target);
+      console.log('currentTarget:', e.currentTarget);
+      console.log('这是在执行元素3事件')
+      // if (!e) var e = window.event;
+    	// e.cancelBubble = true;
+    	// if (e.stopPropagation) e.stopPropagation();
+    }
+    function doel4() {
+      console.log('这是在执行元素4事件')
+    }
+    // $el4.onclick = doel4
+    //
+    // $el5.onclick = doel5
+    // $el6.onclick = doel6
+
+    function doel1() {
+      console.log('这是在执行元素1事件')
+    }
+
+    function doel2() {
+      console.log('这是在执行元素2事件')
+    }
+    // $el1.addEventListener('click', handler, false)
+    //
+    // function handler(e) {
+    //   let $dom = e.target
+    //   console.log('text:', $dom.innerHTML)
+    // }
+    // $el2.addEventListener('click', function () {
+    //
+    // }, false)
+  </script>
+</body>
+</html>

@@ -1558,26 +1558,26 @@ function $(id) {
 // 获取元素的样式
 // 如果是IE的话currentStyle但是这个是需要驼峰写法的比如而不是font-size,fontSize
 // 用法getStyle('elementID', 'font-size')css属性
-function getStyle(element, cssPropertyName) {
-  var el = document.getElementById(element);
-
-  // if getComputedStyle is supported, ie8 and below is not supported
-  if (window.getComputedStyle) {
-    return window.getComputedStyle(el)[cssPropertyName];
-  } else {
-    // http://www.quirksmode.org/dom/getstyles.html ie should use lineHeight instead
-    var cssPropertyNameArr,
-      cssCamelCaseName;
-    cssPropertyNameArr = cssPropertyName.split('-');
-    if (cssPropertyNameArr.length > 1) {
-      cssCamelCaseName = cssPropertyNameArr[0] + cssPropertyNameArr[1][0].toUpperCase() + cssPropertyNameArr[1].slice(1);
-    } else {
-      cssCamelCaseName = cssPropertyName;
-    }
-
-    return el.currentStyle[cssCamelCaseName];
-  }
-}
+// function getStyle(element, cssPropertyName) {
+//   var el = document.getElementById(element);
+//
+//   // if getComputedStyle is supported, ie8 and below is not supported
+//   if (window.getComputedStyle) {
+//     return window.getComputedStyle(el)[cssPropertyName];
+//   } else {
+//     // http://www.quirksmode.org/dom/getstyles.html ie should use lineHeight instead
+//     var cssPropertyNameArr,
+//       cssCamelCaseName;
+//     cssPropertyNameArr = cssPropertyName.split('-');
+//     if (cssPropertyNameArr.length > 1) {
+//       cssCamelCaseName = cssPropertyNameArr[0] + cssPropertyNameArr[1][0].toUpperCase() + cssPropertyNameArr[1].slice(1);
+//     } else {
+//       cssCamelCaseName = cssPropertyName;
+//     }
+//
+//     return el.currentStyle[cssCamelCaseName];
+//   }
+// }
 
 /**
  * getStyle 获得元素计算后的样式值
@@ -2502,4 +2502,13 @@ function doSomething(e) {
 	if (e.stopPropagation) {
     e.stopPropagation()
   }
+}
+
+// 获取兄弟元素
+function getSiblings(el) {
+  var siblings = Array.prototype.filter.call(el.parentNode.children, function(child){
+    return child !== el;
+  });
+
+  return siblings
 }
