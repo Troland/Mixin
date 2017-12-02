@@ -1367,16 +1367,14 @@ var XMLHttpFactories = [
     new ActiveXObject("Msxml2.XMLHTTP")
   },
   function() {
-    return
-    new ActiveXObject("Msxml3.XMLHTTP")
+    return new ActiveXObject("Msxml3.XMLHTTP")
   },
   function() {
     return
     new ActiveXObject("Microsoft.XMLHTTP")
   }
 ];
-function
-createXMLHTTPObject() {
+function createXMLHTTPObject() {
   var xmlhttp = false;
   for (vari = 0; i < XMLHttpFactories.length; i++) {
     try
@@ -2511,4 +2509,14 @@ function getSiblings(el) {
   });
 
   return siblings
+}
+
+/**
+ * 根据不同玩法生成注数
+ * @param  {Integer}  digits    选择号码个数如任选二
+ * @param  {Boolean} isOrdered 直选还是组选
+ * @return {Integer}           返回注数
+ */
+function generatePeroids(digits, isOrdered) {
+
 }

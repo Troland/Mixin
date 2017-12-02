@@ -112,6 +112,10 @@ div {
 input::-ms-clear {
   display: none;
 }
+/*
+-webkit-tap-highlight-color: https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-tap-highlight-color
+a链接元素仅被safari/chrome支持表示当元素被tap的时候高亮的颜色。高亮表示用户其tap已经被正确识别并且显示被tap的元素。
+ */
 html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
