@@ -100,3 +100,29 @@ var addEvent = (function() {
   // 5) 最后返回由fn引用的函数
   return fn;
 })();
+
+// trigger event 类似于 $(el).trigger('my-event', {some: 'data'});
+// 原生事件如 click 不传参数
+// 当不是原生的时候示例如下：
+// el.addEventListener('click3', function(e) {
+//    console.log('Event:', e);
+//    console.log('Params:', e.detail); 参数会写在 e.detail 中
+// })
+// trigger('click3', el, false, {name: 'nick'});
+function trigger(eventType, el, isNative, data) {
+  isNative = (isNative !== undefined) ? isNative : true;
+
+  if (isNative) {
+    var event = document.createEvent('HTMLEvents');
+    event.initEvent(eventType, true, false);
+  } else {
+    if (window.CustomEvent) {
+      var event = new CustomEvent(eventType, {detail: data});
+    } else {
+      var event = document.createEvent('CustomEvent');
+      event.initCustomEvent(eventType, true, true, data);
+    }
+  }
+
+  el.dispatchEvent(event);
+}

@@ -1511,11 +1511,7 @@ onerror IE下Stack overflow at line : 0 错误是由于onerror的图片也不存
 //关于parseInt,IE9以下有bug
 parseInt("09")之类的以0开头的会转化为0必须写上进制parseInt("09", 10)function
 
-type(param) {
-  ​ return Object.prototype.toString.call(param).slice(8, -1);
-}
-
-// 数字填补
+// 数字填 0，1 -> 01
 function padding(number) {
   return number < 10
       ? '0' + number
@@ -1524,7 +1520,11 @@ function padding(number) {
 
 // 类型判断
 function type(obj) {
-  return Object.prototype.toString.call(obj).slice(8, -1);
+  return Object.prototype.toString.call(obj).replace(/^\[object (.+)\]$/, '$1').toLowerCase();
+}
+
+function isObject(obj) {
+  return Object.prototype.toString.call(obj).replace(/^\[object (.+)\]$/, '$1').toLowerCase() === 'object';
 }
 
 // 获取对象的构造函数名称
@@ -2520,3 +2520,90 @@ function getSiblings(el) {
 function generatePeroids(digits, isOrdered) {
 
 }
+
+// toggle element
+function toggle(el) {
+  var isShow = el.style.display === 'none' ? false : true;
+  el.style.display = isShow ? 'none' : '';
+}
+
+// 获取元素相对于视窗 viewport 的距离
+el.getBoundingClientRect
+
+el.previousElementSibling 前一个元素
+
+parent.insertBefore(el, parent.firstChild);
+
+// 首尾空格去除
+string.trim()
+
+// 解析 html 字符串
+function parseHTML(str) {
+  var tmp = document.implementation.createHTMLDocument();
+  tmp.body.innerHTML = str;
+  return tmp.body.children;
+};
+
+// 切换 fn 的上下文为 context
+// 示例
+var obj = {
+  name: 'scot'
+};
+
+function showName() {
+  console.log('Name:', this.name);
+}
+
+var cb = showName.bind(obj)
+cb()
+
+// 深拷贝 对象里面有嵌套对象即为深拷贝
+// deepExtend({}, objA, objB);
+function deepExtend(out) {
+  out = out || {};
+
+  function isObject(obj) {
+    return Object.prototype.toString.call(obj).replace(/^\[object (.+)\]$/, '$1').toLowerCase() === 'object';
+  }
+
+  for (var i = 1; i < arguments.length; i++) {
+    var obj = arguments[i];
+    // 过滤非对象
+    if (!isObject(obj))
+      continue;
+
+    for (var key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        if (typeof obj[key] === 'object')
+          out[key] = deepExtend(out[key], obj[key]);
+        else
+          out[key] = obj[key];
+      }
+    }
+  }
+
+  return out;
+};
+
+// 浅拷贝
+// extend({}, objA, objB);
+function extend(out) {
+  out = out || {};
+
+  function isObject(obj) {
+    return Object.prototype.toString.call(obj).replace(/^\[object (.+)\]$/, '$1').toLowerCase() === 'object';
+  }
+
+  for (var i = 1; i < arguments.length; i++) {
+    // 过滤非对象
+    if (!isObject(arguments[i]))
+      continue;
+
+    for (var key in arguments[i]) {
+      if (arguments[i].hasOwnProperty(key))
+        out[key] = arguments[i][key];
+    }
+  }
+
+  return out;
+};
