@@ -5,6 +5,9 @@ function fadeIn(el) {
   var last = +new Date();
   var tick = function() {
     el.style.opacity = +el.style.opacity + (new Date() - last) / 400;
+    if (el.style.opacity > 1) {
+      el.style.opacity = 1
+    }
     last = +new Date();
 
     if (+el.style.opacity < 1) {
@@ -21,6 +24,9 @@ function fadeOut(el) {
   var last = +new Date();
   var tick = function() {
     el.style.opacity = +el.style.opacity - (new Date() - last) / 400;
+    if (el.style.opacity < 0) {
+      el.style.opacity = 0;
+    }
     last = +new Date();
 
     if (+el.style.opacity > 0) {

@@ -23,7 +23,8 @@ var topPos = (typeof window.screenTop = "number")
   ? window.screenTop
   : window.screenY;
 
-// 取得页面视口宽高 IE9+
+// 取得页面视口 viewport 宽高 IE9+ viewport, window.innerWidth 是为了支持 Netscape
+// html元素可以被样式化如设置为 width: 300, 这个是不会影响　viewport 的，viewport 依然是浏览器的大小。
 var pageWidth = window.innerWidth || document.documentElement.clientWidth,
   pageHeight = window.innerHeight || document.documentElement.clientHeight;
 
@@ -53,6 +54,18 @@ let isCSS1Compat = ((document.compatMode || "") === "CSS1Compat")
 let scrollLeft = supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft;
 let scrollTop = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
 
+function getScrollOffset() {
+  let supportPageOffset = window.pageXOffset !== undefined
+  let isCSS1Compat = ((document.compatMode || "") === "CSS1Compat")
+
+  let scrollLeft = supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft;
+  let scrollTop = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+
+  return {
+    scrollTop: scrollTop,
+    scrollLeft: scrollLeft
+  }
+}
 // 页面宽(包含滚动条和隐藏的部分)
 // offsetWidth
 var pageWidth = Math.max(document.documentElement.scrollWidth, document.documentElement.offsetWidth, document.documentElement.clientWidth, document.body.scrollWidth, document.body.offsetWidth);
@@ -2607,3 +2620,6 @@ function extend(out) {
 
   return out;
 };
+
+// 计算 html 元素的分辨率
+document.documentElement.offsetWidth/Height
