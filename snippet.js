@@ -2629,7 +2629,7 @@ document.documentElement.offsetWidth/Height
 // 若是 ES6：
 // var myArray = ['a', 1, 'a', 2, '1'];
 // var unique = myArray.filter((v, i, a) => a.indexOf(v) === i);
-//
+//https://stackoverflow.com/questions/1960473/get-all-unique-values-in-an-array-remove-duplicates
 function getUnique(value, index, self) {
   return self.indexOf(value) === index;
 }
