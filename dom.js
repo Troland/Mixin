@@ -147,3 +147,41 @@ function ready(fn) {
     document.addEventListener('DOMContentLoaded', fn);
   }
 }
+
+// 找出元素在父元素中的索引
+function indexInParent(node) {
+    var children = node.parentNode.childNodes;
+    var num = 0;
+    for (var i=0; i<children.length; i++) {
+         if (children[i]==node) return num;
+         if (children[i].nodeType==1) num++;
+    }
+    return -1;
+}
+
+// 寻找元素最近的指定的类的父元素
+function closest(el, selector) {
+  var matchesFn;
+
+  // find vendor prefix
+  ['matches','webkitMatchesSelector','mozMatchesSelector','msMatchesSelector','oMatchesSelector'].some(function(fn) {
+      if (typeof document.body[fn] == 'function') {
+          matchesFn = fn;
+          return true;
+      }
+      return false;
+  })
+
+  var parent;
+
+  // traverse parents
+  while (el) {
+      parent = el.parentElement;
+      if (parent && parent[matchesFn](selector)) {
+          return parent;
+      }
+      el = parent;
+  }
+
+  return null;
+}

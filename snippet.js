@@ -1517,10 +1517,9 @@ function format(str, object) {
 
 IE9以下不支持数组indexOf img
 onerror IE下Stack overflow at line : 0 错误是由于onerror的图片也不存在引起的.onerror = "this.onerror='';this.src='/Images/img/error-car.png'" 来解决.IE7上的ahref会自动加上域名.href = $(this).attr('href').replace(/.*(?=#[^\s]*$)/, ''), //strip for ie7
-关于tbodyIE8在创建table的时候ie6,
-7
+关于tbodyIE8在创建table的时候ie6,7
 会
-
+img 无图片时 onerror="this.onerror=null;this.src='../../images/product/qilecai.png';"
 //关于parseInt,IE9以下有bug
 parseInt("09")之类的以0开头的会转化为0必须写上进制parseInt("09", 10)function
 
@@ -2623,3 +2622,14 @@ function extend(out) {
 
 // 计算 html 元素的分辨率
 document.documentElement.offsetWidth/Height
+
+// 获得不重复数字的数组 用法：
+// var a = ['a', 1, 'a', 2, '1'];
+// var unique = a.filter( onlyUnique );
+// 若是 ES6：
+// var myArray = ['a', 1, 'a', 2, '1'];
+// var unique = myArray.filter((v, i, a) => a.indexOf(v) === i);
+//
+function getUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
