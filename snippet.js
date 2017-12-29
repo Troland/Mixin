@@ -25,13 +25,14 @@ var topPos = (typeof window.screenTop = "number")
 
 // 取得页面视口 viewport 宽高 IE9+ viewport, window.innerWidth 是为了支持 Netscape
 // html元素可以被样式化如设置为 width: 300, 这个是不会影响　viewport 的，viewport 依然是浏览器的大小。
+// 可获得手机端的布局视口的分辨率比如 iPhone6 是980px。
 var pageWidth = window.innerWidth || document.documentElement.clientWidth,
   pageHeight = window.innerHeight || document.documentElement.clientHeight;
 
 // 获取视窗宽度这个是虚拟的像素不是实际的设备像素
 window.document.documentElement.getBoundingClientRect().width
 
-// 获取手机的设备宽度
+// 获取手机的设备物理宽度
 var width = screen.width;
 
 // 这个兼容所有

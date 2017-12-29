@@ -1,0 +1,25 @@
+@import "mixins";
+@mixin makeCols($borderColor: #C7C7C7, $row-name: row, $col-name: col, $columnCount:12, $has-border: true) {
+  .#{$row-name} {
+    position: relative;
+    overflow: hidden;
+    @if $has-border {
+      @include setTopLine($borderColor, after);
+
+      @include setLeftLine($borderColor);
+    }
+  }
+
+  .#{$col-name} {
+    position: relative;
+    float: left;
+    padding: 20px 10px;
+    width: percentage(1 / $columnCount);
+    box-sizing: border-box;
+    @if $has-border {
+      @include setRightLine($borderColor);
+
+      @include setBottomLine($borderColor, after);
+    }
+  }
+}

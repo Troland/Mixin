@@ -1,9 +1,5 @@
 @mixin css3($property, $value) {
-  '',
-  -moz-,
-  -ms-,
-  -o-,
-  @each $prefix in -webkit- {
+  @each $prefix in ('', -moz-, -ms-, -o-, -webkit-) {
     #{$prefix}#{$property}: $value;
   }
 }
@@ -327,8 +323,9 @@ transform px to rem
 
 /*
 android中在flexible中的1px适配有问题，当在安卓的时候就得写这个样式
+用法直接在样式类中使用@include
  */
- @mixin setTopLine($c: #C7C7C7) {
+ @mixin setTopLine($c: #C7C7C7, $pseudo: before) {
    border-top: 1PX solid $c;
 
    [data-dpr="1"] & {
@@ -336,7 +333,7 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
      @media (min-resolution: 2dppx), (min-resolution: 192dpi) {
        position: relative;
 
-       &:before {
+       &:#{$pseudo} {
          content: " ";
          position: absolute;
          left: 0;
@@ -348,14 +345,14 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
          transform: scaleY(0.5);
        }
        @media (min-resolution: 3dppx), (min-resolution: 288dpi) {
-         &:before {
+         &:#{$pseudo} {
            transform: scaleY(0.33);
          }
        }
      }
    }
  }
- @mixin setBottomLine($c: #C7C7C7) {
+ @mixin setBottomLine($c: #C7C7C7, $pseudo: before) {
    border-bottom: 1PX solid $c;
 
    [data-dpr="1"] & {
@@ -363,7 +360,7 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
      @media (min-resolution: 2dppx), (min-resolution: 192dpi) {
        position: relative;
 
-       &:before {
+       &:#{$pseudo} {
          content: " ";
          position: absolute;
          left: 0;
@@ -375,7 +372,7 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
          transform: scaleY(0.5);
        }
        @media (min-resolution: 3dppx), (min-resolution: 288dpi) {
-         &:before {
+         &:#{$pseudo} {
            transform: scaleY(0.33);
          }
        }
@@ -383,7 +380,7 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
    }
  }
 
- @mixin setLeftLine($c: #C7C7C7) {
+ @mixin setLeftLine($c: #C7C7C7, $pseudo: before) {
    border-left: 1PX solid $c;
 
    [data-dpr="1"] & {
@@ -391,7 +388,7 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
      @media (min-resolution: 2dppx), (min-resolution: 192dpi) {
        position: relative;
 
-       &:before {
+       &:#{$pseudo} {
          content: " ";
          position: absolute;
          left: 0;
@@ -403,7 +400,7 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
          transform: scaleX(0.5);
        }
        @media (min-resolution: 3dppx), (min-resolution: 288dpi) {
-         &:before {
+         &:#{$pseudo} {
            transform: scaleX(0.33);
          }
        }
@@ -411,7 +408,7 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
    }
  }
 
- @mixin setRightLine($c: #C7C7C7) {
+ @mixin setRightLine($c: #C7C7C7, $pseudo: before) {
    border-right: 1PX solid $c;
 
    [data-dpr="1"] & {
@@ -419,7 +416,7 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
      @media (min-resolution: 2dppx), (min-resolution: 192dpi) {
        position: relative;
 
-       &:before {
+       &:#{$pseudo} {
          content: " ";
          position: absolute;
          right: 0;
@@ -431,7 +428,7 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
          transform: scaleX(0.5);
        }
        @media (min-resolution: 3dppx), (min-resolution: 288dpi) {
-         &:before {
+         &:#{$pseudo} {
            transform: scaleX(0.33);
          }
        }
@@ -439,7 +436,7 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
    }
  }
 
- @mixin setLine($c: #C7C7C7, $radius: 0) {
+ @mixin setLine($c: #C7C7C7, $radius: 0, $pseudo: before) {
    border: 1PX solid $c;
    border-radius: $radius;
 
@@ -449,7 +446,7 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
        border: none;
        transform: translateZ(0);
 
-       &:before {
+       &:#{$pseudo} {
          content: '';
          position: absolute;
          left: 0;
@@ -496,7 +493,7 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
    }
  }
 
-@mixin hairline($color: #C7C7C7, $direction: left, $radius: 0) {
+@mixin hairline($color: #C7C7C7, $direction: left, $radius: 0, $pseudo: before) {
 
  @if $direction != 'all' {
    border-#{$direction}: 1PX solid $color;
@@ -506,7 +503,7 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
      @media (min-resolution: 2dppx), (min-resolution: 192dpi) {
        position: relative;
 
-       &:before {
+       &:#{$pseudo} {
          content: " ";
          position: absolute;
          border-#{$direction}: 1PX solid $color;
@@ -542,7 +539,7 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
        }
 
        @media (min-resolution: 3dppx), (min-resolution: 288dpi) {
-         &:before {
+         &:#{$pseudo} {
            @if $direction == 'top' {
              transform: scaleY(0.33);
            } @else if $direction == 'right' {
@@ -566,7 +563,7 @@ android中在flexible中的1px适配有问题，当在安卓的时候就得写�
        border: none;
        transform: translateZ(0);
 
-       &:before {
+       &:#{$pseudo} {
          content: '';
          position: absolute;
          left: 0;
