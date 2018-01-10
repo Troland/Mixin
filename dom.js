@@ -160,7 +160,7 @@ function indexInParent(node) {
 }
 
 // 寻找元素最近的指定的类的父元素
-function closest(el, selector) {
+function findClosestNode(el, selector) {
   var matchesFn;
 
   // find vendor prefix
