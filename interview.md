@@ -9,3 +9,17 @@ for (var i = 0; i < 3; i++) {
 }
 ```
 输出0, 1000, 2000,三次3,为何不是0,3,1000,3,2000,3?
+数组会把每一次 转toString()   恰恰数组的toString()是这样的   Array.prototype.toString = function(){
+ return this.join();
+}
+```
+方法一
+function flattern(arr) {
+    return arr.join(',').split(',');
+}
+
+方法二
+flattern.toString().replace(/{|}|[|]/g, ‘’).split(‘,’)
+
+
+```

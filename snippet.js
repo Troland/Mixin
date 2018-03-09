@@ -2634,3 +2634,13 @@ document.documentElement.offsetWidth/Height
 function getUnique(value, index, self) {
   return self.indexOf(value) === index;
 }
+
+// 是否空对象
+function isEmptyObject (o) {
+    for (var p in o) {
+        if (p !== undefined) {
+            return false;
+        }
+    }
+    return true;
+};
