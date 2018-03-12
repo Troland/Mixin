@@ -530,3 +530,7 @@ div ul:not(:first-child) {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* ios 上面 input 首字母大写  */
+
+在 input 上面写上 autocapitalize="off" 即可。
