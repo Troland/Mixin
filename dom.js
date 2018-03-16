@@ -84,7 +84,7 @@ function getPosition(el) {
 }
 
 // 获取元素的高度
-function outerHeight(el, withMargin) {
+function getOuterHeight(el, withMargin) {
   var height = el.offsetHeight;
   var style = el.currentStyle || getComputedStyle(el);
 
@@ -96,7 +96,7 @@ function outerHeight(el, withMargin) {
 }
 
 // 获取元素的宽度
-function outerWidth(el, withMargin) {
+function getOuterWidth(el, withMargin) {
   var width = el.offsetWidth;
   var style = el.currentStyle || getComputedStyle(el);
 

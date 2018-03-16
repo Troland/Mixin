@@ -403,8 +403,7 @@ $.fn.fadeAll = function(ops) {
 }
 
 // cut out text and redundant words replace with ellipsis
-function
-excerpt(str, nwords) {
+function excerpt(str, nwords) {
   var words = str.split(' ');
   words.splice(nwords, words.length - 1);
   return
