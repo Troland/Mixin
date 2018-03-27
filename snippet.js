@@ -99,8 +99,43 @@ function getQueryStringArgs() {
   return args;
 }
 
-// 非IE下检测浏览器插件
+function addQueryArg(url, key, value) {
+  if(url.indexOf("?") == -1) {
+    url += "?";
+  } else {
+    url += "&";
+  }
 
+  url += encodeURIComponent(key) + "=" + encodeURIComponent(value);
+  return url;
+}
+
+// url 请求参数
+function encodeQueryData(data) {
+   let ret = [];
+   for (let d in data) {
+     ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
+   }
+
+   return ret.join('&');
+}
+
+function addQueryStringArgs(url, data) {
+  let ret = [];
+  if(url.indexOf("?") == -1) {
+    url += "?";
+  } else {
+    url += "&";
+  }
+
+  for (let d in data) {
+    ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
+  }
+  url += ret.join('&');
+  return url;
+}
+
+// 非IE下检测浏览器插件
 function hasPlugin(name) {
   name = name.toLowerCase();
 
@@ -2643,3 +2678,7 @@ function isEmptyObject (o) {
     }
     return true;
 };
+
+// 页面滚动
+禁止页面滚动：el.style.webkitOverflowScrolling = 'auto'
+恢复页面滚动：el.style.webkitOverflowScrolling = 'touch'
