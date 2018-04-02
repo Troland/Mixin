@@ -23,3 +23,15 @@ flattern.toString().replace(/{|}|[|]/g, ‘’).split(‘,’)
 
 
 ```
+
+
+
+
+1、二叉树算法
+2、Promise async 等
+
+
+1、沙箱环境 ast 也是可以实现 new Function es6 proxy with
+2、event loop
+3、symbol 保证对象变量的唯一性 obj2.text = Symbol('sdf');obj[obj2.text] = 3
+4、脏检查，存取器技术 这是数据绑定两种技术 优劣
