@@ -36,3 +36,5 @@ flattern.toString().replace(/{|}|[|]/g, ‘’).split(‘,’)
 3、symbol 保证对象变量的唯一性 obj2.text = Symbol('sdf');obj[obj2.text] = 3
 4、脏检查，存取器技术 这是数据绑定两种技术 优劣 脏检查会一直查数据变化，存取器不会，但存取器不能处理 expando 动态添加的属，而脏检查却可以。性能脏检查会一直检查，而存取器技术可以是把操作缓存起来再批量执行。可以参见 vue.nextTick 的语法，
 5、es6 代理数据绑定 Reflect, proxy, WeakMap, map
+6、路由 parallel routing
+7、pwa 的 data shell 和 app shell
