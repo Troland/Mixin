@@ -27,7 +27,7 @@
         width: 200px;
         line-height: 100px;
         text-align:center;
-        margin: 0px;
+        margin: 100px;
     }
     .wrap {
       overflow: hidden;
@@ -55,6 +55,7 @@ overflow不为visible
 
   <div class="aside"></div>
   <div class="main"></div>
+  <!-- 由于包含 haha 的块和 .wrap 里面的块属于不同的 bfc 所以垂直方向上的 margin 不重叠  -->
   <p>haha</p>
   <div class="wrap">
     <p>hehe</p>

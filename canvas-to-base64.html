@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas to base64</title>
+</head>
+<body>
+  <script>
+    function loadImage(url, callback) {
+      var image = new Image();
+
+      image.onload = function() {
+        callback(null, image);
+      };
+
+      image.onerror = function() {
+        callback(new Error('Could not load image at ' + url));
+      };
+
+      image.src = url;
+    }
+
+
+    function loadImageAsync(url) {
+      if (typeof url !== 'string') {
+        return Promise.reject(new TypeError('must specify a string'));
+      }
+
+      return new Promise(function(resolve, reject) {
+        var image = new Image();
+        console.time('loadImage');
+        image.crossOrigin="anonymous";
+        image.onload = function() {
+          console.timeEnd('loadImage');
+          const $canvas = document.createElement('canvas');
+          const ctx = $canvas.getContext('2d');
+          const width = this.width;
+          const height = this.height;
+          let dataUrl;
+
+          $canvas.width = width;
+          $canvas.height = height;
+          console.log('canvasToJson:', $canvas.toJSON())
+          ctx.drawImage(image, 0, 0, width, height);
+          console.time('calcDataUrl');
+          dataUrl = $canvas.toDataURL();
+          console.timeEnd('calcDataUrl');
+          resolve({image, dataUrl});
+        };
+
+        image.onerror = function() {
+          reject(new Error('Could not load image at ' + url));
+        };
+
+        image.src = url;
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      loadImageAsync('https://cdn-images-1.medium.com/max/1600/1*4lHHyfEhVB0LnQ3HlhSs8g.png')
+        .then(function (image) {
+          console.log('Image loaded %o, dataUrl %s', image.image, image.dataUrl);
+        })
+        .catch(function (err) {
+          console.log('Error：', err.message);
+        });
+
+      loadImage('https://cdn-images-1.medium.com/max/1600/1*4lHHyfEhVB0LnQ3HlhSs8g.png', function (err, res) {
+        console.log('DataUrl：', res);
+      });
+    });
+  </script>
+</body>
+</html>

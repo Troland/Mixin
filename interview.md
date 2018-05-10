@@ -38,3 +38,46 @@ flattern.toString().replace(/{|}|[|]/g, ‘’).split(‘,’)
 5、es6 代理数据绑定 Reflect, proxy, WeakMap, map
 6、路由 parallel routing
 7、pwa 的 data shell 和 app shell
+8、并行路由器
+9、实现 es6 类
+
+
+
+plain Javascript objects 翻译成啥？
+
+
+1、请简单地说出数据绑定的方法，并实现至少一种数据绑定方法
+
+简述组件化方案 react, vue, Polymer
+
+Getter/setter properties are neither supported since accessors can't be wrapped by accessors again
+怎么翻译？
+
+查看下 vue
+
+
+
+自己创建一个框架 ?开撸
+
+## 存储器技术
+
+Expando properties 是弱点无法监听动态添加的属性。添加后手动添加 observe 或者 es6 proxy
+封装对象实现注册变化
+
+
+## 请描述一下 webpack 的 HMR
+
+实现原理，为什么修改 js 会刷新页面而只有修改 scss 并不会呢？
+
+
+
+现在是否需要迁移到HTTP/2
+终止HTTP/2和TLS
+考虑从SPDY开始
+找出为HTTP/1.x优化的代码
+部署HTTP/2或SPDY
+再谈HTTP/1.x优化
+实现智能分域
+
+
+FOUC 指的是什么？

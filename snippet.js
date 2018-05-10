@@ -236,14 +236,14 @@ function getContains() {
 
 // 获得元素的innerText
 function getInnerText(element) {
-  return (typeofelement.textContent == 'string')
+  return (typeof element.textContent == 'string')
     ? element.textContent
     : element.innerText;
 }
 
 // 设置元素innerText
 function setInnerText(element, text) {
-  if (typeofelement.textContent == 'string') {
+  if (typeof element.textContent == 'string') {
     element.textContent = text;
   } else {
     element.innerText = text;
@@ -682,6 +682,11 @@ Function.method("curry", function() {
   };
 });
 
+// 转换 arguments 为数组
+function getArgs(a, b) {
+  var args = [].slice.call(arguments);
+  console.log('arguments', args);
+}
 // global namespace
 var chat = {
   // Create this closure to contain the cached modules
@@ -1891,6 +1896,7 @@ readFileThunk(fileA)(callback);
 
 // 异步加载图片
 function loadImageAsync(url) {
+
   return new Promise(function(resolve, reject) {
     var image = new Image()
 
@@ -2682,3 +2688,107 @@ function isEmptyObject (o) {
 // 页面滚动
 禁止页面滚动：el.style.webkitOverflowScrolling = 'auto'
 恢复页面滚动：el.style.webkitOverflowScrolling = 'touch'
+
+// 长轮询
+(function poll(){
+   setTimeout(function(){
+      $.ajax({
+        url: 'https://api.example.com/endpoint',
+        success: function(data) {
+          // Do something with `data`
+          // ...
+
+          //Setup the next poll recursively
+          poll();
+        },
+        dataType: 'json'
+      });
+  }, 10000);
+})();
+
+// 示例
+// getBase64('screenshot.png', function (dataUrl) {
+//   const $img = document.getElementById('J_img');
+//   $img.src = dataUrl;
+// });
+function getBase64(imgUrl, callback) {
+  const img = new Image();
+  img.src = imgUrl;
+  img.onload = function () {
+    const $canvas = document.createElement('canvas');
+    const ctx = $canvas.getContext('2d');
+    const width = this.width;
+    const height = this.height;
+    let dataUrl;
+
+    $canvas.width = width;
+    $canvas.height = height;
+    ctx.drawImage(img, 0, 0, width, height);
+    dataUrl = $canvas.toDataURL();
+    callback ? callback(dataUrl) : null;
+  };
+}
+
+// 普通的加载图片的函数
+function loadImage(url, callback) {
+  var image = new Image();
+
+  image.onload = function() {
+    callback(null, image);
+  };
+
+  image.onerror = function() {
+    callback(new Error('Could not load image at ' + url));
+  };
+
+  image.src = url;
+}
+
+// 如果是多个
+function loadImage(url, callback) {
+  var image = new Image();
+  image.onload = function() {
+    callback(null, image);
+  };
+  image.onerror = function() {
+    callback(new Error('Could not load image at ' + url));
+  };
+  image.src = url;
+}
+
+function loadImages(urls, callback) {
+  var returned = false;
+  var count = 0;
+  var result = new Array(urls.length);
+  urls.forEach(function(url, index) {
+    loadImage(url, function(error, item) {
+      if (returned) return;
+      if (error) {
+        returned = true;
+        return callback(error);
+      }
+      result[index] = item;
+      count++;
+      if (count === urls.length) {
+        return callback(null, result);
+      }
+    });
+  });
+}
+
+var imageUrls = ['one.png', 'two.png', 'three.png'];
+loadImages(imageUrls, function(err, images) {
+  if (err) throw err;
+  console.log('All images loaded', images);
+});
+
+// 未找到指定图片的缓存
+var notFound;
+
+function getNotFoundImage() {
+  if (notFound) {
+    return notFound;
+  }
+  notFound = loadImageAsync('not-found.png');
+  return notFound;
+}
