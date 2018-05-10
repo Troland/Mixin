@@ -2792,3 +2792,55 @@ function getNotFoundImage() {
   notFound = loadImageAsync('not-found.png');
   return notFound;
 }
+
+
+// 加载图片
+// loadImages(urls)
+// .then(function(images) {
+//   console.log('All images loaded', images);
+// })
+// .catch(function(err) {
+//   console.error(err);
+// });
+// 这里的 loadImageAsync 可以通过 promisify 把 node err-first 风格的转化为 Promise 副本。
+// var Promise = require('bluebird');
+// var loadImageAsync = Promise.promisify(loadImage);
+//
+function loadImageAsync(url) {
+  if (typeof url !== 'string') {
+    return Promise.reject(new TypeError('must specify a string'));
+  }
+
+  return new Promise(function(resolve, reject) {
+    var image = new Image();
+    console.time('loadImage');
+    image.crossOrigin="anonymous";
+    image.onload = function() {
+      console.timeEnd('loadImage');
+      const $canvas = document.createElement('canvas');
+      const ctx = $canvas.getContext('2d');
+      const width = this.width;
+      const height = this.height;
+      let dataUrl;
+
+      $canvas.width = width;
+      $canvas.height = height;
+      console.log('canvasToJson:', $canvas.toJSON())
+      ctx.drawImage(image, 0, 0, width, height);
+      console.time('calcDataUrl');
+      dataUrl = $canvas.toDataURL();
+      console.timeEnd('calcDataUrl');
+      resolve({image, dataUrl});
+    };
+
+    image.onerror = function() {
+      reject(new Error('Could not load image at ' + url));
+    };
+
+    image.src = url;
+  });
+}
+function loadImages(urls) {
+  var promises = urls.map(loadImageAsync);
+  return Promise.all(promises);
+}
