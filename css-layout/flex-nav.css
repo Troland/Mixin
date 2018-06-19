@@ -1,0 +1,36 @@
+/* If you want to divide nav-list into thirds with nav-container of 15pixels padding */
+/* solution tranditional */
+/* .nav-container {
+  padding: 0 25px;
+  overflow: hidden;
+}
+.nav-list {
+  margin-right: -50px;
+}
+.nav-item {
+  float: left;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  width: 200px;
+  text-align: center;
+  background-color: #fe0;
+} */
+/* flex */
+.nav-container {
+  padding: 0 25px;
+  overflow: hidden;
+}
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -50px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.nav-item {
+  margin-right: 50px;
+  margin-bottom: 20px;
+  width: 200px;
+  text-align: center;
+  background-color: #fe0;
+}

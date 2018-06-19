@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>双飞翼布局</title>
+  <style>
+    /* 三栏布局 main 的身体，sub, extra 鸟的翅膀 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      min-width: 700px;
+    }
+    .header, .footer {
+      border: 1px solid #333;
+      background: #aaa;
+      text-align: center;
+      clear: both;
+    }
+    .main,
+    .sub,
+    .extra {
+      float: left;
+      position: relative;
+      min-height: 130px;
+    }
+    .main {
+      width: 100%;
+    }
+    .main-inner {
+      margin: 0 200px;
+      min-height: 130px;
+      word-break: break-all;
+      background-color: #ff0;
+    }
+    .sub {
+      margin-left: -100%;
+      width: 200px;
+      background-color: #f00;
+    }
+    .extra {
+      margin-left: -200px;
+      width: 200px;
+      background-color: #0ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h4>header</h4>
+  </div>
+  <div class="main">
+    <div class="main-inner">
+      <h4>maiin</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur qui ratione consequatur laudantium eius, nulla rerum necessitatibus dolores modi illum libero vitae consectetur blanditiis reprehenderit, amet excepturi maxime esse magnam.</p>
+    </div>
+  </div>
+  <div class="sub">
+    <h4>sub</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic esse inventore doloremque, repellendus laborum? Minus at, iure in nulla laboriosam, eos accusantium asperiores, corrupti dolorum iusto saepe? Asperiores, possimus, sapiente!</p>
+  </div>
+  <div class="extra">
+    <h4>extra</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam sit tempore dolores aspernatur fuga esse fugiat ipsum tenetur distinctio laborum, quis nostrum, nobis illum aliquam error, inventore eum quo. Asperiores!</p>
+  </div>
+  <div class="footer">footer</div>
+</body>
+</html>

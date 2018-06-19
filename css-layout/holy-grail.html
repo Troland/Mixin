@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>holy grail layout</title>
+  <style>
+  /* 左右两栏固定宽度，中间部分自适应 */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    min-width: 700px;
+  }
+  .header, .footer {
+    background-color: #ccc;
+  }
+  .container {
+    padding: 0 200px;
+    overflow: hidden;
+  }
+  .left, .middle, .right {
+    float: left;
+    position: relative;
+    min-height: 130px;
+  }
+  .left {
+    margin-left: -100%;
+    left: -200px;
+    width: 200px;
+    background-color: #f00;
+  }
+  .middle {
+    width: 100%;
+    background-color: #ff0;
+  }
+  .right {
+    margin-left: -200px;
+    right: -200px;
+    width: 200px;
+    background-color: #0ff;
+  }
+  </style>
+</head>
+<body>
+  <div class="header">header</div>
+  <div class="container">
+    <div class="middle">
+      <h4>middle</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et quam quisquam doloribus non repellendus ipsam tempore eos eum natus cupiditate magni, cum voluptate fugiat vel. Voluptate dignissimos impedit debitis voluptates.</p>
+    </div>
+    <div class="left">
+      <h4>left</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non cum delectus illum provident. Eum sint, dolores unde, debitis omnis et laborum impedit aliquid tenetur, facere, est. Odio corrupti, harum suscipit.</p>
+    </div>
+    <div class="right">
+      <h4>right</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam qui velit libero reiciendis assumenda possimus molestiae veniam ad reprehenderit cupiditate, officia explicabo distinctio iure nobis ea deserunt, autem voluptas sunt?</p>
+    </div>
+  </div>
+  <div class="footer">footer</div>
+</body>
+</html>

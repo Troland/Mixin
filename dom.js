@@ -16,6 +16,11 @@ function prependNode(parent, el) {
   parent.insertBefore(el, parent.firstChild);
 }
 
+// wrap node
+function wrapNode(el, target) {
+  el.parentNode.insertBefore(target, el);
+  target.appendChild(el);
+}
 
 // 在元素的前面添加html字符串
 function insertHtmlBeforeDom(el, htmlString) {

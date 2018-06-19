@@ -5,21 +5,25 @@
   <title>多列等宽布局</title>
   <link rel="stylesheet" href="reset.css">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
     /*第一种方案*/
     .parent {
-      margin-left: -20px;
+      /* margin-left: -20px; */
     }
     .column {
       float: left;
       width: 25%;
-      padding-left: 20px;
+      /* padding-left: 20px; */
       box-sizing: border-box;
       background-color: #ccc;
     }
 
     /*第二种方案*/
     .parent-fix {
-      margin-left: -20px;
+      /* margin-left: -20px; */
     }
     .parent-l {
       display: table;
@@ -28,12 +32,11 @@
     }
     .column-t {
       display: table-cell;
-      padding-left: 20px;
+      /* padding-left: 20px; */
       background-color: #ccc;
     }
     .flex-content {
       display: flex;
-
     }
     .flex-column {
       flex: 1;

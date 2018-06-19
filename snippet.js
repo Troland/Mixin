@@ -519,8 +519,7 @@ function makeMenu(items, tags) {
     items[i] = '<' + child + ' ' + (value && 'value="' + value + '"') + '>' + // add value if present item + '</' + child + '>';
   }
 
-  return
-  '<' + parent + '>' + items.join('') + '</' + parent + '>';
+  return '<' + parent + '>' + items.join('') + '</' + parent + '>';
 }
 
 // 创建原型方法的函数
@@ -536,8 +535,7 @@ if (typeofFunction.prototype.method !== "function") {
 
 // trim trailing spaces
 String.method("trim", function() {
-  return
-  this.replace(/^\s+|\s+$/g, "");
+  return this.replace(/^\s+|\s+$/g, "");
 });
 
 // get the nodes by className
@@ -552,19 +550,16 @@ function getByClass(oParent, sClass) {
     }
   }
 
-  return
-  aResult;
+  return aResult;
 }
 
 // detect array
 
 function isArray(value) {
   if (typeofArray.isArray === "function") {
-    return
-    Array.isArray(value);
+    return Array.isArray(value);
   }
-  return
-  Object.prototype.toString.call(value) === "[object Array]";
+  return Object.prototype.toString.call(value) === "[object Array]";
 }
 
 //query nodes under node
@@ -645,8 +640,7 @@ var fibonacci = (function() {
     return
     result;
   };
-  return
-  fib;
+  return fib;
 }());
 
 /*记忆函数
@@ -918,10 +912,8 @@ var isNumber = function isNumber(value) {
 
 // 检测对象中的属性是否存在
 
-function
-hasPrototypeProperty(object, name) {
-  return
-  !object.hasOwnProperty(name) && (name in object);
+function hasPrototypeProperty(object, name) {
+  return !object.hasOwnProperty(name) && (name in object);
 }
 
 // 注意jQuery或者原生也是这样的中当利用data获取元素的data属性的时候data-后面的脚本里面都必须写成小写HTML上面可以写大写
