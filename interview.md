@@ -31,6 +31,7 @@ flattern.toString().replace(/{|}|[|]/g, ‘’).split(‘,’)
 2、Promise async 等
 
 
+
 1、沙箱环境 ast 也是可以实现 new Function es6 proxy with
 2、event loop
 3、symbol 保证对象变量的唯一性 obj2.text = Symbol('sdf');obj[obj2.text] = 3
@@ -38,6 +39,7 @@ flattern.toString().replace(/{|}|[|]/g, ‘’).split(‘,’)
 5、es6 代理数据绑定 Reflect, proxy, WeakMap, map
 6、路由 parallel routing
 7、pwa 的 data shell 和 app shell
+
 8、并行路由器
 9、实现 es6 类
 
@@ -81,3 +83,5 @@ Expando properties 是弱点无法监听动态添加的属性。添加后手动�
 
 
 FOUC 指的是什么？
+
+直接单独给seo吐数据 就行 seo的ua固定
