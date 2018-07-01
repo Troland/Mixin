@@ -122,7 +122,7 @@ html {
 
 /*vertical align*/
 
-v-center {
+.v-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -205,7 +205,7 @@ font-family: -apple-system, "Helvetica Neue", Arial, Tahoma, "PingFang SC", "Mic
 
 /*css3 vertical-align center and horizonal-align center*/
 
-.flex-direction-vertical {
+.flex-vertical-direction {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -214,7 +214,7 @@ font-family: -apple-system, "Helvetica Neue", Arial, Tahoma, "PingFang SC", "Mic
   display: flex;
   flex-direction: column;
 }
-.flex-direction-horizonal {
+.flex-horizonal-direction {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;

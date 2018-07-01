@@ -113,8 +113,9 @@
 	-ms-flex-direction: $value;
 	flex-direction: $value;
 }
-	// Shorter version:
-	@mixin flex-dir($args...) { @include flex-direction($args...); }
+
+// Shorter version:
+@mixin flex-dir($args...) { @include flex-direction($args...); }
 
 //----------------------------------------------------------------------
 
@@ -308,8 +309,8 @@
 	-moz-justify-content: $value;
 	justify-content: $value;
 }
-	// Shorter version:
-	@mixin flex-just($args...) { @include justify-content($args...); }
+// Shorter version:
+@mixin flex-just($args...) { @include justify-content($args...); }
 
 //----------------------------------------------------------------------
 

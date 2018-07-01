@@ -24,10 +24,68 @@
       background: red;
       width: 400px;
     }
+    .flex-item {
+      height: 30px;
+      margin-right: 30px;
+      /* margin-right: 0; */
+      background-color: #0f0;
+    }
+    .flex-item:last-child {
+      margin: 0;
+    }
+    /*horizontally center*/
+.flex-horizonal-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 30px;
+  /* 水平居中*/
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-pack: center;
+  /* IE 10 */
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  /* IE 11+,Firefox 22+,Chrome 29+,Opera 12.1*/
+  background-color: #f00;
+}
+    .flex-vertical-center {
+      /* padding: 30px 0; */
+      margin-bottom: 30px;
+      height: 500px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: column;
+      /* 垂直居中 */
+      -webkit-box-pack: center;
+      -moz-box-pack: center;
+      -ms-flex-align: center;
+      /* IE 10 */
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      justify-content: center;
+      /* IE 11+,Firefox 22+,Chrome 29+,Opera 12.1*/
+      background-color: #f00;
+    }
   </style>
 </head>
 
 <body>
+  <div class="flex-horizonal-center">
+    <div class="flex-item">flex-item1</div>
+    <div class="flex-item">flex-item2</div>
+    <div class="flex-item">flex-item3</div>
+    <div class="flex-item">flex-item4</div>
+    <div class="flex-item">flex-item5</div>
+  </div>
   <div class="grid">
     <div class="col fluid">
 

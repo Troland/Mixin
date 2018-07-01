@@ -190,3 +190,7 @@ function findClosestNode(el, selector) {
 
   return null;
 }
+
+// scrollTop 获取滚动距顶部距离
+// offsetTop 包括滚动距离的总高度
+// clientHeight 不包含滚动距离

@@ -37,6 +37,7 @@
   &:after {
     clear: both;
   }
+  *zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
 @function black($opacity) {
    @return rgba(0,0,0,$opacity)
