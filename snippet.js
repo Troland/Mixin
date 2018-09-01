@@ -2836,3 +2836,27 @@ function loadImages(urls) {
   var promises = urls.map(loadImageAsync);
   return Promise.all(promises);
 }
+
+// 获取 transform 样式
+// https://css-tricks.com/get-value-of-css-rotation-through-javascript/
+// https://medium.com/building-blocks/how-to-read-out-translatex-translatey-from-an-element-with-translate3d-with-jquery-c15d2dcccc2c
+function getTransformStyle(el){
+  const st = window.getComputedStyle(el, null);
+  const transformStyle = st.getPropertyValue("-webkit-transform") ||
+                         st.getPropertyValue("-moz-transform") ||
+                         st.getPropertyValue("-ms-transform") ||
+                         st.getPropertyValue("-o-transform") ||
+                         st.getPropertyValue("transform") ||
+                         "Either no transform set, or browser doesn't do getComputedStyle";
+  if (transformStyle.indexOf('matrix') > -1) {
+    const matrix = transformStyle.replace(/[^0-9\-.,]/g, '').split(',');
+    const translateX = matrix[12] || matrix[4];
+    const translateY = matrix[13] || matrix[5];
+    return {
+      translateX,
+      translateY,
+    }
+  } else {
+    return transformStyle;
+  }
+};
