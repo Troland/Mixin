@@ -25,7 +25,7 @@ var topPos = (typeof window.screenTop = "number")
 
 // 取得页面视口 viewport 宽高 IE9+ viewport, window.innerWidth 是为了支持 Netscape
 // html元素可以被样式化如设置为 width: 300, 这个是不会影响　viewport 的，viewport 依然是浏览器的大小。
-// 可获得手机端的布局视口的分辨率比如 iPhone6 是980px。
+// 可获得手机端的布局视口的分辨率比如 iPhone6 是 667 px。
 var pageWidth = window.innerWidth || document.documentElement.clientWidth,
   pageHeight = window.innerHeight || document.documentElement.clientHeight;
 
@@ -2860,3 +2860,70 @@ function getTransformStyle(el){
     return transformStyle;
   }
 };
+
+// elements
+const $elements = document.getElementsByTagName('p')
+const $eleList = Array.prototype.slice.call($elements)
+
+
+// https://stackoverflow.com/questions/11761881/javascript-dom-find-element-index-in-container
+function getElementIndex($list, $target) {
+  const nodes = Array.prototype.slice.call($list);
+  const elementIndex = nodes.indexOf( $target );
+  return elementIndex;
+}
+
+// 获取从指定元素索引找到第一个不为 disabled 的元素
+const index = 1
+const items = [
+  {
+    name: 'nick',
+    id: 1
+  },
+  {
+    name: 'scot',
+    id: 2,
+    disabled: true
+  },
+  {
+    name: 'mike',
+    id: 3,
+    disabled: true
+  },
+  {
+    name: 'jordan',
+    id: 4,
+    disabled: true
+  }
+]
+
+while (items[index].disabled) {
+  index++
+  if (index > 3) index = 0
+}
+
+var mi;
+items.some((item, index) => {
+  console.log('item:')
+  if (!item.disabled) {
+    mi = index
+    console.log('mi:', mi)
+    return true;
+  }
+})
+
+// fragment example
+const createDom = () => {
+  const element  = document.getElementById('ul')
+  const fragment = document.createDocumentFragment()
+  const browsers = ['Firefox', 'Chrome', 'Opera', 
+      'Safari', 'Internet Explorer']
+
+  browsers.forEach(function(browser) {
+    const li = document.createElement('li')
+    li.textContent = browser
+    fragment.appendChild(li)
+  });
+
+  element.appendChild(fragment)
+}
